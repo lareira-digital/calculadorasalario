@@ -650,5 +650,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('result-simple-employee-annual').textContent = fmt(result.net.annual);
         document.getElementById('result-simple-company-monthly').textContent = fmt(result.company.total / 12);
         document.getElementById('result-simple-employee-monthly').textContent = fmt(result.net.monthly);
+        // Employee taxes: SS worker contributions + IRPF
+        const employeeTaxes = result.ssWorker.total + result.irpf.withholdingAmount;
+        document.getElementById('result-simple-employee-taxes').textContent = fmt(employeeTaxes);
+        // Company taxes: SS company contributions
+        document.getElementById('result-simple-company-taxes').textContent = fmt(result.ssCompany.total);
     }
 });
