@@ -234,6 +234,51 @@ html[dir="rtl"] .market-rate-header {
     border-bottom: 2px solid var(--color-primary);
 }
 
+/* Section header with help button */
+.section-header-with-help {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.section-header-with-help h2 {
+    flex: 1;
+}
+
+.help-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.help-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 5px 16px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    background-color: var(--color-text-muted);
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.help-icon-btn:hover .help-icon {
+    background-color: var(--color-primary);
+}
+
 .form-hint {
     font-size: 0.875rem;
     color: var(--color-text-muted);

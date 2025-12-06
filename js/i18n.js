@@ -144,7 +144,14 @@ const I18n = {
             'modal.convenio.p1': 'En España existen <strong>cientos de convenios colectivos</strong>, tanto de ámbito estatal como provincial y autonómico. Añadir todos ellos a esta calculadora es una tarea enorme, incluso si solo fuera como referencia orientativa.',
             'modal.convenio.p2': 'Hacemos nuestro mejor esfuerzo por mantener actualizada la calculadora con el mayor número posible de convenios, priorizando aquellos que afectan a más trabajadores y tienen tablas salariales claras y públicas.',
             'modal.convenio.p3': 'Si tu convenio no aparece en la lista, puedes consultar el <a href="https://www.boe.es" target="_blank" rel="noopener">Boletín Oficial del Estado (BOE)</a> o el boletín oficial de tu provincia para encontrar las tablas salariales oficiales.',
-            'modal.convenio.close': 'Entendido'
+            'modal.convenio.close': 'Entendido',
+
+            // Spanish text explanation modal
+            'modal.spanish.title': '¿Por qué algunos textos están solo en español?',
+            'modal.spanish.p1': 'Es posible que notes que algunas opciones en esta sección permanecen en español independientemente del idioma seleccionado. Esto es intencional.',
+            'modal.spanish.p2': 'Dado que tu contrato de trabajo está redactado en español, toda la normativa laboral oficial está en español, y cualquier documentación que recibas de tu empleador estará en español, mantenemos estos términos específicos en su idioma original.',
+            'modal.spanish.p3': 'Esto te facilita comparar lo que ves en tu contrato con el <strong>convenio</strong> (acuerdo colectivo), <strong>categoría</strong> profesional y otros términos oficiales correctos.',
+            'modal.spanish.close': 'Entendido'
         },
 
         // Galician
@@ -238,7 +245,14 @@ const I18n = {
             'modal.convenio.p1': 'En España existen <strong>centos de convenios colectivos</strong>, tanto de ámbito estatal como provincial e autonómico. Engadir todos eles a esta calculadora é unha tarefa enorme, aínda que só fose como referencia orientativa.',
             'modal.convenio.p2': 'Facemos o noso mellor esforzo por manter actualizada a calculadora co maior número posible de convenios, priorizando aqueles que afectan a máis traballadores e teñen táboas salariais claras e públicas.',
             'modal.convenio.p3': 'Se o teu convenio non aparece na lista, podes consultar o <a href="https://www.boe.es" target="_blank" rel="noopener">Boletín Oficial do Estado (BOE)</a> ou o boletín oficial da túa provincia para atopar as táboas salariais oficiais.',
-            'modal.convenio.close': 'Entendido'
+            'modal.convenio.close': 'Entendido',
+
+            // Spanish text explanation modal
+            'modal.spanish.title': 'Por que algúns textos están só en castelán?',
+            'modal.spanish.p1': 'É posible que notes que algunhas opcións nesta sección permanecen en castelán independentemente do idioma seleccionado. Isto é intencional.',
+            'modal.spanish.p2': 'Dado que o teu contrato de traballo está redactado en castelán, toda a normativa laboral oficial está en castelán, e calquera documentación que recibas do teu empregador estará en castelán, mantemos estes termos específicos no seu idioma orixinal.',
+            'modal.spanish.p3': 'Isto facilítache comparar o que ves no teu contrato co <strong>convenio</strong> (acordo colectivo), <strong>categoría</strong> profesional e outros termos oficiais correctos.',
+            'modal.spanish.close': 'Entendido'
         },
 
         // Catalan
@@ -332,7 +346,14 @@ const I18n = {
             'modal.convenio.p1': 'A Espanya existeixen <strong>centenars de convenis col·lectius</strong>, tant d\'àmbit estatal com provincial i autonòmic. Afegir tots ells a aquesta calculadora és una tasca enorme, fins i tot si només fos com a referència orientativa.',
             'modal.convenio.p2': 'Fem el nostre millor esforç per mantenir actualitzada la calculadora amb el major nombre possible de convenis, prioritzant aquells que afecten a més treballadors i tenen taules salarials clares i públiques.',
             'modal.convenio.p3': 'Si el teu conveni no apareix a la llista, pots consultar el <a href="https://www.boe.es" target="_blank" rel="noopener">Butlletí Oficial de l\'Estat (BOE)</a> o el butlletí oficial de la teva província per trobar les taules salarials oficials.',
-            'modal.convenio.close': 'Entès'
+            'modal.convenio.close': 'Entès',
+
+            // Spanish text explanation modal
+            'modal.spanish.title': 'Per què alguns textos estan només en castellà?',
+            'modal.spanish.p1': 'És possible que notis que algunes opcions en aquesta secció romanen en castellà independentment de l\'idioma seleccionat. Això és intencional.',
+            'modal.spanish.p2': 'Atès que el teu contracte de treball està redactat en castellà, tota la normativa laboral oficial està en castellà, i qualsevol documentació que rebis del teu ocupador estarà en castellà, mantenim aquests termes específics en el seu idioma original.',
+            'modal.spanish.p3': 'Això et facilita comparar el que veus al teu contracte amb el <strong>conveni</strong> (acord col·lectiu), <strong>categoria</strong> professional i altres termes oficials correctes.',
+            'modal.spanish.close': 'Entès'
         },
 
         // Basque
@@ -426,7 +447,14 @@ const I18n = {
             'modal.convenio.p1': 'Espainian <strong>ehunka hitzarmen kolektibo</strong> daude, bai estatu mailakoak, bai probintzia eta autonomia mailakoak. Guztiak kalkulagailu honetan gehitzea lan handia da, erreferentzia orientagarri gisa bakarrik izanda ere.',
             'modal.convenio.p2': 'Ahalik eta hitzarmen gehien kalkulagailuan eguneratuta mantentzeko ahalegin handia egiten dugu, langile gehienei eragiten dietenak eta soldata taula argiak eta publikoak dituztenak lehenetsiz.',
             'modal.convenio.p3': 'Zure hitzarmena zerrendan agertzen ez bada, <a href="https://www.boe.es" target="_blank" rel="noopener">Estatuko Aldizkari Ofiziala (BOE)</a> edo zure probintziako aldizkari ofiziala kontsultatu dezakezu soldata taula ofizialak aurkitzeko.',
-            'modal.convenio.close': 'Ulertuta'
+            'modal.convenio.close': 'Ulertuta',
+
+            // Spanish text explanation modal
+            'modal.spanish.title': 'Zergatik daude testu batzuk gaztelaniaz soilik?',
+            'modal.spanish.p1': 'Agian ohartu zara atal honetako aukera batzuk gaztelaniaz mantentzen direla hautatutako hizkuntza edozein dela ere. Hau nahita egindakoa da.',
+            'modal.spanish.p2': 'Zure lan-kontratua gaztelaniaz idatzita dagoenez, lan-araudia ofiziala gaztelaniaz dago, eta zure enpresaburuaren edozein dokumentazio gaztelaniaz jasoko duzunez, termino espezifiko hauek jatorrizko hizkuntzan mantentzen ditugu.',
+            'modal.spanish.p3': 'Honek zure kontratuan ikusten duzuna <strong>hitzarmen</strong> (akordio kolektiboa), <strong>kategoria</strong> profesionala eta beste termino ofizial zuzenak alderatzea errazten dizu.',
+            'modal.spanish.close': 'Ulertuta'
         },
 
         // English
@@ -520,7 +548,14 @@ const I18n = {
             'modal.convenio.p1': 'In Spain there are <strong>hundreds of collective agreements</strong>, both national and provincial/regional. Adding all of them to this calculator is an enormous task, even if only as an indicative reference.',
             'modal.convenio.p2': 'We do our best to keep the calculator updated with as many agreements as possible, prioritizing those that affect more workers and have clear and public salary tables.',
             'modal.convenio.p3': 'If your agreement does not appear in the list, you can check the <a href="https://www.boe.es" target="_blank" rel="noopener">Official State Gazette (BOE)</a> or your province\'s official gazette to find the official salary tables.',
-            'modal.convenio.close': 'Understood'
+            'modal.convenio.close': 'Understood',
+
+            // Spanish text explanation modal
+            'modal.spanish.title': 'Why are some texts in Spanish only?',
+            'modal.spanish.p1': 'You may notice that some options in this section remain in Spanish regardless of your language selection. This is intentional.',
+            'modal.spanish.p2': 'Since your employment contract is written in Spanish, all official labor regulations are in Spanish, and any documentation you receive from your employer will be in Spanish, we keep these specific terms in their original language.',
+            'modal.spanish.p3': 'This makes it easier for you to match what you see on your contract with the correct <strong>convenio</strong> (collective agreement), <strong>categoría</strong> (job category), and other official terms.',
+            'modal.spanish.close': 'Got it'
         },
 
         // German
@@ -614,7 +649,14 @@ const I18n = {
             'modal.convenio.p1': 'In Spanien gibt es <strong>Hunderte von Tarifverträgen</strong>, sowohl auf staatlicher als auch auf provinzieller und regionaler Ebene. Sie alle zu diesem Rechner hinzuzufügen ist eine enorme Aufgabe, selbst wenn es nur als Orientierungshilfe dient.',
             'modal.convenio.p2': 'Wir tun unser Bestes, um den Rechner mit so vielen Tarifverträgen wie möglich aktuell zu halten, wobei wir diejenigen priorisieren, die mehr Arbeitnehmer betreffen und klare und öffentliche Gehaltstabellen haben.',
             'modal.convenio.p3': 'Wenn Ihr Tarifvertrag nicht in der Liste erscheint, können Sie das <a href="https://www.boe.es" target="_blank" rel="noopener">Staatsanzeiger (BOE)</a> oder das Amtsblatt Ihrer Provinz konsultieren, um die offiziellen Gehaltstabellen zu finden.',
-            'modal.convenio.close': 'Verstanden'
+            'modal.convenio.close': 'Verstanden',
+
+            // Spanish text explanation modal
+            'modal.spanish.title': 'Warum sind einige Texte nur auf Spanisch?',
+            'modal.spanish.p1': 'Sie werden feststellen, dass einige Optionen in diesem Abschnitt unabhängig von Ihrer Sprachauswahl auf Spanisch bleiben. Dies ist beabsichtigt.',
+            'modal.spanish.p2': 'Da Ihr Arbeitsvertrag auf Spanisch verfasst ist, alle offiziellen Arbeitsvorschriften auf Spanisch sind und alle Dokumente, die Sie von Ihrem Arbeitgeber erhalten, auf Spanisch sein werden, behalten wir diese spezifischen Begriffe in ihrer Originalsprache.',
+            'modal.spanish.p3': 'Dies erleichtert es Ihnen, das, was Sie in Ihrem Vertrag sehen, mit dem richtigen <strong>Convenio</strong> (Tarifvertrag), der <strong>Categoría</strong> (Berufskategorie) und anderen offiziellen Begriffen abzugleichen.',
+            'modal.spanish.close': 'Verstanden'
         },
 
         // French
@@ -708,7 +750,14 @@ const I18n = {
             'modal.convenio.p1': 'En Espagne, il existe <strong>des centaines de conventions collectives</strong>, tant au niveau national que provincial et régional. Les ajouter toutes à ce calculateur est une tâche énorme, même si ce n\'est qu\'à titre indicatif.',
             'modal.convenio.p2': 'Nous faisons de notre mieux pour maintenir le calculateur à jour avec le plus grand nombre possible de conventions, en donnant la priorité à celles qui concernent le plus de travailleurs et qui ont des grilles salariales claires et publiques.',
             'modal.convenio.p3': 'Si votre convention n\'apparaît pas dans la liste, vous pouvez consulter le <a href="https://www.boe.es" target="_blank" rel="noopener">Journal Officiel de l\'État (BOE)</a> ou le journal officiel de votre province pour trouver les grilles salariales officielles.',
-            'modal.convenio.close': 'Compris'
+            'modal.convenio.close': 'Compris',
+
+            // Spanish text explanation modal
+            'modal.spanish.title': 'Pourquoi certains textes sont-ils uniquement en espagnol ?',
+            'modal.spanish.p1': 'Vous remarquerez que certaines options de cette section restent en espagnol quelle que soit la langue sélectionnée. C\'est intentionnel.',
+            'modal.spanish.p2': 'Comme votre contrat de travail est rédigé en espagnol, que toutes les réglementations officielles du travail sont en espagnol et que toute documentation que vous recevrez de votre employeur sera en espagnol, nous conservons ces termes spécifiques dans leur langue d\'origine.',
+            'modal.spanish.p3': 'Cela vous permet de faire plus facilement correspondre ce que vous voyez sur votre contrat avec le bon <strong>convenio</strong> (convention collective), la <strong>categoría</strong> (catégorie professionnelle) et d\'autres termes officiels.',
+            'modal.spanish.close': 'Compris'
         },
 
         // Italian
@@ -802,7 +851,14 @@ const I18n = {
             'modal.convenio.p1': 'In Spagna esistono <strong>centinaia di contratti collettivi</strong>, sia a livello nazionale che provinciale e regionale. Aggiungerli tutti a questo calcolatore è un compito enorme, anche solo come riferimento indicativo.',
             'modal.convenio.p2': 'Facciamo del nostro meglio per mantenere il calcolatore aggiornato con il maggior numero possibile di contratti, dando priorità a quelli che riguardano più lavoratori e hanno tabelle salariali chiare e pubbliche.',
             'modal.convenio.p3': 'Se il tuo contratto non appare nella lista, puoi consultare la <a href="https://www.boe.es" target="_blank" rel="noopener">Gazzetta Ufficiale dello Stato (BOE)</a> o la gazzetta ufficiale della tua provincia per trovare le tabelle salariali ufficiali.',
-            'modal.convenio.close': 'Capito'
+            'modal.convenio.close': 'Capito',
+
+            // Spanish text explanation modal
+            'modal.spanish.title': 'Perché alcuni testi sono solo in spagnolo?',
+            'modal.spanish.p1': 'Potresti notare che alcune opzioni in questa sezione rimangono in spagnolo indipendentemente dalla lingua selezionata. Questo è intenzionale.',
+            'modal.spanish.p2': 'Poiché il tuo contratto di lavoro è scritto in spagnolo, tutte le normative ufficiali sul lavoro sono in spagnolo e qualsiasi documentazione che riceverai dal tuo datore di lavoro sarà in spagnolo, manteniamo questi termini specifici nella loro lingua originale.',
+            'modal.spanish.p3': 'Questo ti facilita nel far corrispondere ciò che vedi sul tuo contratto con il corretto <strong>convenio</strong> (contratto collettivo), <strong>categoría</strong> (categoria professionale) e altri termini ufficiali.',
+            'modal.spanish.close': 'Capito'
         },
 
         // Moroccan Arabic (Darija)
@@ -896,7 +952,14 @@ const I18n = {
             'modal.convenio.p1': 'في إسبانيا هناك <strong>مئات الاتفاقيات الجماعية</strong>، على المستوى الوطني والإقليمي والمحلي. إضافتها جميعًا إلى هذه الآلة الحاسبة مهمة ضخمة، حتى لو كانت فقط كمرجع توجيهي.',
             'modal.convenio.p2': 'نبذل قصارى جهدنا للحفاظ على تحديث الآلة الحاسبة بأكبر عدد ممكن من الاتفاقيات، مع إعطاء الأولوية لتلك التي تؤثر على المزيد من العمال ولديها جداول رواتب واضحة وعامة.',
             'modal.convenio.p3': 'إذا لم تظهر اتفاقيتك في القائمة، يمكنك مراجعة <a href="https://www.boe.es" target="_blank" rel="noopener">الجريدة الرسمية للدولة (BOE)</a> أو الجريدة الرسمية لمنطقتك للعثور على جداول الرواتب الرسمية.',
-            'modal.convenio.close': 'فهمت'
+            'modal.convenio.close': 'فهمت',
+
+            // Spanish text explanation modal
+            'modal.spanish.title': 'لماذا بعض النصوص بالإسبانية فقط؟',
+            'modal.spanish.p1': 'قد تلاحظ أن بعض الخيارات في هذا القسم تبقى بالإسبانية بغض النظر عن اللغة المختارة. هذا مقصود.',
+            'modal.spanish.p2': 'نظرًا لأن عقد عملك مكتوب بالإسبانية، وجميع لوائح العمل الرسمية بالإسبانية، وأي وثائق تتلقاها من صاحب العمل ستكون بالإسبانية، نحتفظ بهذه المصطلحات المحددة بلغتها الأصلية.',
+            'modal.spanish.p3': 'هذا يسهل عليك مطابقة ما تراه في عقدك مع <strong>convenio</strong> (الاتفاقية الجماعية) و<strong>categoría</strong> (فئة الوظيفة) الصحيحة والمصطلحات الرسمية الأخرى.',
+            'modal.spanish.close': 'فهمت'
         },
 
         // Romanian
@@ -990,7 +1053,14 @@ const I18n = {
             'modal.convenio.p1': 'În Spania există <strong>sute de contracte colective</strong>, atât la nivel național, cât și provincial și regional. Adăugarea tuturor la acest calculator este o sarcină enormă, chiar și doar ca referință orientativă.',
             'modal.convenio.p2': 'Facem tot posibilul pentru a menține calculatorul actualizat cu cât mai multe contracte, prioritizând pe cele care afectează mai mulți lucrători și au tabele salariale clare și publice.',
             'modal.convenio.p3': 'Dacă contractul dvs. nu apare în listă, puteți consulta <a href="https://www.boe.es" target="_blank" rel="noopener">Buletinul Oficial de Stat (BOE)</a> sau buletinul oficial al provinciei dvs. pentru a găsi tabelele salariale oficiale.',
-            'modal.convenio.close': 'Am înțeles'
+            'modal.convenio.close': 'Am înțeles',
+
+            // Spanish text explanation modal
+            'modal.spanish.title': 'De ce unele texte sunt doar în spaniolă?',
+            'modal.spanish.p1': 'Este posibil să observați că unele opțiuni din această secțiune rămân în spaniolă indiferent de limba selectată. Acest lucru este intenționat.',
+            'modal.spanish.p2': 'Deoarece contractul dvs. de muncă este scris în spaniolă, toate reglementările oficiale ale muncii sunt în spaniolă și orice documentație pe care o primiți de la angajator va fi în spaniolă, păstrăm acești termeni specifici în limba lor originală.',
+            'modal.spanish.p3': 'Acest lucru vă face mai ușor să potriviți ceea ce vedeți în contract cu <strong>convenio</strong> (contract colectiv), <strong>categoría</strong> (categoria profesională) corectă și alți termeni oficiali.',
+            'modal.spanish.close': 'Am înțeles'
         },
 
         // Chinese (Simplified)
@@ -1084,7 +1154,14 @@ const I18n = {
             'modal.convenio.p1': '西班牙有<strong>数百个集体协议</strong>，包括国家级、省级和地区级。将所有协议添加到此计算器是一项艰巨的任务，即使仅作为参考。',
             'modal.convenio.p2': '我们尽最大努力使计算器保持更新，优先添加影响更多工人且工资表清晰公开的协议。',
             'modal.convenio.p3': '如果您的协议不在列表中，可以查阅<a href="https://www.boe.es" target="_blank" rel="noopener">国家官方公报（BOE）</a>或您所在省份的官方公报以查找官方工资表。',
-            'modal.convenio.close': '知道了'
+            'modal.convenio.close': '知道了',
+
+            // Spanish text explanation modal
+            'modal.spanish.title': '为什么有些文字只有西班牙语？',
+            'modal.spanish.p1': '您可能会注意到，无论选择什么语言，此部分的某些选项仍然是西班牙语。这是故意的。',
+            'modal.spanish.p2': '由于您的劳动合同是用西班牙语书写的，所有官方劳动法规都是西班牙语，您从雇主那里收到的任何文件也都是西班牙语，因此我们保留这些特定术语的原始语言。',
+            'modal.spanish.p3': '这使您更容易将合同上看到的内容与正确的<strong>convenio</strong>（集体协议）、<strong>categoría</strong>（职业类别）和其他官方术语进行匹配。',
+            'modal.spanish.close': '知道了'
         },
 
         // Portuguese
@@ -1178,7 +1255,14 @@ const I18n = {
             'modal.convenio.p1': 'Em Espanha existem <strong>centenas de convenções coletivas</strong>, tanto de âmbito estatal como provincial e autonómico. Adicionar todas elas a esta calculadora é uma tarefa enorme, mesmo que apenas como referência orientativa.',
             'modal.convenio.p2': 'Fazemos o nosso melhor esforço para manter a calculadora atualizada com o maior número possível de convenções, priorizando aquelas que afetam mais trabalhadores e têm tabelas salariais claras e públicas.',
             'modal.convenio.p3': 'Se a sua convenção não aparece na lista, pode consultar o <a href="https://www.boe.es" target="_blank" rel="noopener">Boletim Oficial do Estado (BOE)</a> ou o boletim oficial da sua província para encontrar as tabelas salariais oficiais.',
-            'modal.convenio.close': 'Entendido'
+            'modal.convenio.close': 'Entendido',
+
+            // Spanish text explanation modal
+            'modal.spanish.title': 'Por que alguns textos estão apenas em espanhol?',
+            'modal.spanish.p1': 'Pode notar que algumas opções nesta secção permanecem em espanhol independentemente do idioma selecionado. Isto é intencional.',
+            'modal.spanish.p2': 'Uma vez que o seu contrato de trabalho está escrito em espanhol, toda a regulamentação laboral oficial está em espanhol, e qualquer documentação que receba do seu empregador estará em espanhol, mantemos estes termos específicos na sua língua original.',
+            'modal.spanish.p3': 'Isto facilita-lhe comparar o que vê no seu contrato com o <strong>convenio</strong> (convenção coletiva), <strong>categoría</strong> (categoria profissional) correta e outros termos oficiais.',
+            'modal.spanish.close': 'Entendido'
         },
 
         // Polish
@@ -1272,7 +1356,14 @@ const I18n = {
             'modal.convenio.p1': 'W Hiszpanii istnieją <strong>setki układów zbiorowych</strong>, zarówno na poziomie krajowym, jak i prowincjonalnym i regionalnym. Dodanie ich wszystkich do tego kalkulatora to ogromne zadanie, nawet jako orientacyjne odniesienie.',
             'modal.convenio.p2': 'Dokładamy wszelkich starań, aby kalkulator był aktualizowany o jak największą liczbę układów, priorytetyzując te, które dotyczą większej liczby pracowników i mają jasne i publiczne tabele wynagrodzeń.',
             'modal.convenio.p3': 'Jeśli Twojego układu nie ma na liście, możesz sprawdzić <a href="https://www.boe.es" target="_blank" rel="noopener">Dziennik Urzędowy Państwa (BOE)</a> lub oficjalny biuletyn swojej prowincji, aby znaleźć oficjalne tabele wynagrodzeń.',
-            'modal.convenio.close': 'Rozumiem'
+            'modal.convenio.close': 'Rozumiem',
+
+            // Spanish text explanation modal
+            'modal.spanish.title': 'Dlaczego niektóre teksty są tylko po hiszpańsku?',
+            'modal.spanish.p1': 'Możesz zauważyć, że niektóre opcje w tej sekcji pozostają w języku hiszpańskim niezależnie od wybranego języka. Jest to celowe.',
+            'modal.spanish.p2': 'Ponieważ Twoja umowa o pracę jest napisana po hiszpańsku, wszystkie oficjalne przepisy prawa pracy są w języku hiszpańskim, a wszelka dokumentacja od pracodawcy będzie w języku hiszpańskim, zachowujemy te konkretne terminy w ich oryginalnym języku.',
+            'modal.spanish.p3': 'Ułatwia to dopasowanie tego, co widzisz w umowie, do właściwego <strong>convenio</strong> (układu zbiorowego), <strong>categoría</strong> (kategorii zawodowej) i innych oficjalnych terminów.',
+            'modal.spanish.close': 'Rozumiem'
         },
 
         // Ukrainian
@@ -1366,7 +1457,14 @@ const I18n = {
             'modal.convenio.p1': 'В Іспанії існують <strong>сотні колективних договорів</strong>, як на національному, так і на провінційному та регіональному рівнях. Додати їх усі до цього калькулятора - величезне завдання, навіть як орієнтовну довідку.',
             'modal.convenio.p2': 'Ми робимо все можливе, щоб підтримувати калькулятор оновленим з якомога більшою кількістю договорів, пріоритезуючи ті, що стосуються більшої кількості працівників і мають чіткі та публічні таблиці зарплат.',
             'modal.convenio.p3': 'Якщо вашого договору немає в списку, ви можете перевірити <a href="https://www.boe.es" target="_blank" rel="noopener">Офіційний Державний Бюлетень (BOE)</a> або офіційний бюлетень вашої провінції, щоб знайти офіційні таблиці зарплат.',
-            'modal.convenio.close': 'Зрозуміло'
+            'modal.convenio.close': 'Зрозуміло',
+
+            // Spanish text explanation modal
+            'modal.spanish.title': 'Чому деякі тексти лише іспанською?',
+            'modal.spanish.p1': 'Ви можете помітити, що деякі опції в цьому розділі залишаються іспанською незалежно від обраної мови. Це зроблено навмисно.',
+            'modal.spanish.p2': 'Оскільки ваш трудовий договір написаний іспанською, всі офіційні трудові норми іспанською, і будь-яка документація від роботодавця буде іспанською, ми зберігаємо ці конкретні терміни в їхній оригінальній мові.',
+            'modal.spanish.p3': 'Це полегшує вам порівняння того, що ви бачите в договорі, з правильним <strong>convenio</strong> (колективним договором), <strong>categoría</strong> (категорією посади) та іншими офіційними термінами.',
+            'modal.spanish.close': 'Зрозуміло'
         }
     },
 

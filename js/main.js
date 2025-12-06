@@ -64,12 +64,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Regional notice
     const regionalNotice = document.getElementById('convenio-regional-notice');
 
-    // Modal elements
+    // Modal elements - Convenio missing
     const convenioMissingLink = document.getElementById('convenio-missing-link');
     const convenioMissingModal = document.getElementById('convenio-missing-modal');
     const modalOverlay = convenioMissingModal.querySelector('.modal-overlay');
     const modalCloseBtn = convenioMissingModal.querySelector('.modal-close');
     const modalCloseBtnBottom = convenioMissingModal.querySelector('.btn-modal-close');
+
+    // Modal elements - Spanish text explanation
+    const spanishTextHelpBtn = document.getElementById('spanish-text-help');
+    const spanishTextModal = document.getElementById('spanish-text-modal');
+    const spanishModalOverlay = spanishTextModal.querySelector('.modal-overlay');
+    const spanishModalCloseBtn = spanishTextModal.querySelector('.modal-close');
+    const spanishModalCloseBtnBottom = spanishTextModal.querySelector('.btn-modal-close');
 
     // Handle family situation changes to show/hide spouse income field
     const familySituation = document.getElementById('family-situation');
@@ -413,30 +420,51 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listeners for Gestorías convenio selectors
     gestoriasCategorySelect.addEventListener('change', updateConvenioSalaryDisplay);
 
-    // Modal event listeners
-    function openModal() {
+    // Modal event listeners - Convenio missing modal
+    function openConvenioModal() {
         convenioMissingModal.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
     }
 
-    function closeModal() {
+    function closeConvenioModal() {
         convenioMissingModal.classList.add('hidden');
         document.body.style.overflow = '';
     }
 
     convenioMissingLink.addEventListener('click', function(e) {
         e.preventDefault();
-        openModal();
+        openConvenioModal();
     });
 
-    modalOverlay.addEventListener('click', closeModal);
-    modalCloseBtn.addEventListener('click', closeModal);
-    modalCloseBtnBottom.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeConvenioModal);
+    modalCloseBtn.addEventListener('click', closeConvenioModal);
+    modalCloseBtnBottom.addEventListener('click', closeConvenioModal);
 
-    // Close modal on Escape key
+    // Modal event listeners - Spanish text explanation modal
+    function openSpanishModal() {
+        spanishTextModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeSpanishModal() {
+        spanishTextModal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+
+    spanishTextHelpBtn.addEventListener('click', openSpanishModal);
+    spanishModalOverlay.addEventListener('click', closeSpanishModal);
+    spanishModalCloseBtn.addEventListener('click', closeSpanishModal);
+    spanishModalCloseBtnBottom.addEventListener('click', closeSpanishModal);
+
+    // Close modals on Escape key
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && !convenioMissingModal.classList.contains('hidden')) {
-            closeModal();
+        if (e.key === 'Escape') {
+            if (!convenioMissingModal.classList.contains('hidden')) {
+                closeConvenioModal();
+            }
+            if (!spanishTextModal.classList.contains('hidden')) {
+                closeSpanishModal();
+            }
         }
     });
 

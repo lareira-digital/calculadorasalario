@@ -58,7 +58,12 @@
 
                 <!-- Convenio Section -->
                 <section class="form-section">
-                    <h2 data-i18n="convenio.title">Convenio</h2>
+                    <div class="section-header-with-help">
+                        <h2 data-i18n="convenio.title">Convenio</h2>
+                        <button type="button" id="spanish-text-help" class="help-icon-btn" aria-label="Why some texts are in Spanish only">
+                            <span class="help-icon">?</span>
+                        </button>
+                    </div>
                     <div class="form-row form-row-no-margin">
                         <div class="form-group form-group-grow">
                             <label for="convenio" data-i18n="convenio.label">Convenio colectivo</label>
@@ -549,6 +554,19 @@
                 </a>
             </div>
             <button type="button" class="btn-modal-close" data-i18n="modal.convenio.close">Entendido</button>
+        </div>
+    </div>
+
+    <!-- Modal: Why Spanish texts -->
+    <div id="spanish-text-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button type="button" class="modal-close" aria-label="Cerrar">&times;</button>
+            <h3 data-i18n="modal.spanish.title">Why are some texts in Spanish only?</h3>
+            <p data-i18n="modal.spanish.p1">You may notice that some options in this section remain in Spanish regardless of your language selection. This is intentional.</p>
+            <p data-i18n="modal.spanish.p2">Since your employment contract is written in Spanish, all official labor regulations are in Spanish, and any documentation you receive from your employer will be in Spanish, we keep these specific terms in their original language.</p>
+            <p data-i18n="modal.spanish.p3">This makes it easier for you to match what you see on your contract with the correct <strong>convenio</strong> (collective agreement), <strong>categoría</strong> (job category), and other official terms.</p>
+            <button type="button" class="btn-modal-close" data-i18n="modal.spanish.close">Got it</button>
         </div>
     </div>
 
