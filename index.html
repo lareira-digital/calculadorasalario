@@ -365,7 +365,23 @@
 
             <!-- Results Section -->
             <section id="results" class="results-section hidden">
-                <h2 data-i18n="results.title">Resultados</h2>
+                <div class="results-header">
+                    <h2 data-i18n="results.title">Resultados</h2>
+                    <button type="button" id="print-results" class="btn-print" title="Imprimir resultados">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                            <rect x="6" y="14" width="12" height="8"></rect>
+                        </svg>
+                        <span data-i18n="results.print">Imprimir</span>
+                    </button>
+                </div>
+
+                <!-- Print Header (only visible when printing) -->
+                <div class="print-header">
+                    <h1 data-i18n="site.title">Calculadora de Salarios</h1>
+                    <p class="print-date"></p>
+                </div>
 
                 <!-- Convenio Comparison -->
                 <div id="convenio-comparison" class="convenio-comparison">
@@ -477,6 +493,27 @@
                         <div class="result-row total">
                             <span data-i18n="results.company.total">Total Coste Empresa</span>
                             <span id="result-company-total" class="result-value">-</span>
+                        </div>
+                    </div>
+
+                    <!-- In Simpler Terms -->
+                    <div class="result-card highlight-simple">
+                        <h3 data-i18n="results.simple.title">En términos más simples</h3>
+                        <div class="result-row">
+                            <span data-i18n="results.simple.company.annual">La empresa paga por ti al año</span>
+                            <span id="result-simple-company-annual" class="result-value">-</span>
+                        </div>
+                        <div class="result-row">
+                            <span data-i18n="results.simple.employee.annual">Tú recibes al año</span>
+                            <span id="result-simple-employee-annual" class="result-value">-</span>
+                        </div>
+                        <div class="result-row">
+                            <span data-i18n="results.simple.company.monthly">La empresa paga por ti al mes</span>
+                            <span id="result-simple-company-monthly" class="result-value">-</span>
+                        </div>
+                        <div class="result-row">
+                            <span data-i18n="results.simple.employee.monthly">Tú recibes al mes</span>
+                            <span id="result-simple-employee-monthly" class="result-value">-</span>
                         </div>
                     </div>
                 </div>

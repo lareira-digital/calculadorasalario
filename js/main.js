@@ -497,6 +497,19 @@ document.addEventListener('DOMContentLoaded', function() {
         resultsSection.scrollIntoView({ behavior: 'smooth' });
     });
 
+    // Print button handler
+    const printButton = document.getElementById('print-results');
+    printButton.addEventListener('click', function() {
+        // Set the print date
+        const printDateEl = document.querySelector('.print-date');
+        const now = new Date();
+        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        printDateEl.textContent = now.toLocaleDateString(I18n.currentLang || 'es', dateOptions);
+
+        // Trigger print
+        window.print();
+    });
+
     /**
      * Display calculation results in the UI
      * @param {Object} result - Calculation results
@@ -603,5 +616,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('result-company-accidents').textContent =
             fmt(result.ssCompany.accidents) + ' (' + fmtPct(result.ssCompany.accidentsRate) + ')';
         document.getElementById('result-company-total').textContent = fmt(result.company.total);
+
+        // In Simpler Terms card
+        document.getElementById('result-simple-company-annual').textContent = fmt(result.company.total);
+        document.getElementById('result-simple-employee-annual').textContent = fmt(result.net.annual);
+        document.getElementById('result-simple-company-monthly').textContent = fmt(result.company.total / 12);
+        document.getElementById('result-simple-employee-monthly').textContent = fmt(result.net.monthly);
     }
 });

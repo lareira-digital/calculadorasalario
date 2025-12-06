@@ -342,11 +342,47 @@ html[dir="rtl"] .market-rate-header {
     margin-top: 2rem;
 }
 
-.results-section h2 {
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.results-header h2 {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
-    text-align: center;
+    margin: 0;
+}
+
+.btn-print {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    color: var(--color-text);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-print:hover {
+    background: var(--color-highlight);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-print svg {
+    flex-shrink: 0;
+}
+
+/* Print header - hidden on screen */
+.print-header {
+    display: none;
 }
 
 .results-section.hidden {
@@ -415,6 +451,20 @@ html[dir="rtl"] .market-rate-header {
 .result-card.highlight .result-value {
     color: var(--color-success);
     font-size: 1.125rem;
+}
+
+/* In Simpler Terms card */
+.result-card.highlight-simple {
+    border-color: var(--color-primary);
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.result-card.highlight-simple h3 {
+    color: var(--color-primary);
+}
+
+.result-card.highlight-simple .result-value {
+    color: var(--color-primary);
 }
 
 /* Convenio info section */
@@ -799,5 +849,191 @@ footer p {
 
     header h1 {
         font-size: 1.5rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    /* Reset page */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    @page {
+        size: A4;
+        margin: 1.5cm;
+    }
+
+    body {
+        background: white !important;
+        font-size: 11pt;
+        line-height: 1.4;
+    }
+
+    /* Hide everything except results */
+    header,
+    main > form,
+    footer,
+    .modal,
+    .btn-print,
+    .results-header {
+        display: none !important;
+    }
+
+    /* Show and style the results section */
+    .results-section {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .results-section.hidden {
+        display: block !important;
+    }
+
+    /* Show print header */
+    .print-header {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #333;
+    }
+
+    .print-header h1 {
+        font-size: 18pt;
+        font-weight: 700;
+        margin: 0 0 0.25rem 0;
+        color: #333;
+    }
+
+    .print-header .print-date {
+        font-size: 10pt;
+        color: #666;
+        margin: 0;
+    }
+
+    /* Container adjustments */
+    .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Convenio comparison */
+    .convenio-comparison {
+        background: #f8f9fa !important;
+        border: 1px solid #dee2e6 !important;
+        border-radius: 4px;
+        padding: 0.75rem !important;
+        margin-bottom: 1rem !important;
+        page-break-inside: avoid;
+    }
+
+    .convenio-comparison h3 {
+        font-size: 11pt;
+        margin-bottom: 0.5rem;
+    }
+
+    .comparison-content {
+        gap: 0.5rem;
+    }
+
+    .comparison-item {
+        padding: 0.25rem 0.5rem;
+        font-size: 10pt;
+    }
+
+    /* Results grid - 2 columns for print */
+    .results-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;
+    }
+
+    /* Result cards */
+    .result-card {
+        background: white !important;
+        border: 1px solid #dee2e6 !important;
+        border-radius: 4px;
+        padding: 0.75rem !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+    }
+
+    .result-card.highlight {
+        background: #f0fdf4 !important;
+        border-color: #22c55e !important;
+    }
+
+    .result-card.highlight-simple {
+        background: #eff6ff !important;
+        border-color: #3b82f6 !important;
+    }
+
+    .result-card h3 {
+        font-size: 10pt;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 1px solid #eee;
+    }
+
+    .result-card.highlight h3 {
+        color: #16a34a !important;
+    }
+
+    .result-card.highlight-simple h3 {
+        color: #2563eb !important;
+    }
+
+    .result-row {
+        padding: 0.2rem 0;
+        font-size: 9pt;
+        border-bottom: 1px dotted #eee;
+    }
+
+    .result-row:last-child {
+        border-bottom: none;
+    }
+
+    .result-row.total {
+        font-weight: 600;
+        border-top: 1px solid #ccc;
+        margin-top: 0.25rem;
+        padding-top: 0.35rem;
+    }
+
+    .result-value {
+        font-weight: 600;
+    }
+
+    .result-card.highlight .result-value {
+        color: #16a34a !important;
+    }
+
+    .result-card.highlight-simple .result-value {
+        color: #2563eb !important;
+    }
+
+    /* Comparison values */
+    .comparison-value.positive {
+        color: #16a34a !important;
+    }
+
+    .comparison-value.negative {
+        color: #dc2626 !important;
+    }
+
+    /* Print footer */
+    .results-section::after {
+        content: "Calculadora de Salarios - lareira.digital";
+        display: block;
+        text-align: center;
+        font-size: 8pt;
+        color: #999;
+        margin-top: 1.5rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid #eee;
     }
 }
