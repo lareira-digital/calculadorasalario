@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Salarios - España</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <div class="language-selector">
+                    <button type="button" class="lang-btn" data-lang="es" title="Español">🇪🇸</button>
+                    <button type="button" class="lang-btn" data-lang="gl" title="Galego">GL</button>
+                    <button type="button" class="lang-btn" data-lang="ca" title="Català">CA</button>
+                    <button type="button" class="lang-btn" data-lang="eu" title="Euskara">EU</button>
+                    <button type="button" class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+                    <button type="button" class="lang-btn" data-lang="de" title="Deutsch">🇩🇪</button>
+                    <button type="button" class="lang-btn" data-lang="fr" title="Français">🇫🇷</button>
+                    <button type="button" class="lang-btn" data-lang="it" title="Italiano">🇮🇹</button>
+                    <button type="button" class="lang-btn" data-lang="ro" title="Română">🇷🇴</button>
+                    <button type="button" class="lang-btn" data-lang="zh" title="中文">🇨🇳</button>
+                    <button type="button" class="lang-btn" data-lang="ar" title="العربية">🇲🇦</button>
+                </div>
+                <a href="https://ko-fi.com/lareiradigital" target="_blank" rel="noopener" class="kofi-btn kofi-header">
+                    <svg class="kofi-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311z" fill="currentColor"/></svg>
+                    <span data-i18n="kofi.header">Apóyanos</span>
+                </a>
+            </div>
+            <h1 data-i18n="site.title">Calculadora de Salarios</h1>
+            <p data-i18n="site.subtitle">Calcula tu salario neto en España</p>
+        </header>
+
+        <main>
+            <form id="salary-form">
+                <!-- Salary Input Section -->
+                <section class="form-section">
+                    <h2 data-i18n="salary.title">Salario Bruto</h2>
+                    <div class="form-row">
+                        <div class="form-group form-group-grow">
+                            <label for="gross-salary" data-i18n="salary.gross">Salario bruto anual (€)</label>
+                            <input type="number" id="gross-salary" name="gross-salary"
+                                   min="0" step="0.01" placeholder="30000" required>
+                        </div>
+                        <div class="form-group form-group-shrink">
+                            <label for="num-payments" data-i18n="salary.payments">Número de pagas</label>
+                            <select id="num-payments" name="num-payments">
+                                <option value="12" data-i18n="salary.payments.12">12 pagas</option>
+                                <option value="14" selected data-i18n="salary.payments.14">14 pagas</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Convenio Section -->
+                <section class="form-section">
+                    <h2 data-i18n="convenio.title">Convenio</h2>
+                    <div class="form-row form-row-no-margin">
+                        <div class="form-group form-group-grow">
+                            <label for="convenio" data-i18n="convenio.label">Convenio colectivo</label>
+                            <select id="convenio" name="convenio">
+                                <option value="tic" selected data-i18n="convenio.tic">Consultoría, TIC y Estudios de Mercado (XIX Convenio, 2025)</option>
+                                <option value="hosteleria" data-i18n="convenio.hosteleria">Hostelería - C. de Madrid (Convenio 2024)</option>
+                                <option value="seguridad-privada" data-i18n="convenio.seguridad">Seguridad Privada (Convenio 2022)</option>
+                                <option value="contact-center" data-i18n="convenio.contact">Contact Center / Telemarketing (III Convenio, 2023)</option>
+                                <option value="gestorias" data-i18n="convenio.gestorias">Gestorías Administrativas (IX Convenio, 2024)</option>
+                            </select>
+                        </div>
+                        <div class="form-group form-group-shrink">
+                            <label for="year" data-i18n="convenio.year">Año</label>
+                            <select id="year" name="year">
+                                <option value="2025" selected>2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                            </select>
+                        </div>
+                    </div>
+                    <a href="#" id="convenio-missing-link" class="convenio-missing-link"><span class="convenio-missing-icon">?</span> <strong data-i18n="convenio.missing">Mi convenio no aparece en la lista</strong></a>
+
+                    <!-- Regional notice for hostelería -->
+                    <div id="convenio-regional-notice" class="convenio-notice hidden">
+                        <p data-i18n="convenio.regional.notice">Este convenio usa las tablas de la Comunidad de Madrid como referencia. Cada Comunidad Autónoma tiene su propio convenio provincial/autonómico con tablas salariales diferentes. Consulta el Boletín Oficial de tu provincia o comunidad para datos exactos.</p>
+                    </div>
+
+                    <!-- TIC Convenio Fields -->
+                    <div id="tic-fields">
+                        <div class="form-group">
+                            <label for="area">Área profesional</label>
+                            <select id="area" name="area">
+                                <option value="1">Área 1 - BPO y Administración Interna</option>
+                                <option value="2">Área 2 - CAU</option>
+                                <option value="3" selected>Área 3 - Programación</option>
+                                <option value="4">Área 4 - Consultoría de Negocio y Tecnológica</option>
+                                <option value="5">Área 5 - Ciberseguridad</option>
+                                <option value="6">Área 6 - Estudios de Mercado</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="group">Grupo</label>
+                                <select id="group" name="group">
+                                    <option value="A">Grupo A</option>
+                                    <option value="B">Grupo B</option>
+                                    <option value="C" selected>Grupo C</option>
+                                    <option value="D">Grupo D</option>
+                                    <option value="E">Grupo E</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="level">Nivel</label>
+                                <select id="level" name="level">
+                                    <option value="1" selected>Nivel 1</option>
+                                    <option value="2">Nivel 2</option>
+                                    <option value="3">Nivel 3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hostelería Convenio Fields -->
+                    <div id="hosteleria-fields" class="hidden">
+                        <div class="form-group">
+                            <label for="establishment-group">Grupo de establecimiento</label>
+                            <select id="establishment-group" name="establishment-group">
+                                <option value="A">Grupo A - Hoteles 5*, alta cocina, clubs exclusivos</option>
+                                <option value="B">Grupo B - Hoteles boutique, restaurantes de autor</option>
+                                <option value="C" selected>Grupo C - Hoteles 3-4*, bistrós, cadenas</option>
+                                <option value="D">Grupo D - Bares, comedores, hostales</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hosteleria-level">Nivel profesional</label>
+                            <select id="hosteleria-level" name="hosteleria-level">
+                                <option value="1A">Nivel 1A - Alta Dirección (Director, Gerente)</option>
+                                <option value="1B">Nivel 1B - Dirección Media (Jefe Cocina, Jefe Sala)</option>
+                                <option value="2">Nivel 2 - Supervisión (Jefe de Turno, Coordinador)</option>
+                                <option value="3" selected>Nivel 3 - Cualificado (Cocinero, Camarero Senior)</option>
+                                <option value="4">Nivel 4 - Operativo (Camarero, Ayudante Cocina)</option>
+                                <option value="5">Nivel 5 - Apoyo (Aprendiz, Auxiliar)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Seguridad Privada Convenio Fields -->
+                    <div id="seguridad-fields" class="hidden">
+                        <div class="form-group">
+                            <label for="seguridad-category">Categoría profesional</label>
+                            <select id="seguridad-category" name="seguridad-category">
+                                <optgroup label="Personal de Vigilancia">
+                                    <option value="vs_sin_arma" selected>Vigilante de Seguridad (sin arma)</option>
+                                    <option value="vs_con_arma">Vigilante de Seguridad (con arma)</option>
+                                    <option value="vs_explosivos">Vigilante de Explosivos</option>
+                                </optgroup>
+                                <optgroup label="Personal de Protección">
+                                    <option value="escolta">Escolta Privado</option>
+                                </optgroup>
+                                <optgroup label="Personal Técnico">
+                                    <option value="tecnico">Técnico / Especialista</option>
+                                    <option value="jefe_equipo_tec">Jefe de Equipo Técnico</option>
+                                </optgroup>
+                                <optgroup label="Personal Administrativo">
+                                    <option value="aux_admin">Auxiliar Administrativo</option>
+                                    <option value="oficial_admin">Oficial Administrativo</option>
+                                    <option value="teleoperador">Teleoperador CRA</option>
+                                </optgroup>
+                                <optgroup label="Dirección y Jefatura">
+                                    <option value="jefe_seguridad">Jefe de Seguridad</option>
+                                    <option value="director_seguridad">Director de Seguridad</option>
+                                </optgroup>
+                                <optgroup label="Personal Subalterno">
+                                    <option value="ordenanza">Ordenanza / Conserje</option>
+                                    <option value="almacenero">Almacenero</option>
+                                    <option value="limpiador">Limpiador/a</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Contact Center Convenio Fields -->
+                    <div id="contact-center-fields" class="hidden">
+                        <div class="form-group">
+                            <label for="contact-center-level">Nivel profesional</label>
+                            <select id="contact-center-level" name="contact-center-level">
+                                <optgroup label="Grupo A - Dirección">
+                                    <option value="1">Nivel 1 - Director/a General, Director/a de Área</option>
+                                    <option value="2">Nivel 2 - Jefe/a de Área, Jefe/a de Departamento</option>
+                                </optgroup>
+                                <optgroup label="Grupo B - Personal Técnico">
+                                    <option value="3">Nivel 3 - Analista Funcional, Jefe/a de Proyecto</option>
+                                    <option value="4">Nivel 4 - Analista, Técnico/a de Sistemas Senior</option>
+                                    <option value="5">Nivel 5 - Programador Senior, Analista Programador</option>
+                                </optgroup>
+                                <optgroup label="Grupo D - Operaciones">
+                                    <option value="6">Nivel 6 - Supervisor/a, Formador/a, Quality Analyst</option>
+                                    <option value="7">Nivel 7 - Coordinador/a, Team Leader</option>
+                                    <option value="8">Nivel 8 - Teleoperador/a Especialista, Agente Senior</option>
+                                    <option value="9">Nivel 9 - Auxiliar Administrativo, Back Office</option>
+                                    <option value="10" selected>Nivel 10 - Teleoperador/a, Agente de Contact Center</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Gestorías Administrativas Convenio Fields -->
+                    <div id="gestorias-fields" class="hidden">
+                        <div class="form-group">
+                            <label for="gestorias-category">Categoría profesional</label>
+                            <select id="gestorias-category" name="gestorias-category">
+                                <optgroup label="Grupo I - Personal Titulado">
+                                    <option value="titulado_superior">Titulado/a Superior (Licenciado, Grado, Máster)</option>
+                                    <option value="titulado_medio">Titulado/a Medio (Diplomado, Grado Medio)</option>
+                                </optgroup>
+                                <optgroup label="Grupo II - Administración">
+                                    <option value="coordinador_jefe">Coordinador/a - Jefe/a Administrativo/a</option>
+                                    <option value="oficial_primera">Oficial de Primera</option>
+                                    <option value="oficial_segunda" selected>Oficial de Segunda</option>
+                                    <option value="auxiliar_administrativo">Auxiliar Administrativo/a (SMI)</option>
+                                </optgroup>
+                                <optgroup label="Grupo III - Servicios">
+                                    <option value="ordenanza">Ordenanza (SMI)</option>
+                                    <option value="limpieza">Personal de Limpieza (SMI)</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="convenio-salary-info" class="convenio-info">
+                        <div class="convenio-info-row">
+                            <p><span data-i18n="convenio.salary">Salario según convenio:</span> <strong id="convenio-salary-display">-</strong></p>
+                            <button type="button" id="use-convenio-salary" class="btn-secondary" data-i18n="convenio.use">Usar salario del convenio</button>
+                        </div>
+                        <div id="market-rate-info" class="market-rate-info">
+                            <div class="market-rate-header">
+                                <span class="market-rate-label" data-i18n="convenio.market">Salario de mercado orientativo:</span>
+                                <span id="market-rate-range" class="market-rate-value">-</span>
+                            </div>
+                            <div id="market-rate-roles" class="market-rate-roles"></div>
+                            <p class="market-rate-disclaimer" data-i18n="convenio.market.disclaimer">* Datos orientativos basados en fuentes como Glassdoor, Indeed y Talent.com (2025). Los salarios reales varían según empresa, ubicación y experiencia.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Personal Situation Section -->
+                <section class="form-section">
+                    <h2 data-i18n="irpf.title">Situación Personal (IRPF)</h2>
+
+                    <div class="form-row form-row-3col">
+                        <div class="form-group">
+                            <label for="age" data-i18n="irpf.age">Edad</label>
+                            <input type="number" id="age" name="age" min="16" max="100" value="30">
+                        </div>
+                        <div class="form-group">
+                            <label for="contract-type" data-i18n="irpf.contract">Tipo de contrato</label>
+                            <select id="contract-type" name="contract-type">
+                                <option value="indefinido" selected data-i18n="irpf.contract.indefinido">Indefinido</option>
+                                <option value="temporal" data-i18n="irpf.contract.temporal">Temporal</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="disability" data-i18n="irpf.disability">Discapacidad</label>
+                            <select id="disability" name="disability">
+                                <option value="none" selected data-i18n="irpf.disability.none">Sin discapacidad</option>
+                                <option value="33-65" data-i18n="irpf.disability.33">Entre 33% y 65%</option>
+                                <option value="33-65-mobility" data-i18n="irpf.disability.33mob">33-65% + movilidad reducida</option>
+                                <option value="65+" data-i18n="irpf.disability.65">65% o superior</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="family-situation" data-i18n="irpf.family">Situación familiar</label>
+                            <select id="family-situation" name="family-situation">
+                                <option value="single" data-i18n="irpf.family.single">Soltero/a</option>
+                                <option value="married-joint" data-i18n="irpf.family.married.joint">Casado/a - Tributación conjunta</option>
+                                <option value="married-separate" data-i18n="irpf.family.married.separate">Casado/a - Tributación individual</option>
+                                <option value="single-parent" data-i18n="irpf.family.single.parent">Familia monoparental</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="spouse-income" data-i18n="irpf.spouse">Rentas cónyuge > 1.500€/año</label>
+                            <select id="spouse-income" name="spouse-income">
+                                <option value="yes" selected data-i18n="irpf.spouse.yes">Sí</option>
+                                <option value="no" data-i18n="irpf.spouse.no">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="autonomous-community" data-i18n="irpf.community">Comunidad Autónoma</label>
+                        <select id="autonomous-community" name="autonomous-community">
+                            <option value="andalucia">Andalucía</option>
+                            <option value="aragon">Aragón</option>
+                            <option value="asturias">Asturias</option>
+                            <option value="baleares">Islas Baleares</option>
+                            <option value="canarias">Canarias</option>
+                            <option value="cantabria">Cantabria</option>
+                            <option value="castilla-mancha">Castilla-La Mancha</option>
+                            <option value="castilla-leon">Castilla y León</option>
+                            <option value="cataluna">Cataluña</option>
+                            <option value="extremadura">Extremadura</option>
+                            <option value="galicia">Galicia</option>
+                            <option value="madrid" selected>Madrid</option>
+                            <option value="murcia">Murcia</option>
+                            <option value="navarra">Navarra</option>
+                            <option value="pais-vasco">País Vasco</option>
+                            <option value="rioja">La Rioja</option>
+                            <option value="valencia">Comunidad Valenciana</option>
+                            <option value="ceuta">Ceuta</option>
+                            <option value="melilla">Melilla</option>
+                        </select>
+                    </div>
+                </section>
+
+                <!-- Descendants Section -->
+                <section class="form-section">
+                    <h2 data-i18n="descendants.title">Descendientes</h2>
+                    <p class="form-hint" data-i18n="descendants.hint">Hijos menores de 25 años que convivan con usted y no tengan rentas superiores a 8.000€/año</p>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="children-under-3" data-i18n="descendants.under3">Menores de 3 años</label>
+                            <input type="number" id="children-under-3" name="children-under-3" min="0" max="10" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="children-3-to-25" data-i18n="descendants.3to25">De 3 a 25 años</label>
+                            <input type="number" id="children-3-to-25" name="children-3-to-25" min="0" max="10" value="0">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="children-disability" data-i18n="descendants.disability">Hijos con discapacidad (33% o más)</label>
+                        <input type="number" id="children-disability" name="children-disability" min="0" max="10" value="0">
+                    </div>
+                </section>
+
+                <!-- Ascendants Section -->
+                <section class="form-section">
+                    <h2 data-i18n="ascendants.title">Ascendientes</h2>
+                    <p class="form-hint" data-i18n="ascendants.hint">Mayores de 65 años o con discapacidad que convivan con usted</p>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ascendants-65-75" data-i18n="ascendants.65to75">De 65 a 75 años</label>
+                            <input type="number" id="ascendants-65-75" name="ascendants-65-75" min="0" max="10" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="ascendants-75+" data-i18n="ascendants.75plus">Mayores de 75 años</label>
+                            <input type="number" id="ascendants-75+" name="ascendants-75+" min="0" max="10" value="0">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ascendants-disability" data-i18n="ascendants.disability">Ascendientes con discapacidad (33% o más)</label>
+                        <input type="number" id="ascendants-disability" name="ascendants-disability" min="0" max="10" value="0">
+                    </div>
+                </section>
+
+                <button type="submit" class="btn-calculate" data-i18n="calculate">Calcular</button>
+            </form>
+
+            <!-- Results Section -->
+            <section id="results" class="results-section hidden">
+                <h2 data-i18n="results.title">Resultados</h2>
+
+                <!-- Convenio Comparison -->
+                <div id="convenio-comparison" class="convenio-comparison">
+                    <h3 data-i18n="results.comparison.title">Comparativa con Convenio</h3>
+                    <div class="comparison-content">
+                        <div class="comparison-item">
+                            <span data-i18n="results.comparison.your">Tu salario bruto</span>
+                            <span id="comparison-your-salary" class="comparison-value">-</span>
+                        </div>
+                        <div class="comparison-item">
+                            <span><span data-i18n="results.comparison.convenio">Salario convenio</span> (<span id="comparison-category">-</span>)</span>
+                            <span id="comparison-convenio-salary" class="comparison-value">-</span>
+                        </div>
+                        <div class="comparison-item comparison-diff">
+                            <span data-i18n="results.comparison.diff">Diferencia</span>
+                            <span id="comparison-difference" class="comparison-value">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-grid">
+                    <!-- Gross Salary -->
+                    <div class="result-card">
+                        <h3 data-i18n="results.gross.title">Salario Bruto</h3>
+                        <div class="result-row">
+                            <span data-i18n="results.annual">Anual</span>
+                            <span id="result-gross-annual" class="result-value">-</span>
+                        </div>
+                        <div class="result-row">
+                            <span data-i18n="results.monthly">Mensual</span>
+                            <span id="result-gross-monthly" class="result-value">-</span>
+                        </div>
+                    </div>
+
+                    <!-- Net Salary -->
+                    <div class="result-card highlight">
+                        <h3 data-i18n="results.net.title">Salario Neto</h3>
+                        <div class="result-row">
+                            <span data-i18n="results.annual">Anual</span>
+                            <span id="result-net-annual" class="result-value">-</span>
+                        </div>
+                        <div class="result-row">
+                            <span><span data-i18n="results.monthly">Mensual</span> (x<span id="result-num-payments">14</span>)</span>
+                            <span id="result-net-monthly" class="result-value">-</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Security Worker -->
+                    <div class="result-card">
+                        <h3 data-i18n="results.ss.title">Seguridad Social (Trabajador)</h3>
+                        <div class="result-row">
+                            <span data-i18n="results.ss.common">Contingencias comunes (4,70%)</span>
+                            <span id="result-ss-common" class="result-value">-</span>
+                        </div>
+                        <div class="result-row">
+                            <span data-i18n="results.ss.unemployment">Desempleo</span>
+                            <span id="result-ss-unemployment" class="result-value">-</span>
+                        </div>
+                        <div class="result-row">
+                            <span data-i18n="results.ss.training">Formación profesional (0,10%)</span>
+                            <span id="result-ss-training" class="result-value">-</span>
+                        </div>
+                        <div class="result-row total">
+                            <span data-i18n="results.ss.total">Total SS Trabajador</span>
+                            <span id="result-ss-worker-total" class="result-value">-</span>
+                        </div>
+                    </div>
+
+                    <!-- IRPF -->
+                    <div class="result-card">
+                        <h3 data-i18n="results.irpf.title">IRPF</h3>
+                        <div class="result-row">
+                            <span data-i18n="results.irpf.base">Base imponible</span>
+                            <span id="result-irpf-base" class="result-value">-</span>
+                        </div>
+                        <div class="result-row">
+                            <span data-i18n="results.irpf.rate">Tipo de retención</span>
+                            <span id="result-irpf-rate" class="result-value">-</span>
+                        </div>
+                        <div class="result-row total">
+                            <span data-i18n="results.irpf.total">Retención IRPF anual</span>
+                            <span id="result-irpf-total" class="result-value">-</span>
+                        </div>
+                    </div>
+
+                    <!-- Company Costs -->
+                    <div class="result-card">
+                        <h3 data-i18n="results.company.title">Coste Empresa</h3>
+                        <div class="result-row">
+                            <span data-i18n="results.company.common">Contingencias comunes (23,60%)</span>
+                            <span id="result-company-ss-common" class="result-value">-</span>
+                        </div>
+                        <div class="result-row">
+                            <span data-i18n="results.company.unemployment">Desempleo</span>
+                            <span id="result-company-ss-unemployment" class="result-value">-</span>
+                        </div>
+                        <div class="result-row">
+                            <span data-i18n="results.company.fogasa">FOGASA (0,20%)</span>
+                            <span id="result-company-fogasa" class="result-value">-</span>
+                        </div>
+                        <div class="result-row">
+                            <span data-i18n="results.company.training">Formación profesional (0,60%)</span>
+                            <span id="result-company-training" class="result-value">-</span>
+                        </div>
+                        <div class="result-row">
+                            <span data-i18n="results.company.accidents">Accidentes de trabajo</span>
+                            <span id="result-company-accidents" class="result-value">-</span>
+                        </div>
+                        <div class="result-row total">
+                            <span data-i18n="results.company.total">Total Coste Empresa</span>
+                            <span id="result-company-total" class="result-value">-</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p data-i18n="footer.disclaimer">Esta calculadora es orientativa. Consulte con un profesional para cálculos oficiales.</p>
+            <p class="footer-donate">
+                <span data-i18n="footer.donate">Si esta herramienta te ha sido útil, considera</span>
+                <a href="https://ko-fi.com/lareiradigital" target="_blank" rel="noopener" data-i18n="footer.donate.link">apoyar el proyecto</a>.
+            </p>
+            <p class="footer-credit">
+                <span data-i18n="footer.created">Creado con</span> ❤️ <span data-i18n="footer.by">por</span> <a href="https://lareira.digital" target="_blank" rel="noopener">Lareira Digital</a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Modal: Convenio not in list -->
+    <div id="convenio-missing-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button type="button" class="modal-close" aria-label="Cerrar">&times;</button>
+            <h3 data-i18n="modal.convenio.title">Sobre los convenios disponibles</h3>
+            <p data-i18n="modal.convenio.p1">En España existen <strong>cientos de convenios colectivos</strong>, tanto de ámbito estatal como provincial y autonómico. Añadir todos ellos a esta calculadora es una tarea enorme, incluso si solo fuera como referencia orientativa.</p>
+            <p data-i18n="modal.convenio.p2">Hacemos nuestro mejor esfuerzo por mantener actualizada la calculadora con el mayor número posible de convenios, priorizando aquellos que afectan a más trabajadores y tienen tablas salariales claras y públicas.</p>
+            <p data-i18n="modal.convenio.p3">Si tu convenio no aparece en la lista, puedes consultar el <a href="https://www.boe.es" target="_blank" rel="noopener">Boletín Oficial del Estado (BOE)</a> o el boletín oficial de tu provincia para encontrar las tablas salariales oficiales.</p>
+            <div class="kofi-modal-cta">
+                <p data-i18n="kofi.modal">¿Quieres que añadamos más convenios? Ayúdanos a mantener y mejorar esta herramienta.</p>
+                <a href="https://ko-fi.com/lareiradigital" target="_blank" rel="noopener" class="kofi-btn kofi-modal-btn">
+                    <svg class="kofi-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311z" fill="currentColor"/></svg>
+                    <span data-i18n="kofi.modal.link">Apoya el proyecto en Ko-fi</span>
+                </a>
+            </div>
+            <button type="button" class="btn-modal-close" data-i18n="modal.convenio.close">Entendido</button>
+        </div>
+    </div>
+
+    <script src="js/social-security.js"></script>
+    <script src="js/irpf.js"></script>
+    <script src="convenios/it.js"></script>
+    <script src="convenios/hosteleria.js"></script>
+    <script src="convenios/seguridad-privada.js"></script>
+    <script src="convenios/contact-center.js"></script>
+    <script src="convenios/gestorias.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
