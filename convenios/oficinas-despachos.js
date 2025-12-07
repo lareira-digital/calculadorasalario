@@ -249,6 +249,82 @@ const ConvenioOficinasDespachos = {
     },
 
     /**
+     * Position descriptions by level
+     * Describes responsibilities and typical job functions
+     */
+    positionDescriptions: {
+        'nivel_I': {
+            title: 'Titulado/a Superior',
+            responsibilities: 'Asesoramiento técnico especializado, dirección de proyectos, representación legal o técnica, decisiones de alto nivel',
+            experience: '5+ años + Licenciatura/Grado Superior',
+            equivalentTitles: ['Titulado Superior', 'Director Técnico', 'Abogado', 'Economista', 'Arquitecto', 'Ingeniero']
+        },
+        'nivel_II': {
+            title: 'Titulado/a Medio / Jefe Superior',
+            responsibilities: 'Coordinación de departamentos, análisis técnico, programación senior, supervisión de equipos, reporting a dirección',
+            experience: '4-6 años',
+            equivalentTitles: ['Titulado Medio', 'Jefe Superior', 'Analista Senior', 'Programador Senior', 'Project Manager']
+        },
+        'nivel_III': {
+            title: 'Jefe/a de Primera',
+            responsibilities: 'Jefatura de sección, análisis-programación, coordinación de equipos técnicos, gestión de proyectos medios',
+            experience: '3-5 años',
+            equivalentTitles: ['Jefe de Primera', 'Analista-Programador', 'Jefe Equipo Informático', 'Team Leader', 'Senior Developer']
+        },
+        'nivel_IV': {
+            title: 'Jefe/a de Segunda',
+            responsibilities: 'Supervisión de sección, operación informática avanzada, delineación técnica, coordinación operativa',
+            experience: '2-4 años',
+            equivalentTitles: ['Jefe de Segunda', 'Jefe Delineación', 'Jefe Explotación', 'Operador Informático', 'System Administrator']
+        },
+        'nivel_V': {
+            title: 'Oficial de Primera',
+            responsibilities: 'Gestión administrativa autónoma, delineación de proyectos, operación de sistemas, atención especializada',
+            experience: '2-3 años',
+            equivalentTitles: ['Oficial 1ª Administrativo', 'Delineante Proyectista', 'Operador 1ª', 'CAD Technician', 'Senior Administrative']
+        },
+        'nivel_VI': {
+            title: 'Oficial de Segunda',
+            responsibilities: 'Tareas administrativas intermedias, delineación básica, operación de equipos, supervisión de auxiliares',
+            experience: '1-2 años',
+            equivalentTitles: ['Oficial 2ª Administrativo', 'Delineante', 'Operador 2ª', 'Encargado', 'Conserje Mayor']
+        },
+        'nivel_VII': {
+            title: 'Dibujante / Oficial de Oficios',
+            responsibilities: 'Dibujo técnico, conducción, mantenimiento especializado, calcado, oficios varios cualificados',
+            experience: '1-2 años',
+            equivalentTitles: ['Dibujante', 'Oficial 1ª Oficios Varios', 'Conductor', 'Calcador', 'Driver', 'Maintenance Technician']
+        },
+        'nivel_VIII': {
+            title: 'Administrativo/a',
+            responsibilities: 'Tareas administrativas generales, grabación de datos, atención telefónica, recepción, archivo',
+            experience: '0-2 años',
+            equivalentTitles: ['Administrativo', 'Grabador de Datos', 'Oficial 2ª Oficios', 'Telefonista', 'Recepcionista', 'Data Entry']
+        },
+        'nivel_IX': {
+            title: 'Auxiliar Administrativo/a',
+            responsibilities: 'Apoyo administrativo básico, reproducción de documentos, vigilancia, cobros, tareas auxiliares',
+            experience: '0-1 año',
+            equivalentTitles: ['Auxiliar Administrativo', 'Reproductor', 'Vigilante', 'Cobrador', 'Office Assistant']
+        },
+        'nivel_X': {
+            title: 'Personal de Servicios',
+            responsibilities: 'Conserjería, ordenanza, limpieza, mozos, peones, servicios auxiliares generales',
+            experience: '0 años',
+            equivalentTitles: ['Ordenanza', 'Conserje', 'Limpiador/a', 'Mozo', 'Peón', 'Cleaner', 'Porter']
+        }
+    },
+
+    /**
+     * Get position description for a specific level
+     * @param {string} level - Level code (nivel_I to nivel_X)
+     * @returns {Object|null} - Position description or null
+     */
+    getPositionDescription: function(level) {
+        return this.positionDescriptions[level] || null;
+    },
+
+    /**
      * Market rates for office roles (orientative)
      * Based on market data from Indeed, Glassdoor, InfoJobs (2024-2025)
      */

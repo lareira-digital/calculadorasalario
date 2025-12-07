@@ -387,6 +387,154 @@ const ConvenioOficinasGalicia = {
     },
 
     /**
+     * Position descriptions by category
+     * Describes responsibilities and typical job functions
+     */
+    positionDescriptions: {
+        'titulado_superior': {
+            title: 'Titulado/a Superior',
+            responsibilities: 'Asesoramiento técnico especializado, dirección de proyectos, representación legal, decisiones de alto nivel, firma de documentos',
+            experience: '5+ años + Licenciatura/Grado',
+            equivalentTitles: ['Titulado Superior', 'Abogado', 'Economista', 'Graduado Social', 'Ingeniero', 'Arquitecto']
+        },
+        'titulado_medio': {
+            title: 'Titulado/a Medio',
+            responsibilities: 'Asesoramiento técnico, análisis, gestión de proyectos, supervisión de equipos administrativos',
+            experience: '3-5 años + Diplomatura/Grado',
+            equivalentTitles: ['Titulado Medio', 'Diplomado', 'Técnico Superior', 'Analista']
+        },
+        'xefe_superior': {
+            title: 'Xefe/a Superior',
+            responsibilities: 'Dirección de múltiples departamentos, coordinación general, reporting a dirección, estrategia operativa',
+            experience: '6+ años',
+            equivalentTitles: ['Jefe Superior', 'Director Administrativo', 'Operations Manager', 'General Manager']
+        },
+        'xefe_primeira': {
+            title: 'Xefe/a de Primeira',
+            responsibilities: 'Responsable de departamento o servicio, supervisión de personal, gestión de procesos, control de calidad',
+            experience: '4-6 años',
+            equivalentTitles: ['Jefe de Primera', 'Responsable de Departamento', 'Department Manager', 'Team Leader Senior']
+        },
+        'xefe_segunda': {
+            title: 'Xefe/a de Segunda',
+            responsibilities: 'Cajero con firma, responsable de sección, supervisión operativa, gestión de tesorería',
+            experience: '3-5 años',
+            equivalentTitles: ['Jefe de Segunda', 'Cajero con Firma', 'Encargado', 'Section Supervisor']
+        },
+        'oficial_primeira': {
+            title: 'Oficial de Primeira',
+            responsibilities: 'Gestión administrativa autónoma, contabilidad, gestión de clientes, resolución de incidencias',
+            experience: '2-4 años',
+            equivalentTitles: ['Oficial 1ª Administrativo', 'Contable', 'Administrativo Senior', 'Senior Clerk']
+        },
+        'oficial_segunda': {
+            title: 'Oficial de Segunda',
+            responsibilities: 'Tareas administrativas intermedias, atención telefónica especializada, gestión documental',
+            experience: '1-3 años',
+            equivalentTitles: ['Oficial 2ª Administrativo', 'Telefonista-Recepcionista con Idioma', 'Administrative']
+        },
+        'auxiliar': {
+            title: 'Auxiliar Administrativo/a',
+            responsibilities: 'Tareas administrativas básicas, archivo, atención telefónica, recepción, apoyo general',
+            experience: '0-1 año',
+            equivalentTitles: ['Auxiliar Administrativo', 'Telefonista', 'Recepcionista', 'Office Assistant']
+        },
+        'xefe_informatica': {
+            title: 'Xefe/a de Informática',
+            responsibilities: 'Dirección del departamento IT, estrategia tecnológica, gestión de proyectos, supervisión de equipo técnico',
+            experience: '6+ años',
+            equivalentTitles: ['Jefe de Informática', 'Director TI', 'IT Manager', 'CTO', 'Head of IT']
+        },
+        'analista': {
+            title: 'Analista',
+            responsibilities: 'Análisis de sistemas, diseño de soluciones, programación avanzada, documentación técnica',
+            experience: '3-5 años',
+            equivalentTitles: ['Analista', 'Analista-Programador', 'Desarrollador Senior', 'Systems Analyst', 'Senior Developer']
+        },
+        'programador': {
+            title: 'Programador/a',
+            responsibilities: 'Desarrollo de aplicaciones, mantenimiento de sistemas, testing, documentación de código',
+            experience: '1-3 años',
+            equivalentTitles: ['Programador', 'Desarrollador', 'Developer', 'Software Engineer', 'Web Developer']
+        },
+        'xefe_delineacion': {
+            title: 'Xefe/a de Delineación',
+            responsibilities: 'Coordinación del equipo de delineación, supervisión de proyectos, control de calidad técnica',
+            experience: '4+ años',
+            equivalentTitles: ['Jefe de Delineación', 'Coordinador Técnico', 'CAD Manager', 'Technical Coordinator']
+        },
+        'delineante_proxectista': {
+            title: 'Delineante Proxectista',
+            responsibilities: 'Delineación de proyectos complejos, diseño técnico, interpretación de planos, CAD avanzado',
+            experience: '2-4 años',
+            equivalentTitles: ['Delineante Proyectista', 'Técnico de Proyectos', 'Project Draftsman', 'CAD Designer']
+        },
+        'delineante': {
+            title: 'Delineante',
+            responsibilities: 'Delineación técnica, dibujo CAD, reproducción de planos, apoyo a proyectistas',
+            experience: '1-2 años',
+            equivalentTitles: ['Delineante', 'Dibujante Técnico', 'CAD Technician', 'Draftsman']
+        },
+        'xefe_maquinas': {
+            title: 'Xefe/a de Máquinas',
+            responsibilities: 'Supervisión de operaciones de máquinas, gestión de equipo de operadores, mantenimiento',
+            experience: '3+ años',
+            equivalentTitles: ['Jefe de Máquinas', 'Supervisor de Operaciones', 'Operations Supervisor']
+        },
+        'operador': {
+            title: 'Operador/a',
+            responsibilities: 'Operación de sistemas y equipos, monitorización, resolución de incidencias básicas',
+            experience: '1-2 años',
+            equivalentTitles: ['Operador', 'Operador de Sistemas', 'System Operator', 'Técnico de Operaciones']
+        },
+        'perforador': {
+            title: 'Perforador/a - Calcador/a',
+            responsibilities: 'Grabación de datos, calcado de documentos, operaciones de perforación, tareas repetitivas',
+            experience: '0-1 año',
+            equivalentTitles: ['Perforador', 'Calcador', 'Grabador de Datos', 'Data Entry Operator']
+        },
+        'conserxe_maior': {
+            title: 'Conserxe Maior',
+            responsibilities: 'Jefatura de conserjería, supervisión de personal subalterno, gestión de instalaciones',
+            experience: '2+ años',
+            equivalentTitles: ['Conserje Mayor', 'Jefe de Conserjería', 'Head Porter', 'Facilities Supervisor']
+        },
+        'conserxe': {
+            title: 'Conserxe',
+            responsibilities: 'Conserjería, control de accesos, atención al público, gestión de correspondencia, mantenimiento básico',
+            experience: '0-2 años',
+            equivalentTitles: ['Conserje', 'Portero', 'Doorman', 'Reception', 'Security']
+        },
+        'ordenanza': {
+            title: 'Ordenanza',
+            responsibilities: 'Ordenanza, vigilancia, mensajería interna, apoyo general, tareas auxiliares',
+            experience: '0 años',
+            equivalentTitles: ['Ordenanza', 'Vigilante', 'Botones', 'Messenger', 'Office Boy']
+        },
+        'condutor': {
+            title: 'Condutor/a',
+            responsibilities: 'Conducción de vehículos, gestiones externas, mensajería, mantenimiento básico del vehículo',
+            experience: '0-2 años + Carnet B',
+            equivalentTitles: ['Conductor', 'Chófer', 'Driver', 'Mensajero', 'Courier']
+        },
+        'limpeza': {
+            title: 'Persoal de Limpeza',
+            responsibilities: 'Limpieza y mantenimiento de instalaciones, gestión de residuos, reposición de materiales',
+            experience: '0 años',
+            equivalentTitles: ['Limpiador/a', 'Personal de Limpieza', 'Cleaner', 'Cleaning Staff']
+        }
+    },
+
+    /**
+     * Get position description for a specific category
+     * @param {string} category - Category code
+     * @returns {Object|null} - Position description or null
+     */
+    getPositionDescription: function(category) {
+        return this.positionDescriptions[category] || null;
+    },
+
+    /**
      * Market rates for office roles in Galicia (orientative)
      * Based on market data from Indeed, InfoJobs (2024-2025)
      */

@@ -51,6 +51,8 @@
                             <select id="num-payments" name="num-payments">
                                 <option value="12" data-i18n="salary.payments.12">12 pagas</option>
                                 <option value="14" selected data-i18n="salary.payments.14">14 pagas</option>
+                                <option value="15" data-i18n="salary.payments.15">15 pagas</option>
+                                <option value="16" data-i18n="salary.payments.16">16 pagas</option>
                             </select>
                         </div>
                     </div>
@@ -75,6 +77,10 @@
                                 <option value="gestorias" data-i18n="convenio.gestorias">Gestorías Administrativas (IX Convenio, 2024)</option>
                                 <option value="oficinas-despachos" data-i18n="convenio.oficinasDespachos">Oficinas y Despachos - C. de Madrid (Convenio 2025)</option>
                                 <option value="oficinas-despachos-galicia" data-i18n="convenio.oficinasGalicia">Oficinas y Despachos - A Coruña (Convenio 2023)</option>
+                                <option value="metal-madrid" data-i18n="convenio.metalMadrid">Metal - C. de Madrid (Convenio 2024)</option>
+                                <option value="metal-coruna" data-i18n="convenio.metalCoruna">Metal - A Coruña (Convenio 2020-2025)</option>
+                                <option value="metal-pontevedra" data-i18n="convenio.metalPontevedra">Metal - Pontevedra (Convenio 2023-2025)</option>
+                                <option value="seguros" data-i18n="convenio.seguros">Seguros, Reaseguros y Mutuas (Convenio 2020-2024)</option>
                             </select>
                         </div>
                         <div class="form-group form-group-shrink">
@@ -305,6 +311,94 @@
                         </div>
                     </div>
 
+                    <!-- Metal Madrid Convenio Fields -->
+                    <div id="metal-madrid-fields" class="hidden">
+                        <div class="form-group">
+                            <label for="metal-madrid-group">Grupo profesional</label>
+                            <select id="metal-madrid-group" name="metal-madrid-group">
+                                <option value="grupo_1">Grupo 1 - Licenciado/a, Grado (Ingeniero, Director Técnico)</option>
+                                <option value="grupo_2">Grupo 2 - Técnico/a (Programador CNC, Jefe de Taller)</option>
+                                <option value="grupo_3">Grupo 3 - Técnico/a Auxiliar (Delineante, Auxiliar Mantenimiento)</option>
+                                <option value="grupo_4">Grupo 4 - Empleado/a (Administrativo, Contable)</option>
+                                <option value="grupo_5" selected>Grupo 5 - Operario/a (Soldador, Tornero, Montador)</option>
+                                <option value="grupo_6">Grupo 6 - Empleado/a Auxiliar (Aux. Administrativo, Recepcionista)</option>
+                                <option value="grupo_7">Grupo 7 - Operario/a Auxiliar (Peón, Mozo Almacén)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Metal A Coruña Convenio Fields -->
+                    <div id="metal-coruna-fields" class="hidden">
+                        <div class="form-group">
+                            <label for="metal-coruna-group">Grupo profesional</label>
+                            <select id="metal-coruna-group" name="metal-coruna-group">
+                                <option value="grupo_1">Grupo 1 - Técnicos de Grado Superior (Enxeñeiro)</option>
+                                <option value="grupo_2">Grupo 2 - Técnicos de Grado Medio (Perito Industrial)</option>
+                                <option value="grupo_3A">Grupo 3A - Xefe de Taller / Xefe Administrativo</option>
+                                <option value="grupo_3B">Grupo 3B - Xefe Organización / Delineante Proxectista</option>
+                                <option value="grupo_3C">Grupo 3C - Mestre de Taller / Contramestre</option>
+                                <option value="grupo_4">Grupo 4 - Delineante 1ª / Encargado / Técnico Org.</option>
+                                <option value="grupo_5A">Grupo 5A - Oficial Administración 1ª e 2ª</option>
+                                <option value="grupo_5B" selected>Grupo 5B - Profesional de Oficio (Soldador, Torneiro)</option>
+                                <option value="grupo_6">Grupo 6 - Almaceneiro / Aux. Admón / Especialista</option>
+                                <option value="grupo_7">Grupo 7 - Peón / Ordenanza / Porteiro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Metal Pontevedra Convenio Fields -->
+                    <div id="metal-pontevedra-fields" class="hidden">
+                        <div class="form-group">
+                            <label for="metal-pontevedra-group">Grupo profesional</label>
+                            <select id="metal-pontevedra-group" name="metal-pontevedra-group">
+                                <option value="grupo_1A">Grupo 1A - Enxeñeiros e Licenciados</option>
+                                <option value="grupo_2A">Grupo 2A - Perito con Responsabilidade / Enx. Técnicos</option>
+                                <option value="grupo_2B">Grupo 2B - Xefe Taller / Xefe 1ª Técnico / Xefe Org.</option>
+                                <option value="grupo_3A">Grupo 3A - Delineante Proxectista / Xefe 2ª Org.</option>
+                                <option value="grupo_3B">Grupo 3B - Mestres Industriais / Contramaestre</option>
+                                <option value="grupo_4A">Grupo 4A - Encargado / Analista 1ª / Oficial 1ª Admin</option>
+                                <option value="grupo_4B">Grupo 4B - Viaxante / Delineante 1ª / Practicantes</option>
+                                <option value="grupo_5A" selected>Grupo 5A - Oficial 1ª e 2ª Taller / Delineante 2ª</option>
+                                <option value="grupo_5B">Grupo 5B - Analista 2ª / Chófer Camión / Capataz</option>
+                                <option value="grupo_6A">Grupo 6A - Oficial 3ª / Chófer Turismo / Listeiro</option>
+                                <option value="grupo_6B">Grupo 6B - Especialista / Capataz Peóns / Almaceneiro</option>
+                                <option value="grupo_6C">Grupo 6C - Pesador / Aux. Laboratorio / Aux. Admin</option>
+                                <option value="grupo_7A">Grupo 7A - Peón / Vixilante / Porteiro e Ordenanza</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Seguros Convenio Fields -->
+                    <div id="seguros-fields" class="hidden">
+                        <div class="form-group">
+                            <label for="seguros-level">Nivel retributivo</label>
+                            <select id="seguros-level" name="seguros-level">
+                                <option value="nivel_1">Nivel 1 - Director/Responsable de Área (Grupo I)</option>
+                                <option value="nivel_2">Nivel 2 - Técnico Superior/Jefe de Equipo (Grupo I)</option>
+                                <option value="nivel_3">Nivel 3 - Técnico Especialista (Grupo I)</option>
+                                <option value="nivel_4">Nivel 4 - Técnico/Gestor Senior (Grupo II)</option>
+                                <option value="nivel_5" selected>Nivel 5 - Técnico/Gestor (Grupo II)</option>
+                                <option value="nivel_6">Nivel 6 - Administrativo/Tramitador (Grupo II)</option>
+                                <option value="nivel_7">Nivel 7 - Auxiliar Especializado (Grupo III)</option>
+                                <option value="nivel_8">Nivel 8 - Auxiliar/Operario (Grupo III)</option>
+                                <option value="nivel_9">Nivel 9 - Personal en formación (Grupo IV)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Position Description (TIC only) -->
+                    <div id="position-description-info" class="position-description-info hidden">
+                        <div class="position-description-header">
+                            <span class="position-description-title" id="position-title">-</span>
+                            <span class="position-description-experience" id="position-experience">-</span>
+                        </div>
+                        <p class="position-description-responsibilities" id="position-responsibilities">-</p>
+                        <div class="position-description-equivalents">
+                            <span class="equivalents-label" data-i18n="convenio.equivalents">Títulos equivalentes:</span>
+                            <div id="position-equivalents" class="equivalents-tags"></div>
+                        </div>
+                    </div>
+
                     <div id="convenio-salary-info" class="convenio-info">
                         <div class="convenio-info-row">
                             <p><span data-i18n="convenio.salary">Salario según convenio:</span> <strong id="convenio-salary-display">-</strong></p>
@@ -315,7 +409,6 @@
                                 <span class="market-rate-label" data-i18n="convenio.market">Salario de mercado orientativo:</span>
                                 <span id="market-rate-range" class="market-rate-value">-</span>
                             </div>
-                            <div id="market-rate-roles" class="market-rate-roles"></div>
                             <p class="market-rate-disclaimer" data-i18n="convenio.market.disclaimer">* Datos orientativos basados en fuentes como Glassdoor, Indeed y Talent.com (2025). Los salarios reales varían según empresa, ubicación y experiencia.</p>
                         </div>
                     </div>
@@ -465,6 +558,7 @@
                 <!-- Convenio Comparison -->
                 <div id="convenio-comparison" class="convenio-comparison">
                     <h3 data-i18n="results.comparison.title">Comparativa con Convenio</h3>
+                    <p class="comparison-convenio-name"><span id="comparison-convenio-name">-</span> (<span id="comparison-year">-</span>)</p>
                     <div class="comparison-content">
                         <div class="comparison-item">
                             <span data-i18n="results.comparison.your">Tu salario bruto</span>
@@ -684,6 +778,10 @@
     <script src="convenios/gestorias.js"></script>
     <script src="convenios/oficinas-despachos.js"></script>
     <script src="convenios/oficinas-despachos-galicia.js"></script>
+    <script src="convenios/metal-madrid.js"></script>
+    <script src="convenios/metal-coruna.js"></script>
+    <script src="convenios/metal-pontevedra.js"></script>
+    <script src="convenios/seguros.js"></script>
     <script src="js/calculator.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>

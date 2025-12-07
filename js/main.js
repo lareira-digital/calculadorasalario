@@ -69,6 +69,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const oficinasGaliciaFields = document.getElementById('oficinas-galicia-fields');
     const oficinasGaliciaCategorySelect = document.getElementById('oficinas-galicia-category');
 
+    // Metal Madrid convenio selectors
+    const metalMadridFields = document.getElementById('metal-madrid-fields');
+    const metalMadridGroupSelect = document.getElementById('metal-madrid-group');
+
+    // Metal A Coruña convenio selectors
+    const metalCorunaFields = document.getElementById('metal-coruna-fields');
+    const metalCorunaGroupSelect = document.getElementById('metal-coruna-group');
+
+    // Metal Pontevedra convenio selectors
+    const metalPontevedraFields = document.getElementById('metal-pontevedra-fields');
+    const metalPontevedraGroupSelect = document.getElementById('metal-pontevedra-group');
+
+    // Seguros convenio selectors
+    const segurosFields = document.getElementById('seguros-fields');
+    const segurosLevelSelect = document.getElementById('seguros-level');
+
     // Regional notice
     const regionalNotice = document.getElementById('convenio-regional-notice');
 
@@ -119,6 +135,10 @@ document.addEventListener('DOMContentLoaded', function() {
         gestoriasFields.classList.add('hidden');
         oficinasFields.classList.add('hidden');
         oficinasGaliciaFields.classList.add('hidden');
+        metalMadridFields.classList.add('hidden');
+        metalCorunaFields.classList.add('hidden');
+        metalPontevedraFields.classList.add('hidden');
+        segurosFields.classList.add('hidden');
         regionalNotice.classList.add('hidden');
 
         if (convenio === 'tic') {
@@ -145,6 +165,21 @@ document.addEventListener('DOMContentLoaded', function() {
             oficinasGaliciaFields.classList.remove('hidden');
             regionalNotice.classList.remove('hidden');
             updateYearOptionsForOficinasGalicia();
+        } else if (convenio === 'metal-madrid') {
+            metalMadridFields.classList.remove('hidden');
+            regionalNotice.classList.remove('hidden');
+            updateYearOptionsForMetalMadrid();
+        } else if (convenio === 'metal-coruna') {
+            metalCorunaFields.classList.remove('hidden');
+            regionalNotice.classList.remove('hidden');
+            updateYearOptionsForMetalCoruna();
+        } else if (convenio === 'metal-pontevedra') {
+            metalPontevedraFields.classList.remove('hidden');
+            regionalNotice.classList.remove('hidden');
+            updateYearOptionsForMetalPontevedra();
+        } else if (convenio === 'seguros') {
+            segurosFields.classList.remove('hidden');
+            updateYearOptionsForSeguros();
         }
 
         updateConvenioSalaryDisplay();
@@ -280,6 +315,77 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /**
+     * Update year options for Metal Madrid convenio (2024-2026)
+     */
+    function updateYearOptionsForMetalMadrid() {
+        const currentYear = parseInt(yearSelect.value);
+        yearSelect.innerHTML = `
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+        `;
+        // Keep current selection if valid
+        if ([2024, 2025, 2026].includes(currentYear)) {
+            yearSelect.value = currentYear;
+        } else {
+            yearSelect.value = '2025';
+        }
+    }
+
+    /**
+     * Update year options for Metal A Coruña convenio (2023-2025)
+     */
+    function updateYearOptionsForMetalCoruna() {
+        const currentYear = parseInt(yearSelect.value);
+        yearSelect.innerHTML = `
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+        `;
+        // Keep current selection if valid
+        if ([2023, 2024, 2025].includes(currentYear)) {
+            yearSelect.value = currentYear;
+        } else {
+            yearSelect.value = '2025';
+        }
+    }
+
+    /**
+     * Update year options for Metal Pontevedra convenio (2023-2025)
+     */
+    function updateYearOptionsForMetalPontevedra() {
+        const currentYear = parseInt(yearSelect.value);
+        yearSelect.innerHTML = `
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+        `;
+        // Keep current selection if valid
+        if ([2023, 2024, 2025].includes(currentYear)) {
+            yearSelect.value = currentYear;
+        } else {
+            yearSelect.value = '2024';
+        }
+    }
+
+    /**
+     * Update year options for Seguros convenio (2023-2024)
+     */
+    function updateYearOptionsForSeguros() {
+        const currentYear = parseInt(yearSelect.value);
+        yearSelect.innerHTML = `
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+        `;
+        // Keep current selection if valid
+        if ([2023, 2024].includes(currentYear)) {
+            yearSelect.value = currentYear;
+        } else {
+            yearSelect.value = '2024';
+        }
+    }
+
+    /**
      * Get available levels for a given group (TIC convenio)
      */
     function getLevelsForGroup(group) {
@@ -351,6 +457,18 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (convenio === 'oficinas-despachos-galicia') {
             const category = oficinasGaliciaCategorySelect.value;
             return ConvenioOficinasGalicia.getSalary(category, year);
+        } else if (convenio === 'metal-madrid') {
+            const group = metalMadridGroupSelect.value;
+            return ConvenioMetalMadrid.getSalary(group, year);
+        } else if (convenio === 'metal-coruna') {
+            const group = metalCorunaGroupSelect.value;
+            return ConvenioMetalCoruna.getSalary(group, year);
+        } else if (convenio === 'metal-pontevedra') {
+            const group = metalPontevedraGroupSelect.value;
+            return ConvenioMetalPontevedra.getSalary(group, year);
+        } else if (convenio === 'seguros') {
+            const level = segurosLevelSelect.value;
+            return ConvenioSeguros.getSalary(level, year);
         }
 
         return null;
@@ -369,6 +487,78 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Update market rate display
         updateMarketRateDisplay();
+
+        // Update position description display
+        updatePositionDescriptionDisplay();
+    }
+
+    /**
+     * Update the position description display for all convenios
+     */
+    function updatePositionDescriptionDisplay() {
+        const convenio = getCurrentConvenio();
+        const positionDescriptionInfo = document.getElementById('position-description-info');
+        const positionTitle = document.getElementById('position-title');
+        const positionExperience = document.getElementById('position-experience');
+        const positionResponsibilities = document.getElementById('position-responsibilities');
+        const positionEquivalents = document.getElementById('position-equivalents');
+
+        if (!positionDescriptionInfo) return;
+
+        let positionData = null;
+
+        // Get position data based on convenio type
+        if (convenio === 'tic') {
+            const area = parseInt(areaSelect.value);
+            const group = groupSelect.value;
+            const level = parseInt(levelSelect.value);
+            positionData = ConvenioIT.getPositionDescription(area, group, level);
+        } else if (convenio === 'hosteleria') {
+            const establishmentGroup = establishmentGroupSelect.value;
+            const level = hosteleriaLevelSelect.value;
+            positionData = ConvenioHosteleria.getPositionDescription(establishmentGroup, level);
+        } else if (convenio === 'seguridad-privada') {
+            const category = seguridadCategorySelect.value;
+            positionData = ConvenioSeguridadPrivada.getPositionDescription(category);
+        } else if (convenio === 'contact-center') {
+            const level = parseInt(contactCenterLevelSelect.value);
+            positionData = ConvenioContactCenter.getPositionDescription(level);
+        } else if (convenio === 'gestorias') {
+            const category = gestoriasCategorySelect.value;
+            positionData = ConvenioGestorias.getPositionDescription(category);
+        } else if (convenio === 'oficinas-despachos') {
+            const level = oficinasLevelSelect.value;
+            positionData = ConvenioOficinasDespachos.getPositionDescription(level);
+        } else if (convenio === 'oficinas-despachos-galicia') {
+            const category = oficinasGaliciaCategorySelect.value;
+            positionData = ConvenioOficinasGalicia.getPositionDescription(category);
+        } else if (convenio === 'metal-madrid') {
+            const group = metalMadridGroupSelect.value;
+            positionData = ConvenioMetalMadrid.getPositionDescription(group);
+        } else if (convenio === 'metal-coruna') {
+            const group = metalCorunaGroupSelect.value;
+            positionData = ConvenioMetalCoruna.getPositionDescription(group);
+        } else if (convenio === 'metal-pontevedra') {
+            const group = metalPontevedraGroupSelect.value;
+            positionData = ConvenioMetalPontevedra.getPositionDescription(group);
+        } else if (convenio === 'seguros') {
+            const level = segurosLevelSelect.value;
+            positionData = ConvenioSeguros.getPositionDescription(level);
+        }
+
+        if (positionData) {
+            positionDescriptionInfo.classList.remove('hidden');
+            positionTitle.textContent = positionData.title;
+            positionExperience.textContent = positionData.experience;
+            positionResponsibilities.textContent = positionData.responsibilities;
+
+            // Show equivalent titles as tags
+            positionEquivalents.innerHTML = positionData.equivalentTitles
+                .map(title => `<span class="equivalent-tag">${title}</span>`)
+                .join('');
+        } else {
+            positionDescriptionInfo.classList.add('hidden');
+        }
     }
 
     /**
@@ -377,7 +567,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateMarketRateDisplay() {
         const convenio = getCurrentConvenio();
         const marketRateRange = document.getElementById('market-rate-range');
-        const marketRateRoles = document.getElementById('market-rate-roles');
 
         let marketData = null;
 
@@ -405,21 +594,26 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (convenio === 'oficinas-despachos-galicia') {
             const category = oficinasGaliciaCategorySelect.value;
             marketData = ConvenioOficinasGalicia.marketRates.getMarketRateForCategory(category);
+        } else if (convenio === 'metal-madrid') {
+            const group = metalMadridGroupSelect.value;
+            marketData = ConvenioMetalMadrid.marketRates.getMarketRateForCategory(group);
+        } else if (convenio === 'metal-coruna') {
+            const group = metalCorunaGroupSelect.value;
+            marketData = ConvenioMetalCoruna.marketRates.getMarketRateForCategory(group);
+        } else if (convenio === 'metal-pontevedra') {
+            const group = metalPontevedraGroupSelect.value;
+            marketData = ConvenioMetalPontevedra.marketRates.getMarketRateForCategory(group);
+        } else if (convenio === 'seguros') {
+            const level = segurosLevelSelect.value;
+            marketData = ConvenioSeguros.marketRates.getMarketRateForCategory(level);
         }
 
         if (marketData) {
-            // Format the range
             const minFormatted = Calculator.formatCurrency(marketData.marketRange.min);
             const maxFormatted = Calculator.formatCurrency(marketData.marketRange.max);
             marketRateRange.textContent = `${minFormatted} - ${maxFormatted}`;
-
-            // Show matching roles as tags
-            marketRateRoles.innerHTML = marketData.roles
-                .map(role => `<span class="market-rate-role-tag">${role}</span>`)
-                .join('');
         } else {
             marketRateRange.textContent = '-';
-            marketRateRoles.innerHTML = '<span class="market-rate-no-data">No hay datos de mercado para esta categoría</span>';
         }
     }
 
@@ -467,6 +661,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 type: 'oficinas-despachos-galicia',
                 category: oficinasGaliciaCategorySelect.value
             };
+        } else if (convenio === 'metal-madrid') {
+            return {
+                type: 'metal-madrid',
+                group: metalMadridGroupSelect.value
+            };
+        } else if (convenio === 'metal-coruna') {
+            return {
+                type: 'metal-coruna',
+                group: metalCorunaGroupSelect.value
+            };
+        } else if (convenio === 'metal-pontevedra') {
+            return {
+                type: 'metal-pontevedra',
+                group: metalPontevedraGroupSelect.value
+            };
+        } else if (convenio === 'seguros') {
+            return {
+                type: 'seguros',
+                level: segurosLevelSelect.value
+            };
         }
 
         return null;
@@ -501,6 +715,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listeners for Oficinas y Despachos Galicia convenio selectors
     oficinasGaliciaCategorySelect.addEventListener('change', updateConvenioSalaryDisplay);
+
+    // Event listeners for Metal Madrid convenio selectors
+    metalMadridGroupSelect.addEventListener('change', updateConvenioSalaryDisplay);
+
+    // Event listeners for Metal A Coruña convenio selectors
+    metalCorunaGroupSelect.addEventListener('change', updateConvenioSalaryDisplay);
+
+    // Event listeners for Metal Pontevedra convenio selectors
+    metalPontevedraGroupSelect.addEventListener('change', updateConvenioSalaryDisplay);
+
+    // Event listeners for Seguros convenio selectors
+    segurosLevelSelect.addEventListener('change', updateConvenioSalaryDisplay);
 
     // Modal event listeners - Convenio missing modal
     function openConvenioModal() {
@@ -632,9 +858,25 @@ document.addEventListener('DOMContentLoaded', function() {
         const fmt = Calculator.formatCurrency;
         const fmtPct = Calculator.formatPercentage;
 
+        // Convenio name mapping
+        const convenioNames = {
+            'tic': 'Consultoría, TIC y Estudios de Mercado',
+            'hosteleria': 'Hostelería - C. de Madrid',
+            'seguridad-privada': 'Seguridad Privada',
+            'contact-center': 'Contact Center / Telemarketing',
+            'gestorias': 'Gestorías Administrativas',
+            'oficinas-despachos': 'Oficinas y Despachos - C. de Madrid',
+            'oficinas-despachos-galicia': 'Oficinas y Despachos - A Coruña',
+            'metal-madrid': 'Metal - C. de Madrid',
+            'metal-coruna': 'Metal - A Coruña',
+            'metal-pontevedra': 'Metal - Pontevedra',
+            'seguros': 'Seguros, Reaseguros y Mutuas'
+        };
+
         // Convenio comparison
         let convenioSalary = null;
         let categoryCode = '';
+        let convenioName = convenioNames[convenioParams.type] || convenioParams.type;
 
         if (convenioParams.type === 'tic') {
             convenioSalary = ConvenioIT.getSalary(
@@ -691,11 +933,45 @@ document.addEventListener('DOMContentLoaded', function() {
             // Use category name for display
             const catInfo = ConvenioOficinasGalicia.categories[convenioParams.category];
             categoryCode = catInfo ? catInfo.name.substring(0, 18) : convenioParams.category;
+        } else if (convenioParams.type === 'metal-madrid') {
+            convenioSalary = ConvenioMetalMadrid.getSalary(
+                convenioParams.group,
+                year
+            );
+            // Use group name for display
+            const groupInfo = ConvenioMetalMadrid.categories[convenioParams.group];
+            categoryCode = groupInfo ? groupInfo.name.substring(0, 18) : convenioParams.group;
+        } else if (convenioParams.type === 'metal-coruna') {
+            convenioSalary = ConvenioMetalCoruna.getSalary(
+                convenioParams.group,
+                year
+            );
+            // Use group name for display
+            const groupInfo = ConvenioMetalCoruna.categories[convenioParams.group];
+            categoryCode = groupInfo ? groupInfo.name.substring(0, 18) : convenioParams.group;
+        } else if (convenioParams.type === 'metal-pontevedra') {
+            convenioSalary = ConvenioMetalPontevedra.getSalary(
+                convenioParams.group,
+                year
+            );
+            // Use group name for display
+            const groupInfo = ConvenioMetalPontevedra.categories[convenioParams.group];
+            categoryCode = groupInfo ? groupInfo.name.substring(0, 18) : convenioParams.group;
+        } else if (convenioParams.type === 'seguros') {
+            convenioSalary = ConvenioSeguros.getSalary(
+                convenioParams.level,
+                year
+            );
+            // Use level name for display
+            const levelInfo = ConvenioSeguros.categories[convenioParams.level];
+            categoryCode = levelInfo ? levelInfo.name.substring(0, 18) : convenioParams.level;
         }
 
         if (convenioSalary) {
             const difference = grossAnnual - convenioSalary.total;
 
+            document.getElementById('comparison-convenio-name').textContent = convenioName;
+            document.getElementById('comparison-year').textContent = year;
             document.getElementById('comparison-your-salary').textContent = fmt(grossAnnual);
             document.getElementById('comparison-category').textContent = categoryCode;
             document.getElementById('comparison-convenio-salary').textContent = fmt(convenioSalary.total);

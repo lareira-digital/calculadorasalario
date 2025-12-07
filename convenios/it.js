@@ -372,142 +372,569 @@ const ConvenioIT = {
     },
 
     /**
+     * Position descriptions by area, group and level
+     * Describes responsibilities and typical job functions for each category
+     */
+    positionDescriptions: {
+        // Área 1 - BPO y Administración Interna
+        'A1': {
+            name: 'BPO y Administración Interna',
+            description: 'Gestión de procesos de negocio externalizados, administración interna, contabilidad, RRHH, facturación y back-office',
+            positions: {
+                'A1': {
+                    title: 'Director/a de Operaciones BPO',
+                    responsibilities: 'Dirección estratégica de operaciones BPO, gestión de grandes cuentas, definición de KPIs, responsabilidad P&L',
+                    experience: '10+ años',
+                    equivalentTitles: ['Director de Operaciones', 'Head of BPO', 'Operations Director', 'Director de Back Office']
+                },
+                'B1': {
+                    title: 'Responsable de Área / Team Leader Senior',
+                    responsibilities: 'Gestión de equipos grandes (+15 personas), coordinación con cliente, reporting ejecutivo, mejora de procesos',
+                    experience: '6-10 años',
+                    equivalentTitles: ['Team Leader Senior', 'Responsable de Operaciones', 'Service Delivery Manager', 'Account Manager']
+                },
+                'B2': {
+                    title: 'Team Leader / Coordinador/a',
+                    responsibilities: 'Supervisión de equipos (5-15 personas), control de calidad, formación, gestión de incidencias escaladas',
+                    experience: '4-6 años',
+                    equivalentTitles: ['Team Leader', 'Coordinator', 'Supervisor', 'Jefe de Equipo']
+                },
+                'C1': {
+                    title: 'Especialista Senior BPO',
+                    responsibilities: 'Gestión de procesos complejos, resolución de incidencias nivel 2, mentoring de juniors, documentación de procesos',
+                    experience: '3-5 años',
+                    equivalentTitles: ['Senior Back Office Specialist', 'Process Specialist', 'Senior Administrator']
+                },
+                'C2': {
+                    title: 'Especialista BPO',
+                    responsibilities: 'Ejecución de procesos administrativos, gestión documental, atención a proveedores/clientes internos',
+                    experience: '2-3 años',
+                    equivalentTitles: ['Back Office Specialist', 'Administrative Specialist', 'Process Analyst']
+                },
+                'C3': {
+                    title: 'Técnico/a BPO',
+                    responsibilities: 'Procesamiento de transacciones, introducción de datos, verificación documental, tareas rutinarias',
+                    experience: '1-2 años',
+                    equivalentTitles: ['Back Office Technician', 'Data Entry Specialist', 'Administrative Assistant']
+                },
+                'D1': {
+                    title: 'Administrativo/a Senior',
+                    responsibilities: 'Tareas administrativas con cierta autonomía, gestión de archivo, correspondencia, soporte a equipos',
+                    experience: '1-2 años',
+                    equivalentTitles: ['Senior Administrative', 'Office Administrator', 'Administrative Support']
+                },
+                'D2': {
+                    title: 'Administrativo/a',
+                    responsibilities: 'Tareas administrativas básicas, archivo, gestión de llamadas, soporte general',
+                    experience: '0-1 año',
+                    equivalentTitles: ['Administrative', 'Office Assistant', 'Clerk']
+                },
+                'D3': {
+                    title: 'Auxiliar Administrativo/a',
+                    responsibilities: 'Apoyo administrativo, tareas de archivo, fotocopias, gestión básica de documentos',
+                    experience: '0 años',
+                    equivalentTitles: ['Administrative Assistant', 'Junior Administrative', 'Office Junior']
+                },
+                'E1': {
+                    title: 'Becario/a Senior',
+                    responsibilities: 'Prácticas con tareas asignadas, aprendizaje de procesos, apoyo al equipo',
+                    experience: 'Prácticas',
+                    equivalentTitles: ['Senior Intern', 'Trainee']
+                },
+                'E2': {
+                    title: 'Becario/a',
+                    responsibilities: 'Prácticas formativas, observación y aprendizaje, tareas básicas de apoyo',
+                    experience: 'Prácticas',
+                    equivalentTitles: ['Intern', 'Trainee', 'Becario']
+                }
+            }
+        },
+
+        // Área 2 - CAU (Centro de Atención al Usuario)
+        'A2': {
+            name: 'CAU - Centro de Atención al Usuario',
+            description: 'Soporte técnico a usuarios, helpdesk, service desk, gestión de incidencias y peticiones IT',
+            positions: {
+                'A1': {
+                    title: 'Director/a de Service Desk',
+                    responsibilities: 'Dirección del servicio de soporte, definición de SLAs, gestión de contratos, estrategia ITSM',
+                    experience: '10+ años',
+                    equivalentTitles: ['Service Desk Director', 'Head of IT Support', 'IT Service Manager Director']
+                },
+                'B1': {
+                    title: 'Service Desk Manager',
+                    responsibilities: 'Gestión del equipo de soporte, cumplimiento de SLAs, reporting, mejora continua ITIL',
+                    experience: '6-10 años',
+                    equivalentTitles: ['Service Desk Manager', 'IT Support Manager', 'Helpdesk Manager']
+                },
+                'B2': {
+                    title: 'Team Leader CAU',
+                    responsibilities: 'Supervisión de técnicos, gestión de turnos, escalado de incidencias, formación',
+                    experience: '4-6 años',
+                    equivalentTitles: ['CAU Team Leader', 'Support Team Lead', 'Helpdesk Supervisor']
+                },
+                'C1': {
+                    title: 'Técnico/a Soporte N2 Senior',
+                    responsibilities: 'Resolución de incidencias complejas, soporte especializado, documentación técnica, mentoring',
+                    experience: '3-5 años',
+                    equivalentTitles: ['Senior Support Engineer', 'L2 Support Specialist', 'Technical Support Senior']
+                },
+                'C2': {
+                    title: 'Técnico/a Soporte N2',
+                    responsibilities: 'Soporte nivel 2, diagnóstico avanzado, escalado a N3, gestión de problemas',
+                    experience: '2-3 años',
+                    equivalentTitles: ['L2 Support Technician', 'Technical Support Analyst', 'IT Support Specialist']
+                },
+                'C3': {
+                    title: 'Técnico/a Soporte N1 Senior',
+                    responsibilities: 'Soporte nivel 1 avanzado, resolución en primer contacto, formación de nuevos técnicos',
+                    experience: '1-2 años',
+                    equivalentTitles: ['Senior Helpdesk Technician', 'L1 Support Senior', 'IT Support Technician']
+                },
+                'D1': {
+                    title: 'Técnico/a Soporte N1',
+                    responsibilities: 'Atención telefónica/remota, registro de incidencias, resolución básica, escalado',
+                    experience: '1-2 años',
+                    equivalentTitles: ['Helpdesk Technician', 'L1 Support', 'IT Helpdesk', 'Service Desk Analyst']
+                },
+                'D2': {
+                    title: 'Técnico/a CAU Junior',
+                    responsibilities: 'Atención básica a usuarios, registro de tickets, tareas guiadas',
+                    experience: '0-1 año',
+                    equivalentTitles: ['Junior Helpdesk', 'IT Support Junior', 'Service Desk Agent']
+                },
+                'D3': {
+                    title: 'Operador/a CAU',
+                    responsibilities: 'Recepción de llamadas, registro inicial, derivación de incidencias',
+                    experience: '0 años',
+                    equivalentTitles: ['Helpdesk Operator', 'Call Center IT', 'Support Agent']
+                },
+                'E1': {
+                    title: 'Becario/a CAU Senior',
+                    responsibilities: 'Prácticas en soporte técnico con supervisión, resolución de casos simples',
+                    experience: 'Prácticas',
+                    equivalentTitles: ['IT Support Intern Senior', 'Helpdesk Trainee']
+                },
+                'E2': {
+                    title: 'Becario/a CAU',
+                    responsibilities: 'Prácticas formativas en helpdesk, observación y aprendizaje',
+                    experience: 'Prácticas',
+                    equivalentTitles: ['IT Support Intern', 'Helpdesk Intern']
+                }
+            }
+        },
+
+        // Área 3 - Programación
+        'A3': {
+            name: 'Programación',
+            description: 'Desarrollo de software, programación, ingeniería de software, DevOps, QA y testing',
+            positions: {
+                'A1': {
+                    title: 'Director/a de Tecnología / CTO',
+                    responsibilities: 'Estrategia tecnológica, arquitectura empresarial, gestión de equipos de desarrollo, decisiones técnicas de alto nivel',
+                    experience: '10+ años',
+                    equivalentTitles: ['CTO', 'VP Engineering', 'Director de Desarrollo', 'Head of Engineering', 'Technical Director']
+                },
+                'B1': {
+                    title: 'Arquitecto/a de Software / Tech Lead Senior',
+                    responsibilities: 'Diseño de arquitectura, decisiones técnicas, liderazgo técnico de múltiples equipos, code reviews',
+                    experience: '7-10 años',
+                    equivalentTitles: ['Software Architect', 'Principal Engineer', 'Staff Engineer', 'Technical Lead Senior']
+                },
+                'B2': {
+                    title: 'Tech Lead / Lead Developer',
+                    responsibilities: 'Liderazgo técnico de equipo, diseño de soluciones, mentoría, desarrollo de componentes críticos',
+                    experience: '5-7 años',
+                    equivalentTitles: ['Tech Lead', 'Lead Developer', 'Engineering Lead', 'Development Lead']
+                },
+                'C1': {
+                    title: 'Senior Developer / Ingeniero/a Software Senior',
+                    responsibilities: 'Desarrollo de funcionalidades complejas, code reviews, diseño técnico, mentoría de juniors',
+                    experience: '4-6 años',
+                    equivalentTitles: ['Senior Developer', 'Senior Software Engineer', 'Senior Programmer', 'Senior Full Stack Developer']
+                },
+                'C2': {
+                    title: 'Developer / Ingeniero/a Software',
+                    responsibilities: 'Desarrollo de funcionalidades, testing, debugging, documentación técnica',
+                    experience: '2-4 años',
+                    equivalentTitles: ['Software Developer', 'Software Engineer', 'Programmer', 'Full Stack Developer', 'Backend Developer', 'Frontend Developer']
+                },
+                'C3': {
+                    title: 'Developer Junior Avanzado',
+                    responsibilities: 'Desarrollo con supervisión reducida, tareas de complejidad media, testing',
+                    experience: '1-2 años',
+                    equivalentTitles: ['Junior Developer (Advanced)', 'Software Developer Junior', 'Associate Developer']
+                },
+                'D1': {
+                    title: 'Junior Developer',
+                    responsibilities: 'Desarrollo de tareas asignadas, corrección de bugs, testing básico, aprendizaje continuo',
+                    experience: '1-2 años',
+                    equivalentTitles: ['Junior Developer', 'Junior Programmer', 'Junior Software Engineer', 'Graduate Developer']
+                },
+                'D2': {
+                    title: 'Junior Developer Entry',
+                    responsibilities: 'Tareas de desarrollo simples, bugs menores, documentación, aprendizaje del codebase',
+                    experience: '0-1 año',
+                    equivalentTitles: ['Entry Level Developer', 'Trainee Developer', 'Associate Programmer']
+                },
+                'D3': {
+                    title: 'Programador/a en Formación',
+                    responsibilities: 'Formación en desarrollo, tareas muy básicas supervisadas, pair programming',
+                    experience: '0 años',
+                    equivalentTitles: ['Trainee Programmer', 'Development Trainee', 'Graduate Trainee']
+                },
+                'E1': {
+                    title: 'Becario/a Desarrollo Senior',
+                    responsibilities: 'Prácticas con desarrollo real supervisado, pequeñas funcionalidades',
+                    experience: 'Prácticas',
+                    equivalentTitles: ['Software Development Intern Senior', 'Programming Intern']
+                },
+                'E2': {
+                    title: 'Becario/a Desarrollo',
+                    responsibilities: 'Prácticas formativas, observación, tareas muy básicas',
+                    experience: 'Prácticas',
+                    equivalentTitles: ['Software Development Intern', 'IT Intern', 'Tech Intern']
+                }
+            }
+        },
+
+        // Área 4 - Consultoría de Negocio y Tecnológica
+        'A4': {
+            name: 'Consultoría de Negocio y Tecnológica',
+            description: 'Consultoría IT, consultoría de negocio, implantación de ERPs, transformación digital, análisis funcional',
+            positions: {
+                'A1': {
+                    title: 'Director/a de Consultoría / Partner',
+                    responsibilities: 'Dirección de práctica de consultoría, desarrollo de negocio, gestión de grandes cuentas, estrategia',
+                    experience: '12+ años',
+                    equivalentTitles: ['Consulting Director', 'Partner', 'Managing Director', 'Practice Lead', 'Head of Consulting']
+                },
+                'B1': {
+                    title: 'Principal Consultant / Manager',
+                    responsibilities: 'Gestión de proyectos complejos, liderazgo de equipos de consultores, relación con cliente C-level',
+                    experience: '8-12 años',
+                    equivalentTitles: ['Principal Consultant', 'Consulting Manager', 'Senior Manager', 'Project Director']
+                },
+                'B2': {
+                    title: 'Senior Consultant / Consultor/a Senior',
+                    responsibilities: 'Liderazgo de workstreams, diseño de soluciones, presentaciones a cliente, mentoring',
+                    experience: '5-8 años',
+                    equivalentTitles: ['Senior Consultant', 'Senior Business Analyst', 'Senior SAP Consultant', 'Lead Functional Analyst']
+                },
+                'C1': {
+                    title: 'Consultant / Consultor/a',
+                    responsibilities: 'Análisis funcional, diseño de procesos, documentación, configuración de sistemas',
+                    experience: '3-5 años',
+                    equivalentTitles: ['Consultant', 'Business Analyst', 'Functional Consultant', 'SAP Consultant', 'ERP Consultant']
+                },
+                'C2': {
+                    title: 'Consultor/a Junior Avanzado',
+                    responsibilities: 'Análisis con supervisión, documentación de requisitos, testing funcional, soporte a consultores senior',
+                    experience: '2-3 años',
+                    equivalentTitles: ['Junior Consultant (Advanced)', 'Associate Consultant', 'Business Analyst Junior']
+                },
+                'C3': {
+                    title: 'Consultor/a Junior',
+                    responsibilities: 'Toma de requisitos básica, documentación, testing, soporte en implantaciones',
+                    experience: '1-2 años',
+                    equivalentTitles: ['Junior Consultant', 'Analyst', 'Junior Business Analyst']
+                },
+                'D1': {
+                    title: 'Analista Junior',
+                    responsibilities: 'Apoyo en análisis, documentación de procesos, preparación de materiales, testing',
+                    experience: '1-2 años',
+                    equivalentTitles: ['Junior Analyst', 'Associate Analyst', 'Graduate Consultant']
+                },
+                'D2': {
+                    title: 'Analista Entry Level',
+                    responsibilities: 'Tareas de apoyo, documentación básica, preparación de datos, aprendizaje',
+                    experience: '0-1 año',
+                    equivalentTitles: ['Entry Level Analyst', 'Trainee Consultant', 'Graduate Analyst']
+                },
+                'D3': {
+                    title: 'Analista en Formación',
+                    responsibilities: 'Formación en consultoría, observación de proyectos, tareas administrativas de proyecto',
+                    experience: '0 años',
+                    equivalentTitles: ['Trainee Analyst', 'Consulting Trainee']
+                },
+                'E1': {
+                    title: 'Becario/a Consultoría Senior',
+                    responsibilities: 'Prácticas con participación en proyectos reales, documentación',
+                    experience: 'Prácticas',
+                    equivalentTitles: ['Consulting Intern Senior', 'Business Analyst Intern']
+                },
+                'E2': {
+                    title: 'Becario/a Consultoría',
+                    responsibilities: 'Prácticas formativas, observación, apoyo administrativo',
+                    experience: 'Prácticas',
+                    equivalentTitles: ['Consulting Intern', 'Graduate Intern']
+                }
+            }
+        },
+
+        // Área 5 - Ciberseguridad
+        'A5': {
+            name: 'Ciberseguridad',
+            description: 'Seguridad informática, análisis de vulnerabilidades, pentesting, SOC, respuesta a incidentes, GRC',
+            positions: {
+                'A1': {
+                    title: 'CISO / Director/a de Seguridad',
+                    responsibilities: 'Estrategia de ciberseguridad, gobierno de seguridad, gestión de riesgos, compliance, reporting a dirección',
+                    experience: '12+ años',
+                    equivalentTitles: ['CISO', 'Chief Information Security Officer', 'Security Director', 'Head of Cybersecurity']
+                },
+                'B1': {
+                    title: 'Security Manager / Responsable de Seguridad',
+                    responsibilities: 'Gestión del equipo de seguridad, definición de políticas, gestión de proyectos de seguridad, auditorías',
+                    experience: '8-12 años',
+                    equivalentTitles: ['Security Manager', 'Cybersecurity Manager', 'Information Security Manager', 'SOC Manager']
+                },
+                'B2': {
+                    title: 'Senior Security Engineer / Arquitecto/a Seguridad',
+                    responsibilities: 'Diseño de arquitectura de seguridad, evaluación de soluciones, liderazgo técnico, respuesta a incidentes graves',
+                    experience: '5-8 años',
+                    equivalentTitles: ['Senior Security Engineer', 'Security Architect', 'Principal Security Consultant', 'Lead Pentester']
+                },
+                'C1': {
+                    title: 'Security Engineer / Consultor/a Ciberseguridad',
+                    responsibilities: 'Implementación de controles, análisis de vulnerabilidades, pentesting, hardening, SIEM',
+                    experience: '3-5 años',
+                    equivalentTitles: ['Security Engineer', 'Cybersecurity Consultant', 'Pentester', 'Security Analyst Senior', 'SOC Analyst Senior']
+                },
+                'C2': {
+                    title: 'Security Analyst / Analista de Seguridad',
+                    responsibilities: 'Monitorización de seguridad, análisis de alertas, respuesta a incidentes nivel 2, reporting',
+                    experience: '2-3 años',
+                    equivalentTitles: ['Security Analyst', 'SOC Analyst', 'Cybersecurity Analyst', 'Threat Analyst']
+                },
+                'C3': {
+                    title: 'Junior Security Analyst',
+                    responsibilities: 'Monitorización básica, triaje de alertas, documentación de incidentes, soporte a analistas senior',
+                    experience: '1-2 años',
+                    equivalentTitles: ['Junior Security Analyst', 'SOC Analyst Junior', 'Security Operations Analyst']
+                },
+                'D1': {
+                    title: 'Security Operations Junior',
+                    responsibilities: 'Operaciones de seguridad básicas, monitorización, escalado de incidencias, tareas rutinarias',
+                    experience: '1-2 años',
+                    equivalentTitles: ['Junior SOC Analyst', 'Security Operations Junior', 'Cybersecurity Junior']
+                },
+                'D2': {
+                    title: 'Security Operations Entry',
+                    responsibilities: 'Tareas operativas básicas, aprendizaje de herramientas, monitorización supervisada',
+                    experience: '0-1 año',
+                    equivalentTitles: ['Entry Level Security Analyst', 'SOC Operator', 'Security Trainee']
+                },
+                'D3': {
+                    title: 'Operador/a SOC en Formación',
+                    responsibilities: 'Formación en seguridad, observación de operaciones, tareas muy básicas',
+                    experience: '0 años',
+                    equivalentTitles: ['SOC Trainee', 'Security Operations Trainee']
+                },
+                'E1': {
+                    title: 'Becario/a Ciberseguridad Senior',
+                    responsibilities: 'Prácticas con participación en operaciones de seguridad, análisis básico',
+                    experience: 'Prácticas',
+                    equivalentTitles: ['Cybersecurity Intern Senior', 'Security Intern']
+                },
+                'E2': {
+                    title: 'Becario/a Ciberseguridad',
+                    responsibilities: 'Prácticas formativas en seguridad, observación, aprendizaje',
+                    experience: 'Prácticas',
+                    equivalentTitles: ['Cybersecurity Intern', 'Security Trainee Intern']
+                }
+            }
+        },
+
+        // Área 6 - Estudios de Mercado
+        'A6': {
+            name: 'Estudios de Mercado y Opinión Pública',
+            description: 'Investigación de mercados, análisis de datos, encuestas, focus groups, estudios cualitativos y cuantitativos',
+            positions: {
+                'A1': {
+                    title: 'Director/a de Investigación',
+                    responsibilities: 'Dirección de estudios complejos, gestión de clientes estratégicos, metodología, desarrollo de negocio',
+                    experience: '10+ años',
+                    equivalentTitles: ['Research Director', 'Director de Estudios', 'Head of Research', 'Managing Director Research']
+                },
+                'B1': {
+                    title: 'Research Manager / Director/a de Proyectos',
+                    responsibilities: 'Gestión de proyectos de investigación, relación con cliente, supervisión de equipos, control de calidad',
+                    experience: '6-10 años',
+                    equivalentTitles: ['Research Manager', 'Project Director', 'Senior Research Manager', 'Account Director']
+                },
+                'B2': {
+                    title: 'Senior Research Executive',
+                    responsibilities: 'Diseño de estudios, análisis avanzado, presentación de resultados, coordinación de campo',
+                    experience: '4-6 años',
+                    equivalentTitles: ['Senior Research Executive', 'Senior Market Research Analyst', 'Research Lead']
+                },
+                'C1': {
+                    title: 'Research Executive / Analista Senior',
+                    responsibilities: 'Diseño de cuestionarios, análisis de datos, elaboración de informes, contacto con cliente',
+                    experience: '3-5 años',
+                    equivalentTitles: ['Research Executive', 'Market Research Analyst', 'Research Analyst', 'Data Analyst Research']
+                },
+                'C2': {
+                    title: 'Research Analyst / Analista',
+                    responsibilities: 'Análisis de datos, tabulación, gráficos, soporte en diseño de estudios',
+                    experience: '2-3 años',
+                    equivalentTitles: ['Research Analyst', 'Market Analyst', 'Data Analyst', 'Quantitative Analyst']
+                },
+                'C3': {
+                    title: 'Junior Research Analyst',
+                    responsibilities: 'Apoyo en análisis, procesamiento de datos, revisión de cuestionarios, trabajo de campo',
+                    experience: '1-2 años',
+                    equivalentTitles: ['Junior Research Analyst', 'Junior Market Research Analyst', 'Research Assistant']
+                },
+                'D1': {
+                    title: 'Técnico/a de Estudios',
+                    responsibilities: 'Procesamiento de datos, codificación, tabulación básica, control de campo',
+                    experience: '1-2 años',
+                    equivalentTitles: ['Research Technician', 'Data Processing Technician', 'Field Coordinator']
+                },
+                'D2': {
+                    title: 'Técnico/a de Campo',
+                    responsibilities: 'Supervisión de encuestadores, control de calidad de campo, logística de estudios',
+                    experience: '0-1 año',
+                    equivalentTitles: ['Field Technician', 'Field Supervisor', 'Survey Coordinator']
+                },
+                'D3': {
+                    title: 'Auxiliar de Estudios',
+                    responsibilities: 'Apoyo administrativo, introducción de datos, tareas básicas de campo',
+                    experience: '0 años',
+                    equivalentTitles: ['Research Assistant', 'Data Entry', 'Field Assistant']
+                },
+                'E1': {
+                    title: 'Becario/a Investigación Senior',
+                    responsibilities: 'Prácticas con participación en proyectos de investigación, análisis básico',
+                    experience: 'Prácticas',
+                    equivalentTitles: ['Research Intern Senior', 'Market Research Intern']
+                },
+                'E2': {
+                    title: 'Becario/a Investigación',
+                    responsibilities: 'Prácticas formativas, observación, apoyo básico',
+                    experience: 'Prácticas',
+                    equivalentTitles: ['Research Intern', 'Market Research Trainee']
+                }
+            }
+        }
+    },
+
+    /**
+     * Get position description for a specific area, group and level
+     * @param {number} area - Area number (1-6)
+     * @param {string} group - Group letter (A-E)
+     * @param {number} level - Level number
+     * @returns {Object|null} - Position description or null
+     */
+    getPositionDescription(area, group, level) {
+        const areaKey = `A${area}`;
+        const positionKey = `${group}${level}`;
+        const areaData = this.positionDescriptions[areaKey];
+        if (!areaData) return null;
+        return areaData.positions[positionKey] || null;
+    },
+
+    /**
      * Market rates reference data (2025)
-     * Sources: Glassdoor, Indeed, Talent.com, KeepCoding, InfoJobs
+     * Sources: Glassdoor, Indeed, Talent.com, InfoJobs, Michael Page, Randstad
      * IMPORTANT: These are orientative ranges, actual salaries vary by company, location, and experience
+     * Data updated: December 2025
      */
     marketRates: {
         // Job title mappings to convenio categories with market salary ranges
-        // Format: { title, convenioMapping (suggested), marketRange: { min, max }, description }
-        roles: [
-            // Entry level
-            {
-                title: 'Junior Developer / Programador Junior',
-                convenioMapping: { areas: [3], group: 'E', level: 2 },
-                marketRange: { min: 22000, max: 30000 },
-                description: '0-2 años de experiencia'
-            },
-            {
-                title: 'Junior Full Stack Developer',
-                convenioMapping: { areas: [3], group: 'E', level: 1 },
-                marketRange: { min: 24000, max: 32000 },
-                description: '0-2 años de experiencia'
-            },
-            // Mid level
-            {
-                title: 'Mid-Level Developer / Programador',
-                convenioMapping: { areas: [3], group: 'D', level: 1 },
-                marketRange: { min: 30000, max: 42000 },
-                description: '2-4 años de experiencia'
-            },
-            {
-                title: 'Full Stack Developer (Mid)',
-                convenioMapping: { areas: [3], group: 'C', level: 3 },
-                marketRange: { min: 35000, max: 45000 },
-                description: '3-5 años de experiencia'
-            },
-            // Senior level
-            {
-                title: 'Senior Developer / Programador Senior',
-                convenioMapping: { areas: [3], group: 'C', level: 1 },
-                marketRange: { min: 45000, max: 60000 },
-                description: '5+ años de experiencia'
-            },
-            {
-                title: 'Senior Full Stack Developer',
-                convenioMapping: { areas: [3], group: 'B', level: 2 },
-                marketRange: { min: 48000, max: 65000 },
-                description: '5+ años de experiencia'
-            },
-            // Specialized roles
-            {
-                title: 'DevOps Engineer',
-                convenioMapping: { areas: [3, 4], group: 'C', level: 1 },
-                marketRange: { min: 40000, max: 60000 },
-                description: '3-5 años de experiencia'
-            },
-            {
-                title: 'Senior DevOps Engineer',
-                convenioMapping: { areas: [3, 4], group: 'B', level: 1 },
-                marketRange: { min: 55000, max: 90000 },
-                description: '5+ años de experiencia'
-            },
-            {
-                title: 'Data Analyst',
-                convenioMapping: { areas: [4], group: 'C', level: 2 },
-                marketRange: { min: 30000, max: 45000 },
-                description: '2-4 años de experiencia'
-            },
-            {
-                title: 'Data Scientist / Data Engineer',
-                convenioMapping: { areas: [4], group: 'B', level: 2 },
-                marketRange: { min: 45000, max: 80000 },
-                description: '3+ años de experiencia'
-            },
-            // Cybersecurity
-            {
-                title: 'Cybersecurity Analyst',
-                convenioMapping: { areas: [5], group: 'C', level: 1 },
-                marketRange: { min: 40000, max: 55000 },
-                description: '2-4 años de experiencia'
-            },
-            {
-                title: 'Senior Security Engineer',
-                convenioMapping: { areas: [5], group: 'B', level: 1 },
-                marketRange: { min: 55000, max: 90000 },
-                description: '5+ años de experiencia'
-            },
-            {
-                title: 'CISO / Security Director',
-                convenioMapping: { areas: [5], group: 'A', level: 1 },
-                marketRange: { min: 80000, max: 150000 },
-                description: '10+ años de experiencia'
-            },
-            // Architecture & Leadership
-            {
-                title: 'Software Architect',
-                convenioMapping: { areas: [3, 4], group: 'A', level: 1 },
-                marketRange: { min: 55000, max: 85000 },
-                description: '7+ años de experiencia'
-            },
-            {
-                title: 'Tech Lead',
-                convenioMapping: { areas: [3, 4], group: 'A', level: 1 },
-                marketRange: { min: 50000, max: 90000 },
-                description: '5+ años de experiencia'
-            },
-            {
-                title: 'Engineering Manager',
-                convenioMapping: { areas: [4], group: 'A', level: 1 },
-                marketRange: { min: 60000, max: 100000 },
-                description: '8+ años de experiencia'
-            },
-            {
-                title: 'CTO / Director de Tecnología',
-                convenioMapping: { areas: [4], group: 'A', level: 1 },
-                marketRange: { min: 76000, max: 170000 },
-                description: '10+ años de experiencia'
-            },
-            // Support & Administration
-            {
-                title: 'IT Support / Helpdesk',
-                convenioMapping: { areas: [2], group: 'E', level: 2 },
-                marketRange: { min: 18000, max: 26000 },
-                description: '0-2 años de experiencia'
-            },
-            {
-                title: 'System Administrator',
-                convenioMapping: { areas: [2], group: 'C', level: 2 },
-                marketRange: { min: 28000, max: 42000 },
-                description: '2-5 años de experiencia'
-            },
-            {
-                title: 'Senior SysAdmin / IT Manager',
-                convenioMapping: { areas: [2], group: 'B', level: 1 },
-                marketRange: { min: 40000, max: 60000 },
-                description: '5+ años de experiencia'
-            }
-        ],
+        // Comprehensive coverage for all areas, groups and levels
+
+        // ==========================================
+        // ÁREA 1 - BPO Y ADMINISTRACIÓN INTERNA
+        // ==========================================
+        'A1-A1': { min: 45000, max: 70000, roles: ['Director de Operaciones BPO', 'Head of Back Office', 'Operations Director'] },
+        'A1-B1': { min: 35000, max: 50000, roles: ['Team Leader Senior', 'Service Delivery Manager', 'Responsable de Operaciones'] },
+        'A1-B2': { min: 28000, max: 40000, roles: ['Team Leader', 'Coordinator', 'Supervisor BPO'] },
+        'A1-C1': { min: 25000, max: 35000, roles: ['Senior Back Office Specialist', 'Process Specialist'] },
+        'A1-C2': { min: 22000, max: 30000, roles: ['Back Office Specialist', 'Administrativo Back Office'] },
+        'A1-C3': { min: 20000, max: 26000, roles: ['Back Office Technician', 'Data Entry Specialist'] },
+        'A1-D1': { min: 18000, max: 24000, roles: ['Administrativo Senior', 'Office Administrator'] },
+        'A1-D2': { min: 17000, max: 22000, roles: ['Administrativo', 'Office Assistant'] },
+        'A1-D3': { min: 16000, max: 20000, roles: ['Auxiliar Administrativo', 'Junior Administrative'] },
+        'A1-E1': { min: 12000, max: 16000, roles: ['Becario Senior', 'Senior Intern'] },
+        'A1-E2': { min: 8000, max: 14000, roles: ['Becario', 'Intern', 'Trainee'] },
+
+        // ==========================================
+        // ÁREA 2 - CAU (CENTRO ATENCIÓN USUARIO)
+        // ==========================================
+        'A2-A1': { min: 50000, max: 75000, roles: ['Service Desk Director', 'Head of IT Support', 'IT Service Director'] },
+        'A2-B1': { min: 40000, max: 60000, roles: ['Service Desk Manager', 'IT Support Manager', 'Helpdesk Manager'] },
+        'A2-B2': { min: 30000, max: 42000, roles: ['CAU Team Leader', 'Support Team Lead', 'Helpdesk Supervisor'] },
+        'A2-C1': { min: 26000, max: 38000, roles: ['Senior Support Engineer', 'L2 Support Specialist', 'Technical Support Senior'] },
+        'A2-C2': { min: 22000, max: 32000, roles: ['L2 Support Technician', 'IT Support Specialist', 'System Administrator'] },
+        'A2-C3': { min: 20000, max: 28000, roles: ['Senior Helpdesk Technician', 'L1 Support Senior'] },
+        'A2-D1': { min: 18000, max: 25000, roles: ['Helpdesk Technician', 'Técnico CAU', 'Service Desk Analyst'] },
+        'A2-D2': { min: 17000, max: 22000, roles: ['Junior Helpdesk', 'IT Support Junior', 'Técnico Soporte N1'] },
+        'A2-D3': { min: 16000, max: 20000, roles: ['Helpdesk Operator', 'Operador CAU', 'Support Agent'] },
+        'A2-E1': { min: 12000, max: 16000, roles: ['IT Support Intern Senior', 'Helpdesk Trainee'] },
+        'A2-E2': { min: 8000, max: 14000, roles: ['IT Support Intern', 'Helpdesk Intern'] },
+
+        // ==========================================
+        // ÁREA 3 - PROGRAMACIÓN
+        // ==========================================
+        'A3-A1': { min: 65000, max: 120000, roles: ['CTO', 'VP Engineering', 'Director de Tecnología', 'Head of Engineering'] },
+        'A3-B1': { min: 55000, max: 85000, roles: ['Software Architect', 'Principal Engineer', 'Staff Engineer', 'Tech Lead Senior'] },
+        'A3-B2': { min: 48000, max: 70000, roles: ['Tech Lead', 'Lead Developer', 'Engineering Lead', 'Development Manager'] },
+        'A3-C1': { min: 40000, max: 58000, roles: ['Senior Developer', 'Senior Software Engineer', 'Senior Full Stack Developer', 'DevOps Engineer Senior'] },
+        'A3-C2': { min: 32000, max: 48000, roles: ['Software Developer', 'Full Stack Developer', 'Backend Developer', 'Frontend Developer', 'DevOps Engineer'] },
+        'A3-C3': { min: 28000, max: 40000, roles: ['Developer', 'Programmer', 'Software Engineer', 'Junior Developer Avanzado'] },
+        'A3-D1': { min: 24000, max: 34000, roles: ['Junior Developer', 'Junior Programmer', 'Graduate Developer'] },
+        'A3-D2': { min: 20000, max: 28000, roles: ['Entry Level Developer', 'Trainee Developer', 'Junior Software Engineer'] },
+        'A3-D3': { min: 18000, max: 24000, roles: ['Trainee Programmer', 'Development Trainee', 'Graduate Trainee'] },
+        'A3-E1': { min: 14000, max: 20000, roles: ['Software Development Intern Senior', 'Programming Intern'] },
+        'A3-E2': { min: 8000, max: 16000, roles: ['Software Development Intern', 'Tech Intern', 'IT Intern'] },
+
+        // ==========================================
+        // ÁREA 4 - CONSULTORÍA NEGOCIO Y TECNOLÓGICA
+        // ==========================================
+        'A4-A1': { min: 70000, max: 130000, roles: ['Consulting Director', 'Partner', 'Managing Director', 'Head of Consulting'] },
+        'A4-B1': { min: 55000, max: 90000, roles: ['Principal Consultant', 'Consulting Manager', 'Senior Manager', 'SAP Manager'] },
+        'A4-B2': { min: 45000, max: 70000, roles: ['Senior Consultant', 'Senior SAP Consultant', 'Senior Business Analyst', 'Lead Functional Analyst'] },
+        'A4-C1': { min: 38000, max: 55000, roles: ['Consultant', 'SAP Consultant', 'Business Analyst', 'Functional Consultant', 'ERP Consultant'] },
+        'A4-C2': { min: 30000, max: 45000, roles: ['Associate Consultant', 'Junior Consultant Avanzado', 'Business Analyst', 'Data Analyst'] },
+        'A4-C3': { min: 26000, max: 38000, roles: ['Junior Consultant', 'Junior SAP Consultant', 'Analyst'] },
+        'A4-D1': { min: 22000, max: 32000, roles: ['Junior Analyst', 'Associate Analyst', 'Graduate Consultant'] },
+        'A4-D2': { min: 20000, max: 28000, roles: ['Entry Level Analyst', 'Trainee Consultant', 'Graduate Analyst'] },
+        'A4-D3': { min: 18000, max: 24000, roles: ['Trainee Analyst', 'Consulting Trainee'] },
+        'A4-E1': { min: 14000, max: 20000, roles: ['Consulting Intern Senior', 'Business Analyst Intern'] },
+        'A4-E2': { min: 8000, max: 16000, roles: ['Consulting Intern', 'Graduate Intern'] },
+
+        // ==========================================
+        // ÁREA 5 - CIBERSEGURIDAD
+        // ==========================================
+        'A5-A1': { min: 80000, max: 150000, roles: ['CISO', 'Chief Information Security Officer', 'Security Director', 'Head of Cybersecurity'] },
+        'A5-B1': { min: 60000, max: 95000, roles: ['Security Manager', 'Cybersecurity Manager', 'SOC Manager', 'Information Security Manager'] },
+        'A5-B2': { min: 50000, max: 80000, roles: ['Senior Security Engineer', 'Security Architect', 'Lead Pentester', 'Principal Security Consultant'] },
+        'A5-C1': { min: 40000, max: 60000, roles: ['Security Engineer', 'Cybersecurity Consultant', 'Pentester', 'Senior SOC Analyst'] },
+        'A5-C2': { min: 32000, max: 50000, roles: ['Security Analyst', 'SOC Analyst', 'Cybersecurity Analyst', 'Threat Analyst'] },
+        'A5-C3': { min: 28000, max: 42000, roles: ['Junior Security Analyst', 'SOC Analyst Junior', 'Security Operations Analyst'] },
+        'A5-D1': { min: 24000, max: 35000, roles: ['Junior SOC Analyst', 'Security Operations Junior', 'Cybersecurity Junior'] },
+        'A5-D2': { min: 22000, max: 30000, roles: ['Entry Level Security Analyst', 'SOC Operator', 'Security Trainee'] },
+        'A5-D3': { min: 20000, max: 26000, roles: ['SOC Trainee', 'Security Operations Trainee'] },
+        'A5-E1': { min: 16000, max: 22000, roles: ['Cybersecurity Intern Senior', 'Security Intern'] },
+        'A5-E2': { min: 10000, max: 18000, roles: ['Cybersecurity Intern', 'Security Trainee Intern'] },
+
+        // ==========================================
+        // ÁREA 6 - ESTUDIOS DE MERCADO
+        // ==========================================
+        'A6-A1': { min: 50000, max: 80000, roles: ['Research Director', 'Director de Estudios', 'Head of Research'] },
+        'A6-B1': { min: 38000, max: 55000, roles: ['Research Manager', 'Project Director', 'Senior Research Manager'] },
+        'A6-B2': { min: 30000, max: 45000, roles: ['Senior Research Executive', 'Senior Market Research Analyst', 'Research Lead'] },
+        'A6-C1': { min: 26000, max: 38000, roles: ['Research Executive', 'Market Research Analyst', 'Research Analyst'] },
+        'A6-C2': { min: 22000, max: 32000, roles: ['Research Analyst', 'Market Analyst', 'Data Analyst', 'Quantitative Analyst'] },
+        'A6-C3': { min: 20000, max: 28000, roles: ['Junior Research Analyst', 'Junior Market Research Analyst', 'Research Assistant'] },
+        'A6-D1': { min: 18000, max: 25000, roles: ['Research Technician', 'Data Processing Technician', 'Field Coordinator'] },
+        'A6-D2': { min: 17000, max: 22000, roles: ['Field Technician', 'Survey Coordinator', 'Técnico de Campo'] },
+        'A6-D3': { min: 16000, max: 20000, roles: ['Research Assistant', 'Data Entry', 'Field Assistant'] },
+        'A6-E1': { min: 12000, max: 16000, roles: ['Research Intern Senior', 'Market Research Intern'] },
+        'A6-E2': { min: 8000, max: 14000, roles: ['Research Intern', 'Market Research Trainee'] },
 
         /**
          * Get market rate info for a specific convenio category
@@ -517,23 +944,14 @@ const ConvenioIT = {
          * @returns {Object|null} - Market rate info or null
          */
         getMarketRateForCategory(area, group, level) {
-            const matchingRoles = this.roles.filter(role => {
-                const mapping = role.convenioMapping;
-                return mapping.areas.includes(area) &&
-                       mapping.group === group &&
-                       mapping.level === level;
-            });
+            const key = `A${area}-${group}${level}`;
+            const data = this[key];
 
-            if (matchingRoles.length === 0) return null;
-
-            // Return aggregated range if multiple roles match
-            const minSalary = Math.min(...matchingRoles.map(r => r.marketRange.min));
-            const maxSalary = Math.max(...matchingRoles.map(r => r.marketRange.max));
+            if (!data) return null;
 
             return {
-                roles: matchingRoles.map(r => r.title),
-                marketRange: { min: minSalary, max: maxSalary },
-                descriptions: matchingRoles.map(r => r.description)
+                roles: data.roles,
+                marketRange: { min: data.min, max: data.max }
             };
         }
     }

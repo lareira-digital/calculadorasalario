@@ -280,6 +280,106 @@ const ConvenioSeguridadPrivada = {
     },
 
     /**
+     * Position descriptions by category
+     * Describes responsibilities and typical job functions
+     */
+    positionDescriptions: {
+        'vs_sin_arma': {
+            title: 'Vigilante de Seguridad (sin arma)',
+            responsibilities: 'Control de accesos, vigilancia de instalaciones, rondas de seguridad, gestión de alarmas, atención al público, elaboración de partes',
+            experience: '0-2 años',
+            equivalentTitles: ['Vigilante de Seguridad', 'Controlador de Accesos', 'Security Guard', 'Vigilante', 'Guarda de Seguridad']
+        },
+        'vs_con_arma': {
+            title: 'Vigilante de Seguridad (con arma)',
+            responsibilities: 'Vigilancia armada, protección de bienes de alto valor, transporte de fondos, custodia de explosivos, intervención ante amenazas',
+            experience: '2+ años + TIP',
+            equivalentTitles: ['Vigilante Armado', 'Vigilante de Seguridad con Arma', 'Armed Security Guard', 'Vigilante de Fondos']
+        },
+        'vs_explosivos': {
+            title: 'Vigilante de Explosivos',
+            responsibilities: 'Custodia y vigilancia de depósitos de explosivos, control de accesos a zonas ATEX, cumplimiento normativa de explosivos',
+            experience: '3+ años + habilitación especial',
+            equivalentTitles: ['Vigilante de Explosivos', 'Vigilante ATEX', 'Explosives Security Guard']
+        },
+        'escolta': {
+            title: 'Escolta Privado',
+            responsibilities: 'Protección de personas, análisis de riesgos, planificación de rutas seguras, conducción evasiva, primeros auxilios',
+            experience: '3+ años + TIP Escolta',
+            equivalentTitles: ['Escolta Privado', 'Escolta Personal', 'Bodyguard', 'Close Protection Officer', 'CPO']
+        },
+        'tecnico': {
+            title: 'Técnico de Sistemas de Seguridad',
+            responsibilities: 'Instalación y mantenimiento de alarmas, CCTV, control de accesos, sistemas anti-intrusión, cableado y configuración',
+            experience: '1-3 años',
+            equivalentTitles: ['Técnico de Seguridad', 'Instalador de Alarmas', 'Técnico CCTV', 'Técnico de Sistemas', 'Security Technician']
+        },
+        'jefe_equipo_tec': {
+            title: 'Jefe de Equipo Técnico',
+            responsibilities: 'Coordinación de equipo de instaladores, supervisión de proyectos, gestión de materiales, relación con cliente, presupuestos',
+            experience: '4+ años',
+            equivalentTitles: ['Jefe de Equipo Técnico', 'Supervisor Técnico', 'Team Leader Instalaciones', 'Encargado de Obra']
+        },
+        'aux_admin': {
+            title: 'Auxiliar Administrativo/a',
+            responsibilities: 'Tareas administrativas básicas, gestión documental, atención telefónica, archivo, apoyo a departamentos',
+            experience: '0-1 año',
+            equivalentTitles: ['Auxiliar Administrativo', 'Administrative Assistant', 'Recepcionista', 'Auxiliar de Oficina']
+        },
+        'oficial_admin': {
+            title: 'Oficial Administrativo/a',
+            responsibilities: 'Gestión administrativa, facturación, contabilidad básica, gestión de personal, reporting, coordinación con clientes',
+            experience: '2-4 años',
+            equivalentTitles: ['Oficial Administrativo', 'Administrativo', 'Office Administrator', 'Gestor Administrativo']
+        },
+        'teleoperador': {
+            title: 'Teleoperador/a CRA',
+            responsibilities: 'Recepción y gestión de alarmas, verificación de incidencias, contacto con clientes y fuerzas de seguridad, registro de eventos',
+            experience: '0-2 años',
+            equivalentTitles: ['Teleoperador CRA', 'Operador de Alarmas', 'Operador de Central Receptora', 'Alarm Operator', 'Control Room Operator']
+        },
+        'jefe_seguridad': {
+            title: 'Jefe de Seguridad',
+            responsibilities: 'Dirección del servicio de seguridad, planificación de dispositivos, gestión de equipo de vigilantes, relación con cliente, informes',
+            experience: '5-8 años + Director de Seguridad',
+            equivalentTitles: ['Jefe de Seguridad', 'Security Manager', 'Responsable de Seguridad', 'Jefe de Servicio', 'Security Supervisor']
+        },
+        'director_seguridad': {
+            title: 'Director/a de Seguridad',
+            responsibilities: 'Dirección integral de seguridad corporativa, planes de seguridad, gestión de riesgos, compliance, relación con FCSE, estrategia',
+            experience: '10+ años + habilitación Director',
+            equivalentTitles: ['Director de Seguridad', 'CSO', 'Chief Security Officer', 'Corporate Security Director', 'Security Director']
+        },
+        'ordenanza': {
+            title: 'Ordenanza / Conserje',
+            responsibilities: 'Servicios de conserjería, recepción de paquetes, control básico de accesos, información al público, tareas auxiliares',
+            experience: '0 años',
+            equivalentTitles: ['Ordenanza', 'Conserje', 'Portero', 'Recepcionista', 'Doorman']
+        },
+        'almacenero': {
+            title: 'Almacenero/a',
+            responsibilities: 'Gestión de almacén, recepción y expedición de materiales, inventario, control de stock, preparación de pedidos',
+            experience: '0-2 años',
+            equivalentTitles: ['Almacenero', 'Mozo de Almacén', 'Warehouse Operator', 'Storeman']
+        },
+        'limpiador': {
+            title: 'Personal de Limpieza',
+            responsibilities: 'Limpieza y mantenimiento de instalaciones, gestión de residuos, reposición de materiales de higiene',
+            experience: '0 años',
+            equivalentTitles: ['Limpiador/a', 'Personal de Limpieza', 'Cleaner', 'Cleaning Staff']
+        }
+    },
+
+    /**
+     * Get position description for a specific category
+     * @param {string} category - Category code
+     * @returns {Object|null} - Position description or null
+     */
+    getPositionDescription: function(category) {
+        return this.positionDescriptions[category] || null;
+    },
+
+    /**
      * Market rates for security roles (orientative)
      */
     marketRates: {

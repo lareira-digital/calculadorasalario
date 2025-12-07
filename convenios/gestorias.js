@@ -203,6 +203,70 @@ const ConvenioGestorias = {
     },
 
     /**
+     * Position descriptions by category
+     * Describes responsibilities and typical job functions
+     */
+    positionDescriptions: {
+        'titulado_superior': {
+            title: 'Titulado/a Superior',
+            responsibilities: 'Asesoramiento fiscal, contable y jurídico avanzado, gestión de clientes, representación ante organismos, firma de documentos oficiales',
+            experience: '5+ años + Licenciatura/Grado',
+            equivalentTitles: ['Abogado', 'Economista', 'Asesor Fiscal Senior', 'Director Técnico', 'Tax Advisor', 'Legal Advisor']
+        },
+        'titulado_medio': {
+            title: 'Titulado/a Medio',
+            responsibilities: 'Asesoramiento laboral y fiscal, gestión de nóminas complejas, relación con Seguridad Social y Hacienda, formación a clientes',
+            experience: '3-5 años + Diplomatura/Grado',
+            equivalentTitles: ['Graduado Social', 'Asesor Laboral', 'Técnico Fiscal', 'Payroll Specialist', 'HR Advisor']
+        },
+        'coordinador_jefe': {
+            title: 'Coordinador/a - Jefe/a Administrativo/a',
+            responsibilities: 'Coordinación del equipo administrativo, supervisión de procesos, control de calidad, formación de personal, relación con clientes',
+            experience: '4-6 años',
+            equivalentTitles: ['Jefe de Administración', 'Coordinador de Oficina', 'Responsable Contable', 'Office Manager', 'Team Leader']
+        },
+        'oficial_primera': {
+            title: 'Oficial de Primera',
+            responsibilities: 'Gestión contable autónoma, confección de impuestos, nóminas completas, relación directa con clientes, resolución de incidencias',
+            experience: '3-4 años',
+            equivalentTitles: ['Oficial Administrativo Senior', 'Técnico Contable', 'Gestor de Nóminas', 'Accountant', 'Payroll Manager']
+        },
+        'oficial_segunda': {
+            title: 'Oficial de Segunda',
+            responsibilities: 'Contabilidad básica, preparación de impuestos, gestión de nóminas con supervisión, atención telefónica especializada',
+            experience: '1-3 años',
+            equivalentTitles: ['Oficial Administrativo', 'Auxiliar Contable', 'Administrativo', 'Junior Accountant', 'Administrative']
+        },
+        'auxiliar_administrativo': {
+            title: 'Auxiliar Administrativo/a',
+            responsibilities: 'Tareas administrativas básicas, archivo, atención telefónica, gestión de citas, preparación de documentación',
+            experience: '0-1 año',
+            equivalentTitles: ['Auxiliar Administrativo', 'Recepcionista', 'Administrative Assistant', 'Office Assistant', 'Archivo']
+        },
+        'ordenanza': {
+            title: 'Ordenanza',
+            responsibilities: 'Conserjería, gestiones externas, mensajería, reparto de documentación, apoyo general a la oficina',
+            experience: '0 años',
+            equivalentTitles: ['Ordenanza', 'Conserje', 'Mensajero', 'Recadero', 'Office Boy']
+        },
+        'limpieza': {
+            title: 'Personal de Limpieza',
+            responsibilities: 'Limpieza y mantenimiento de las instalaciones de la oficina',
+            experience: '0 años',
+            equivalentTitles: ['Limpiador/a', 'Personal de Limpieza', 'Cleaner']
+        }
+    },
+
+    /**
+     * Get position description for a specific category
+     * @param {string} category - Category code
+     * @returns {Object|null} - Position description or null
+     */
+    getPositionDescription: function(category) {
+        return this.positionDescriptions[category] || null;
+    },
+
+    /**
      * Market rates for gestorías roles (orientative)
      * Based on market data from Indeed, Glassdoor, InfoJobs (2024-2025)
      */

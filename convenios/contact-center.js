@@ -278,6 +278,82 @@ const ConvenioContactCenter = {
     },
 
     /**
+     * Position descriptions by level
+     * Describes responsibilities and typical job functions
+     */
+    positionDescriptions: {
+        1: {
+            title: 'Director/a General / Director/a de Operaciones',
+            responsibilities: 'Dirección estratégica del contact center, gestión de P&L, relación con clientes corporativos, definición de KPIs, expansión de negocio',
+            experience: '10+ años',
+            equivalentTitles: ['Director General', 'Director de Operaciones', 'Managing Director', 'Operations Director', 'Country Manager']
+        },
+        2: {
+            title: 'Jefe/a de Área / Account Manager',
+            responsibilities: 'Gestión de grandes cuentas, supervisión de múltiples campañas, reporting ejecutivo, negociación de contratos, gestión de equipos',
+            experience: '6-10 años',
+            equivalentTitles: ['Jefe de Área', 'Account Director', 'Responsable de Cuenta', 'Campaign Director', 'Head of Operations']
+        },
+        3: {
+            title: 'Jefe/a de Proyecto / Analista Funcional',
+            responsibilities: 'Gestión de proyectos de implementación, análisis de requisitos, coordinación técnica, documentación funcional, UAT',
+            experience: '4-6 años',
+            equivalentTitles: ['Project Manager', 'Analista Funcional', 'Jefe de Proyecto', 'Implementation Manager', 'Functional Analyst']
+        },
+        4: {
+            title: 'Analista / Técnico de Sistemas Senior',
+            responsibilities: 'Análisis de datos y reporting, administración de sistemas, soporte nivel 2-3, automatizaciones, integraciones',
+            experience: '3-5 años',
+            equivalentTitles: ['Analista', 'Systems Analyst', 'Técnico de Sistemas', 'BI Analyst', 'Data Analyst', 'Programador Senior']
+        },
+        5: {
+            title: 'Programador / Técnico Medio',
+            responsibilities: 'Desarrollo y mantenimiento de aplicaciones, scripts de automatización, soporte técnico, documentación técnica',
+            experience: '2-4 años',
+            equivalentTitles: ['Programador', 'Developer', 'Analista Programador', 'Software Developer', 'Técnico Informático']
+        },
+        6: {
+            title: 'Supervisor/a / Quality Analyst',
+            responsibilities: 'Supervisión de agentes en tiempo real, escuchas de calidad, feedback y coaching, gestión de incidencias, reporting de turno',
+            experience: '2-4 años',
+            equivalentTitles: ['Supervisor', 'Team Leader', 'Quality Analyst', 'QA Analyst', 'Formador', 'Trainer', 'Real-Time Analyst']
+        },
+        7: {
+            title: 'Coordinador/a',
+            responsibilities: 'Coordinación de equipos pequeños, apoyo a supervisión, gestión de horarios, resolución de incidencias operativas',
+            experience: '1-3 años',
+            equivalentTitles: ['Coordinador', 'Team Leader Junior', 'Senior Agent', 'Workforce Coordinator', 'Scheduler']
+        },
+        8: {
+            title: 'Gestor/a Telefónico Especialista',
+            responsibilities: 'Atención de llamadas complejas, gestión de reclamaciones, retención de clientes, ventas especializadas, back office avanzado',
+            experience: '1-2 años',
+            equivalentTitles: ['Gestor Telefónico', 'Senior Agent', 'Teleoperador Especialista', 'Retention Agent', 'Customer Care Specialist']
+        },
+        9: {
+            title: 'Auxiliar Administrativo/a',
+            responsibilities: 'Tareas administrativas de soporte, gestión documental, back office, archivo, atención telefónica interna',
+            experience: '0-2 años',
+            equivalentTitles: ['Auxiliar Administrativo', 'Back Office Agent', 'Administrative Support', 'Oficial Administrativo']
+        },
+        10: {
+            title: 'Teleoperador/a',
+            responsibilities: 'Atención telefónica entrante/saliente, resolución de consultas, gestión de incidencias básicas, registro en CRM, venta telefónica',
+            experience: '0-1 año',
+            equivalentTitles: ['Teleoperador', 'Agente de Contact Center', 'Customer Service Agent', 'Call Center Agent', 'Operador', 'CSR']
+        }
+    },
+
+    /**
+     * Get position description for a specific level
+     * @param {number} level - Level 1-10
+     * @returns {Object|null} - Position description or null
+     */
+    getPositionDescription: function(level) {
+        return this.positionDescriptions[level] || null;
+    },
+
+    /**
      * Market rates for contact center roles (orientative)
      * Based on market data from Indeed, Glassdoor, InfoJobs (2024-2025)
      */

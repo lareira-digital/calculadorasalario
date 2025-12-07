@@ -178,6 +178,75 @@ const ConvenioHosteleria = {
     },
 
     /**
+     * Position descriptions by establishment group and level
+     * Describes responsibilities and typical job functions for each category
+     */
+    positionDescriptions: {
+        '1A': {
+            title: 'Director/a General / Gerente',
+            responsibilities: 'Dirección general del establecimiento, gestión de P&L, estrategia comercial, relación con proveedores y clientes VIP, supervisión de todos los departamentos',
+            experience: '8+ años',
+            equivalentTitles: ['Director de Hotel', 'Director de Restaurante', 'General Manager', 'Gerente', 'Director de Operaciones']
+        },
+        '1B': {
+            title: 'Jefe/a de Cocina / Jefe/a de Sala',
+            responsibilities: 'Dirección de departamento (cocina o sala), diseño de carta/menús, gestión de equipo, control de costes, formación del personal',
+            experience: '5-8 años',
+            equivalentTitles: ['Executive Chef', 'Head Chef', 'Jefe de Cocina', 'Maître', 'Jefe de Sala', 'F&B Manager']
+        },
+        '2': {
+            title: 'Jefe/a de Turno / Segundo/a de Cocina',
+            responsibilities: 'Supervisión de turno, coordinación de equipo durante el servicio, control de calidad, resolución de incidencias, apoyo a jefatura',
+            experience: '3-5 años',
+            equivalentTitles: ['Sous Chef', 'Segundo de Cocina', 'Jefe de Partida', 'Supervisor de Sala', 'Sommelier', 'Head Bartender']
+        },
+        '3': {
+            title: 'Cocinero/a / Camarero/a Senior',
+            responsibilities: 'Elaboración de platos o servicio de sala con autonomía, atención especializada al cliente, conocimiento profundo del producto',
+            experience: '2-4 años',
+            equivalentTitles: ['Cocinero', 'Chef de Partida', 'Camarero Senior', 'Barman', 'Bartender', 'Recepcionista de Hotel', 'Sumiller']
+        },
+        '4': {
+            title: 'Ayudante de Cocina / Camarero/a',
+            responsibilities: 'Apoyo en cocina o servicio de sala, preparación básica de alimentos, atención directa al cliente, montaje y desmontaje',
+            experience: '0-2 años',
+            equivalentTitles: ['Ayudante de Cocina', 'Commis', 'Camarero', 'Waiter', 'Waitress', 'Barista', 'Camarera de Pisos', 'Room Attendant']
+        },
+        '5': {
+            title: 'Personal de Apoyo / Auxiliar',
+            responsibilities: 'Tareas auxiliares de limpieza, transporte de materiales, apoyo general, tareas básicas sin cualificación específica',
+            experience: '0 años',
+            equivalentTitles: ['Pinche', 'Kitchen Porter', 'Friegaplatos', 'Runner', 'Ayudante de Camarero', 'Limpiador/a', 'Office']
+        }
+    },
+
+    /**
+     * Get position description for a specific level
+     * @param {string} establishmentGroup - 'A', 'B', 'C', or 'D'
+     * @param {string} level - '1A', '1B', '2', '3', '4', or '5'
+     * @returns {Object|null} - Position description or null
+     */
+    getPositionDescription: function(establishmentGroup, level) {
+        const position = this.positionDescriptions[level];
+        if (!position) return null;
+
+        // Adjust title based on establishment group
+        const groupContext = {
+            'A': ' (Hotel 5* / Alta Cocina)',
+            'B': ' (Hotel Boutique / Restaurante de Autor)',
+            'C': ' (Hotel 3-4* / Cadena)',
+            'D': ' (Bar / Hostal / Colectividades)'
+        };
+
+        return {
+            title: position.title + (groupContext[establishmentGroup] || ''),
+            responsibilities: position.responsibilities,
+            experience: position.experience,
+            equivalentTitles: position.equivalentTitles
+        };
+    },
+
+    /**
      * Market rates for hostelería roles in Spain (2024-2025)
      * These are indicative ranges from job market data
      */
