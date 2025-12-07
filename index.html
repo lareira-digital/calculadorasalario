@@ -73,6 +73,8 @@
                                 <option value="seguridad-privada" data-i18n="convenio.seguridad">Seguridad Privada (Convenio 2022)</option>
                                 <option value="contact-center" data-i18n="convenio.contact">Contact Center / Telemarketing (III Convenio, 2023)</option>
                                 <option value="gestorias" data-i18n="convenio.gestorias">Gestorías Administrativas (IX Convenio, 2024)</option>
+                                <option value="oficinas-despachos" data-i18n="convenio.oficinasDespachos">Oficinas y Despachos - C. de Madrid (Convenio 2025)</option>
+                                <option value="oficinas-despachos-galicia" data-i18n="convenio.oficinasGalicia">Oficinas y Despachos - A Coruña (Convenio 2023)</option>
                             </select>
                         </div>
                         <div class="form-group form-group-shrink">
@@ -86,9 +88,9 @@
                     </div>
                     <a href="#" id="convenio-missing-link" class="convenio-missing-link"><span class="convenio-missing-icon">?</span> <strong data-i18n="convenio.missing">Mi convenio no aparece en la lista</strong></a>
 
-                    <!-- Regional notice for hostelería -->
+                    <!-- Regional notice for regional/provincial convenios -->
                     <div id="convenio-regional-notice" class="convenio-notice hidden">
-                        <p data-i18n="convenio.regional.notice">Este convenio usa las tablas de la Comunidad de Madrid como referencia. Cada Comunidad Autónoma tiene su propio convenio provincial/autonómico con tablas salariales diferentes. Consulta el Boletín Oficial de tu provincia o comunidad para datos exactos.</p>
+                        <p data-i18n="convenio.regional.notice">Este es un convenio de ámbito regional. Cada Comunidad Autónoma o provincia puede tener su propio convenio con tablas salariales diferentes. Consulta el Boletín Oficial de tu provincia o comunidad para datos exactos.</p>
                     </div>
 
                     <!-- TIC Convenio Fields -->
@@ -233,6 +235,76 @@
                         </div>
                     </div>
 
+                    <!-- Oficinas y Despachos Convenio Fields -->
+                    <div id="oficinas-despachos-fields" class="hidden">
+                        <div class="form-group">
+                            <label for="oficinas-despachos-level">Nivel profesional</label>
+                            <select id="oficinas-despachos-level" name="oficinas-despachos-level">
+                                <optgroup label="Grupo I - Personal Titulado">
+                                    <option value="nivel_I">Nivel I - Titulado Superior (Licenciado, Grado Superior)</option>
+                                    <option value="nivel_II">Nivel II - Titulado Medio / Jefe Superior</option>
+                                </optgroup>
+                                <optgroup label="Grupo II - Jefaturas y Técnicos">
+                                    <option value="nivel_III">Nivel III - Jefe de Primera, Analista-Programador</option>
+                                    <option value="nivel_IV">Nivel IV - Jefe de Segunda, Operador Informático</option>
+                                    <option value="nivel_V">Nivel V - Oficial 1ª Administrativo, Delineante</option>
+                                </optgroup>
+                                <optgroup label="Grupo III - Administrativos">
+                                    <option value="nivel_VI">Nivel VI - Oficial 2ª Administrativo, Encargado</option>
+                                    <option value="nivel_VII">Nivel VII - Dibujante, Conductor, Oficial Oficios</option>
+                                    <option value="nivel_VIII" selected>Nivel VIII - Administrativo, Grabador de Datos</option>
+                                </optgroup>
+                                <optgroup label="Grupo IV - Servicios Auxiliares">
+                                    <option value="nivel_IX">Nivel IX - Auxiliar Administrativo (SMI)</option>
+                                    <option value="nivel_X">Nivel X - Ordenanza, Limpieza (SMI)</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Oficinas y Despachos Galicia Convenio Fields -->
+                    <div id="oficinas-galicia-fields" class="hidden">
+                        <div class="form-group">
+                            <label for="oficinas-galicia-category">Categoría profesional</label>
+                            <select id="oficinas-galicia-category" name="oficinas-galicia-category">
+                                <optgroup label="Sección I - Persoal Titulado">
+                                    <option value="titulado_superior">Titulado/a Superior (Licenciado, Grado)</option>
+                                    <option value="titulado_medio">Titulado/a Medio (Diplomado)</option>
+                                </optgroup>
+                                <optgroup label="Sección II - Persoal Administrativo">
+                                    <option value="xefe_superior">Xefe/a Superior</option>
+                                    <option value="xefe_primeira">Xefe/a de Primeira</option>
+                                    <option value="xefe_segunda">Xefe/a de Segunda / Caixeiro</option>
+                                    <option value="oficial_primeira">Oficial de Primeira</option>
+                                    <option value="oficial_segunda" selected>Oficial de Segunda</option>
+                                    <option value="auxiliar">Auxiliar Administrativo/a (SMI)</option>
+                                </optgroup>
+                                <optgroup label="Sección III - Persoal Técnico">
+                                    <option value="xefe_informatica">Xefe/a de Informática</option>
+                                    <option value="analista">Analista</option>
+                                    <option value="programador">Programador/a</option>
+                                    <option value="xefe_delineacion">Xefe/a de Delineación</option>
+                                    <option value="delineante_proxectista">Delineante Proxectista</option>
+                                    <option value="delineante">Delineante</option>
+                                </optgroup>
+                                <optgroup label="Sección IV - Persoal Especialista">
+                                    <option value="xefe_maquinas">Xefe/a de Máquinas</option>
+                                    <option value="operador">Operador/a</option>
+                                    <option value="perforador">Perforador/a - Calcador/a</option>
+                                </optgroup>
+                                <optgroup label="Sección V - Subalterno">
+                                    <option value="conserxe_maior">Conserxe Maior</option>
+                                    <option value="conserxe">Conserxe</option>
+                                    <option value="ordenanza">Ordenanza (SMI)</option>
+                                </optgroup>
+                                <optgroup label="Sección VI - Oficios Varios">
+                                    <option value="condutor">Condutor/a</option>
+                                    <option value="limpeza">Persoal de Limpeza (SMI)</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
                     <div id="convenio-salary-info" class="convenio-info">
                         <div class="convenio-info-row">
                             <p><span data-i18n="convenio.salary">Salario según convenio:</span> <strong id="convenio-salary-display">-</strong></p>
@@ -253,7 +325,7 @@
                 <section class="form-section">
                     <h2 data-i18n="irpf.title">Situación Personal (IRPF)</h2>
 
-                    <div class="form-row form-row-3col">
+                    <div class="form-row form-row-4col">
                         <div class="form-group">
                             <label for="age" data-i18n="irpf.age">Edad</label>
                             <input type="number" id="age" name="age" min="16" max="100" value="30">
@@ -272,6 +344,30 @@
                                 <option value="33-65" data-i18n="irpf.disability.33">Entre 33% y 65%</option>
                                 <option value="33-65-mobility" data-i18n="irpf.disability.33mob">33-65% + movilidad reducida</option>
                                 <option value="65+" data-i18n="irpf.disability.65">65% o superior</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="autonomous-community" data-i18n="irpf.community">Comunidad Autónoma</label>
+                            <select id="autonomous-community" name="autonomous-community">
+                                <option value="andalucia">Andalucía</option>
+                                <option value="aragon">Aragón</option>
+                                <option value="asturias">Asturias</option>
+                                <option value="baleares">Islas Baleares</option>
+                                <option value="canarias">Canarias</option>
+                                <option value="cantabria">Cantabria</option>
+                                <option value="castilla-mancha">Castilla-La Mancha</option>
+                                <option value="castilla-leon">Castilla y León</option>
+                                <option value="cataluna">Cataluña</option>
+                                <option value="extremadura">Extremadura</option>
+                                <option value="galicia">Galicia</option>
+                                <option value="madrid" selected>Madrid</option>
+                                <option value="murcia">Murcia</option>
+                                <option value="navarra">Navarra</option>
+                                <option value="pais-vasco">País Vasco</option>
+                                <option value="rioja">La Rioja</option>
+                                <option value="valencia">Comunidad Valenciana</option>
+                                <option value="ceuta">Ceuta</option>
+                                <option value="melilla">Melilla</option>
                             </select>
                         </div>
                     </div>
@@ -294,76 +390,54 @@
                             </select>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="autonomous-community" data-i18n="irpf.community">Comunidad Autónoma</label>
-                        <select id="autonomous-community" name="autonomous-community">
-                            <option value="andalucia">Andalucía</option>
-                            <option value="aragon">Aragón</option>
-                            <option value="asturias">Asturias</option>
-                            <option value="baleares">Islas Baleares</option>
-                            <option value="canarias">Canarias</option>
-                            <option value="cantabria">Cantabria</option>
-                            <option value="castilla-mancha">Castilla-La Mancha</option>
-                            <option value="castilla-leon">Castilla y León</option>
-                            <option value="cataluna">Cataluña</option>
-                            <option value="extremadura">Extremadura</option>
-                            <option value="galicia">Galicia</option>
-                            <option value="madrid" selected>Madrid</option>
-                            <option value="murcia">Murcia</option>
-                            <option value="navarra">Navarra</option>
-                            <option value="pais-vasco">País Vasco</option>
-                            <option value="rioja">La Rioja</option>
-                            <option value="valencia">Comunidad Valenciana</option>
-                            <option value="ceuta">Ceuta</option>
-                            <option value="melilla">Melilla</option>
-                        </select>
-                    </div>
                 </section>
 
-                <!-- Descendants Section -->
-                <section class="form-section">
-                    <h2 data-i18n="descendants.title">Descendientes</h2>
-                    <p class="form-hint" data-i18n="descendants.hint">Hijos menores de 25 años que convivan con usted y no tengan rentas superiores a 8.000€/año</p>
+                <!-- Descendants and Ascendants Side by Side -->
+                <div class="form-section-row">
+                    <!-- Descendants Section -->
+                    <section class="form-section">
+                        <h2 data-i18n="descendants.title">Descendientes</h2>
+                        <p class="form-hint" data-i18n="descendants.hint">Hijos menores de 25 años que convivan con usted y no tengan rentas superiores a 8.000€/año</p>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="children-under-3" data-i18n="descendants.under3">Menores de 3 años</label>
-                            <input type="number" id="children-under-3" name="children-under-3" min="0" max="10" value="0">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="children-under-3" data-i18n="descendants.under3">Menores de 3 años</label>
+                                <input type="number" id="children-under-3" name="children-under-3" min="0" max="10" value="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="children-3-to-25" data-i18n="descendants.3to25">De 3 a 25 años</label>
+                                <input type="number" id="children-3-to-25" name="children-3-to-25" min="0" max="10" value="0">
+                            </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="children-3-to-25" data-i18n="descendants.3to25">De 3 a 25 años</label>
-                            <input type="number" id="children-3-to-25" name="children-3-to-25" min="0" max="10" value="0">
+                            <label for="children-disability" data-i18n="descendants.disability">Hijos con discapacidad (33% o más)</label>
+                            <input type="number" id="children-disability" name="children-disability" min="0" max="10" value="0">
                         </div>
-                    </div>
+                    </section>
 
-                    <div class="form-group">
-                        <label for="children-disability" data-i18n="descendants.disability">Hijos con discapacidad (33% o más)</label>
-                        <input type="number" id="children-disability" name="children-disability" min="0" max="10" value="0">
-                    </div>
-                </section>
+                    <!-- Ascendants Section -->
+                    <section class="form-section">
+                        <h2 data-i18n="ascendants.title">Ascendientes</h2>
+                        <p class="form-hint" data-i18n="ascendants.hint">Mayores de 65 años o con discapacidad que convivan con usted</p>
 
-                <!-- Ascendants Section -->
-                <section class="form-section">
-                    <h2 data-i18n="ascendants.title">Ascendientes</h2>
-                    <p class="form-hint" data-i18n="ascendants.hint">Mayores de 65 años o con discapacidad que convivan con usted</p>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ascendants-65-75" data-i18n="ascendants.65to75">De 65 a 75 años</label>
+                                <input type="number" id="ascendants-65-75" name="ascendants-65-75" min="0" max="10" value="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="ascendants-75+" data-i18n="ascendants.75plus">Mayores de 75 años</label>
+                                <input type="number" id="ascendants-75+" name="ascendants-75+" min="0" max="10" value="0">
+                            </div>
+                        </div>
 
-                    <div class="form-row">
                         <div class="form-group">
-                            <label for="ascendants-65-75" data-i18n="ascendants.65to75">De 65 a 75 años</label>
-                            <input type="number" id="ascendants-65-75" name="ascendants-65-75" min="0" max="10" value="0">
+                            <label for="ascendants-disability" data-i18n="ascendants.disability">Ascendientes con discapacidad (33% o más)</label>
+                            <input type="number" id="ascendants-disability" name="ascendants-disability" min="0" max="10" value="0">
                         </div>
-                        <div class="form-group">
-                            <label for="ascendants-75+" data-i18n="ascendants.75plus">Mayores de 75 años</label>
-                            <input type="number" id="ascendants-75+" name="ascendants-75+" min="0" max="10" value="0">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="ascendants-disability" data-i18n="ascendants.disability">Ascendientes con discapacidad (33% o más)</label>
-                        <input type="number" id="ascendants-disability" name="ascendants-disability" min="0" max="10" value="0">
-                    </div>
-                </section>
+                    </section>
+                </div>
 
                 <button type="submit" class="btn-calculate" data-i18n="calculate">Calcular</button>
             </form>
@@ -561,6 +635,29 @@
                     <span data-i18n="kofi.modal.link">Apoya el proyecto en Ko-fi</span>
                 </a>
             </div>
+            <div class="boletines-section">
+                <h4 data-i18n="modal.convenio.boletines">Boletines Oficiales</h4>
+                <div class="boletines-grid">
+                    <a href="https://www.juntadeandalucia.es/eboja" target="_blank" rel="noopener">Andalucía (BOJA)</a>
+                    <a href="https://www.boa.aragon.es" target="_blank" rel="noopener">Aragón (BOA)</a>
+                    <a href="https://sede.asturias.es/bopa" target="_blank" rel="noopener">Asturias (BOPA)</a>
+                    <a href="https://www.caib.es/eboibfront" target="_blank" rel="noopener">Illes Balears (BOIB)</a>
+                    <a href="https://www.gobiernodecanarias.org/boc" target="_blank" rel="noopener">Canarias (BOC)</a>
+                    <a href="https://boc.cantabria.es" target="_blank" rel="noopener">Cantabria (BOC)</a>
+                    <a href="https://docm.jccm.es" target="_blank" rel="noopener">Castilla-La Mancha (DOCM)</a>
+                    <a href="https://bocyl.jcyl.es" target="_blank" rel="noopener">Castilla y León (BOCYL)</a>
+                    <a href="https://dogc.gencat.cat" target="_blank" rel="noopener">Catalunya (DOGC)</a>
+                    <a href="https://doe.juntaex.es" target="_blank" rel="noopener">Extremadura (DOE)</a>
+                    <a href="https://www.xunta.gal/diario-oficial-galicia" target="_blank" rel="noopener">Galicia (DOG)</a>
+                    <a href="https://www.larioja.org/bor" target="_blank" rel="noopener">La Rioja (BOR)</a>
+                    <a href="https://www.bocm.es" target="_blank" rel="noopener">Madrid (BOCM)</a>
+                    <a href="https://www.borm.es" target="_blank" rel="noopener">Murcia (BORM)</a>
+                    <a href="https://bon.navarra.es" target="_blank" rel="noopener">Navarra (BON)</a>
+                    <a href="https://www.euskadi.eus/web01-bopv/es" target="_blank" rel="noopener">País Vasco (EHAA/BOPV)</a>
+                    <a href="https://dogv.gva.es" target="_blank" rel="noopener">C. Valenciana (DOGV)</a>
+                    <a href="https://www.boe.es" target="_blank" rel="noopener">España (BOE)</a>
+                </div>
+            </div>
             <button type="button" class="btn-modal-close" data-i18n="modal.convenio.close">Entendido</button>
         </div>
     </div>
@@ -585,6 +682,8 @@
     <script src="convenios/seguridad-privada.js"></script>
     <script src="convenios/contact-center.js"></script>
     <script src="convenios/gestorias.js"></script>
+    <script src="convenios/oficinas-despachos.js"></script>
+    <script src="convenios/oficinas-despachos-galicia.js"></script>
     <script src="js/calculator.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>

@@ -45,7 +45,7 @@ const I18n = {
             'convenio.use': 'Usar salario del convenio',
             'convenio.market': 'Salario de mercado orientativo:',
             'convenio.market.disclaimer': '* Datos orientativos basados en fuentes como Glassdoor, Indeed y Talent.com (2025). Los salarios reales varían según empresa, ubicación y experiencia.',
-            'convenio.regional.notice': 'Este convenio usa las tablas de la Comunidad de Madrid como referencia. Cada Comunidad Autónoma tiene su propio convenio provincial/autonómico con tablas salariales diferentes. Consulta el Boletín Oficial de tu provincia o comunidad para datos exactos.',
+            'convenio.regional.notice': 'Este es un convenio de ámbito regional. Cada Comunidad Autónoma o provincia puede tener su propio convenio con tablas salariales diferentes. Consulta el Boletín Oficial de tu provincia o comunidad para datos exactos.',
 
             // Convenio names
             'convenio.tic': 'Consultoría, TIC y Estudios de Mercado (XIX Convenio, 2025)',
@@ -53,6 +53,8 @@ const I18n = {
             'convenio.seguridad': 'Seguridad Privada (Convenio 2022)',
             'convenio.contact': 'Contact Center / Telemarketing (III Convenio, 2023)',
             'convenio.gestorias': 'Gestorías Administrativas (IX Convenio, 2024)',
+            'convenio.oficinasDespachos': 'Oficinas y Despachos - C. de Madrid (Convenio 2025)',
+            'convenio.oficinasGalicia': 'Oficinas y Despachos - A Coruña (Convenio 2023)',
 
             // IRPF section
             'irpf.title': 'Situación Personal (IRPF)',
@@ -146,6 +148,7 @@ const I18n = {
             'modal.convenio.p1': 'En España existen <strong>cientos de convenios colectivos</strong>, tanto de ámbito estatal como provincial y autonómico. Añadir todos ellos a esta calculadora es una tarea enorme, incluso si solo fuera como referencia orientativa.',
             'modal.convenio.p2': 'Hacemos nuestro mejor esfuerzo por mantener actualizada la calculadora con el mayor número posible de convenios, priorizando aquellos que afectan a más trabajadores y tienen tablas salariales claras y públicas.',
             'modal.convenio.p3': 'Si tu convenio no aparece en la lista, puedes consultar el <a href="https://www.boe.es" target="_blank" rel="noopener">Boletín Oficial del Estado (BOE)</a> o el boletín oficial de tu provincia para encontrar las tablas salariales oficiales.',
+            'modal.convenio.boletines': 'Boletines Oficiales',
             'modal.convenio.close': 'Entendido',
 
             // Spanish text explanation modal
@@ -173,7 +176,7 @@ const I18n = {
             'convenio.use': 'Usar salario do convenio',
             'convenio.market': 'Salario de mercado orientativo:',
             'convenio.market.disclaimer': '* Datos orientativos baseados en fontes como Glassdoor, Indeed e Talent.com (2025). Os salarios reais varían segundo empresa, ubicación e experiencia.',
-            'convenio.regional.notice': 'Este convenio usa as táboas da Comunidade de Madrid como referencia. Cada Comunidade Autónoma ten o seu propio convenio provincial/autonómico con táboas salariais diferentes. Consulta o Boletín Oficial da túa provincia ou comunidade para datos exactos.',
+            'convenio.regional.notice': 'Este é un convenio de ámbito rexional. Cada Comunidade Autónoma ou provincia pode ter o seu propio convenio con táboas salariais diferentes. Consulta o Boletín Oficial da túa provincia ou comunidade para datos exactos.',
             'irpf.title': 'Situación Persoal (IRPF)',
             'irpf.age': 'Idade',
             'irpf.contract': 'Tipo de contrato',
@@ -249,6 +252,7 @@ const I18n = {
             'modal.convenio.p1': 'En España existen <strong>centos de convenios colectivos</strong>, tanto de ámbito estatal como provincial e autonómico. Engadir todos eles a esta calculadora é unha tarefa enorme, aínda que só fose como referencia orientativa.',
             'modal.convenio.p2': 'Facemos o noso mellor esforzo por manter actualizada a calculadora co maior número posible de convenios, priorizando aqueles que afectan a máis traballadores e teñen táboas salariais claras e públicas.',
             'modal.convenio.p3': 'Se o teu convenio non aparece na lista, podes consultar o <a href="https://www.boe.es" target="_blank" rel="noopener">Boletín Oficial do Estado (BOE)</a> ou o boletín oficial da túa provincia para atopar as táboas salariais oficiais.',
+            'modal.convenio.boletines': 'Boletíns Oficiais',
             'modal.convenio.close': 'Entendido',
 
             // Spanish text explanation modal
@@ -276,7 +280,7 @@ const I18n = {
             'convenio.use': 'Usar salari del conveni',
             'convenio.market': 'Salari de mercat orientatiu:',
             'convenio.market.disclaimer': '* Dades orientatives basades en fonts com Glassdoor, Indeed i Talent.com (2025). Els salaris reals varien segons empresa, ubicació i experiència.',
-            'convenio.regional.notice': 'Aquest conveni utilitza les taules de la Comunitat de Madrid com a referència. Cada Comunitat Autònoma té el seu propi conveni provincial/autonòmic amb taules salarials diferents. Consulta el Butlletí Oficial de la teva província o comunitat per a dades exactes.',
+            'convenio.regional.notice': 'Aquest és un conveni d\'àmbit regional. Cada Comunitat Autònoma o província pot tenir el seu propi conveni amb taules salarials diferents. Consulta el Butlletí Oficial de la teva província o comunitat per a dades exactes.',
             'irpf.title': 'Situació Personal (IRPF)',
             'irpf.age': 'Edat',
             'irpf.contract': 'Tipus de contracte',
@@ -352,6 +356,7 @@ const I18n = {
             'modal.convenio.p1': 'A Espanya existeixen <strong>centenars de convenis col·lectius</strong>, tant d\'àmbit estatal com provincial i autonòmic. Afegir tots ells a aquesta calculadora és una tasca enorme, fins i tot si només fos com a referència orientativa.',
             'modal.convenio.p2': 'Fem el nostre millor esforç per mantenir actualitzada la calculadora amb el major nombre possible de convenis, prioritzant aquells que afecten a més treballadors i tenen taules salarials clares i públiques.',
             'modal.convenio.p3': 'Si el teu conveni no apareix a la llista, pots consultar el <a href="https://www.boe.es" target="_blank" rel="noopener">Butlletí Oficial de l\'Estat (BOE)</a> o el butlletí oficial de la teva província per trobar les taules salarials oficials.',
+            'modal.convenio.boletines': 'Butlletins Oficials',
             'modal.convenio.close': 'Entès',
 
             // Spanish text explanation modal
@@ -379,7 +384,7 @@ const I18n = {
             'convenio.use': 'Hitzarmenaren soldata erabili',
             'convenio.market': 'Merkatuko soldata orientagarria:',
             'convenio.market.disclaimer': '* Glassdoor, Indeed eta Talent.com (2025) bezalako iturrietan oinarritutako datu orientagarriak. Benetako soldatak enpresaren, kokapenaren eta esperientziaren arabera aldatzen dira.',
-            'convenio.regional.notice': 'Hitzarmen honek Madrilgo Erkidegoko taulak erabiltzen ditu erreferentzia gisa. Autonomia Erkidego bakoitzak bere probintzia/autonomia mailako hitzarmena du, soldata taula desberdinekin. Kontsultatu zure probintzia edo erkidegoko Aldizkari Ofiziala datu zehatzak lortzeko.',
+            'convenio.regional.notice': 'Hau eskualde mailako hitzarmena da. Autonomia Erkidego edo probintzia bakoitzak bere hitzarmena izan dezake, soldata taula desberdinekin. Kontsultatu zure probintzia edo erkidegoko Aldizkari Ofiziala datu zehatzak lortzeko.',
             'irpf.title': 'Egoera Pertsonala (IRPF)',
             'irpf.age': 'Adina',
             'irpf.contract': 'Kontratu mota',
@@ -455,6 +460,7 @@ const I18n = {
             'modal.convenio.p1': 'Espainian <strong>ehunka hitzarmen kolektibo</strong> daude, bai estatu mailakoak, bai probintzia eta autonomia mailakoak. Guztiak kalkulagailu honetan gehitzea lan handia da, erreferentzia orientagarri gisa bakarrik izanda ere.',
             'modal.convenio.p2': 'Ahalik eta hitzarmen gehien kalkulagailuan eguneratuta mantentzeko ahalegin handia egiten dugu, langile gehienei eragiten dietenak eta soldata taula argiak eta publikoak dituztenak lehenetsiz.',
             'modal.convenio.p3': 'Zure hitzarmena zerrendan agertzen ez bada, <a href="https://www.boe.es" target="_blank" rel="noopener">Estatuko Aldizkari Ofiziala (BOE)</a> edo zure probintziako aldizkari ofiziala kontsultatu dezakezu soldata taula ofizialak aurkitzeko.',
+            'modal.convenio.boletines': 'Aldizkari Ofizialak',
             'modal.convenio.close': 'Ulertuta',
 
             // Spanish text explanation modal
@@ -482,7 +488,7 @@ const I18n = {
             'convenio.use': 'Use agreement salary',
             'convenio.market': 'Indicative market salary:',
             'convenio.market.disclaimer': '* Indicative data based on sources like Glassdoor, Indeed and Talent.com (2025). Actual salaries vary by company, location and experience.',
-            'convenio.regional.notice': 'This agreement uses the Community of Madrid tables as reference. Each Autonomous Community has its own provincial/regional agreement with different salary tables. Check the Official Gazette of your province or community for exact data.',
+            'convenio.regional.notice': 'This is a regional agreement. Each Autonomous Community or province may have its own agreement with different salary tables. Check the Official Gazette of your province or community for exact data.',
             'irpf.title': 'Personal Situation (Income Tax)',
             'irpf.age': 'Age',
             'irpf.contract': 'Contract type',
@@ -558,6 +564,7 @@ const I18n = {
             'modal.convenio.p1': 'In Spain there are <strong>hundreds of collective agreements</strong>, both national and provincial/regional. Adding all of them to this calculator is an enormous task, even if only as an indicative reference.',
             'modal.convenio.p2': 'We do our best to keep the calculator updated with as many agreements as possible, prioritizing those that affect more workers and have clear and public salary tables.',
             'modal.convenio.p3': 'If your agreement does not appear in the list, you can check the <a href="https://www.boe.es" target="_blank" rel="noopener">Official State Gazette (BOE)</a> or your province\'s official gazette to find the official salary tables.',
+            'modal.convenio.boletines': 'Official Gazettes',
             'modal.convenio.close': 'Understood',
 
             // Spanish text explanation modal
@@ -585,7 +592,7 @@ const I18n = {
             'convenio.use': 'Tarifgehalt verwenden',
             'convenio.market': 'Orientierendes Marktgehalt:',
             'convenio.market.disclaimer': '* Orientierungsdaten basierend auf Quellen wie Glassdoor, Indeed und Talent.com (2025). Tatsächliche Gehälter variieren je nach Unternehmen, Standort und Erfahrung.',
-            'convenio.regional.notice': 'Dieser Tarifvertrag verwendet die Tabellen der Gemeinschaft Madrid als Referenz. Jede Autonome Gemeinschaft hat ihren eigenen regionalen Tarifvertrag mit unterschiedlichen Gehaltstabellen. Prüfen Sie das Amtsblatt Ihrer Provinz oder Gemeinschaft für genaue Daten.',
+            'convenio.regional.notice': 'Dies ist ein regionaler Tarifvertrag. Jede Autonome Gemeinschaft oder Provinz kann ihren eigenen Tarifvertrag mit unterschiedlichen Gehaltstabellen haben. Prüfen Sie das Amtsblatt Ihrer Provinz oder Gemeinschaft für genaue Daten.',
             'irpf.title': 'Persönliche Situation (Einkommensteuer)',
             'irpf.age': 'Alter',
             'irpf.contract': 'Vertragsart',
@@ -661,6 +668,7 @@ const I18n = {
             'modal.convenio.p1': 'In Spanien gibt es <strong>Hunderte von Tarifverträgen</strong>, sowohl auf staatlicher als auch auf provinzieller und regionaler Ebene. Sie alle zu diesem Rechner hinzuzufügen ist eine enorme Aufgabe, selbst wenn es nur als Orientierungshilfe dient.',
             'modal.convenio.p2': 'Wir tun unser Bestes, um den Rechner mit so vielen Tarifverträgen wie möglich aktuell zu halten, wobei wir diejenigen priorisieren, die mehr Arbeitnehmer betreffen und klare und öffentliche Gehaltstabellen haben.',
             'modal.convenio.p3': 'Wenn Ihr Tarifvertrag nicht in der Liste erscheint, können Sie das <a href="https://www.boe.es" target="_blank" rel="noopener">Staatsanzeiger (BOE)</a> oder das Amtsblatt Ihrer Provinz konsultieren, um die offiziellen Gehaltstabellen zu finden.',
+            'modal.convenio.boletines': 'Amtsblätter',
             'modal.convenio.close': 'Verstanden',
 
             // Spanish text explanation modal
@@ -688,7 +696,7 @@ const I18n = {
             'convenio.use': 'Utiliser le salaire conventionnel',
             'convenio.market': 'Salaire du marché indicatif:',
             'convenio.market.disclaimer': '* Données indicatives basées sur des sources comme Glassdoor, Indeed et Talent.com (2025). Les salaires réels varient selon l\'entreprise, la localisation et l\'expérience.',
-            'convenio.regional.notice': 'Cette convention utilise les grilles de la Communauté de Madrid comme référence. Chaque Communauté Autonome a sa propre convention provinciale/régionale avec des grilles salariales différentes. Consultez le Journal Officiel de votre province ou communauté pour des données exactes.',
+            'convenio.regional.notice': 'Ceci est une convention régionale. Chaque Communauté Autonome ou province peut avoir sa propre convention avec des grilles salariales différentes. Consultez le Journal Officiel de votre province ou communauté pour des données exactes.',
             'irpf.title': 'Situation Personnelle (Impôt sur le Revenu)',
             'irpf.age': 'Âge',
             'irpf.contract': 'Type de contrat',
@@ -764,6 +772,7 @@ const I18n = {
             'modal.convenio.p1': 'En Espagne, il existe <strong>des centaines de conventions collectives</strong>, tant au niveau national que provincial et régional. Les ajouter toutes à ce calculateur est une tâche énorme, même si ce n\'est qu\'à titre indicatif.',
             'modal.convenio.p2': 'Nous faisons de notre mieux pour maintenir le calculateur à jour avec le plus grand nombre possible de conventions, en donnant la priorité à celles qui concernent le plus de travailleurs et qui ont des grilles salariales claires et publiques.',
             'modal.convenio.p3': 'Si votre convention n\'apparaît pas dans la liste, vous pouvez consulter le <a href="https://www.boe.es" target="_blank" rel="noopener">Journal Officiel de l\'État (BOE)</a> ou le journal officiel de votre province pour trouver les grilles salariales officielles.',
+            'modal.convenio.boletines': 'Journaux Officiels',
             'modal.convenio.close': 'Compris',
 
             // Spanish text explanation modal
@@ -791,7 +800,7 @@ const I18n = {
             'convenio.use': 'Usa stipendio del contratto',
             'convenio.market': 'Stipendio di mercato indicativo:',
             'convenio.market.disclaimer': '* Dati indicativi basati su fonti come Glassdoor, Indeed e Talent.com (2025). Gli stipendi reali variano per azienda, posizione ed esperienza.',
-            'convenio.regional.notice': 'Questo contratto utilizza le tabelle della Comunità di Madrid come riferimento. Ogni Comunità Autonoma ha il proprio contratto provinciale/regionale con tabelle salariali diverse. Consulta la Gazzetta Ufficiale della tua provincia o comunità per dati esatti.',
+            'convenio.regional.notice': 'Questo è un contratto regionale. Ogni Comunità Autonoma o provincia può avere il proprio contratto con tabelle salariali diverse. Consulta la Gazzetta Ufficiale della tua provincia o comunità per dati esatti.',
             'irpf.title': 'Situazione Personale (Imposta sul Reddito)',
             'irpf.age': 'Età',
             'irpf.contract': 'Tipo di contratto',
@@ -867,6 +876,7 @@ const I18n = {
             'modal.convenio.p1': 'In Spagna esistono <strong>centinaia di contratti collettivi</strong>, sia a livello nazionale che provinciale e regionale. Aggiungerli tutti a questo calcolatore è un compito enorme, anche solo come riferimento indicativo.',
             'modal.convenio.p2': 'Facciamo del nostro meglio per mantenere il calcolatore aggiornato con il maggior numero possibile di contratti, dando priorità a quelli che riguardano più lavoratori e hanno tabelle salariali chiare e pubbliche.',
             'modal.convenio.p3': 'Se il tuo contratto non appare nella lista, puoi consultare la <a href="https://www.boe.es" target="_blank" rel="noopener">Gazzetta Ufficiale dello Stato (BOE)</a> o la gazzetta ufficiale della tua provincia per trovare le tabelle salariali ufficiali.',
+            'modal.convenio.boletines': 'Gazzette Ufficiali',
             'modal.convenio.close': 'Capito',
 
             // Spanish text explanation modal
@@ -894,7 +904,7 @@ const I18n = {
             'convenio.use': 'استخدام راتب الاتفاقية',
             'convenio.market': 'راتب السوق التقريبي:',
             'convenio.market.disclaimer': '* بيانات تقريبية مبنية على مصادر مثل Glassdoor و Indeed و Talent.com (2025). الرواتب الفعلية تختلف حسب الشركة والموقع والخبرة.',
-            'convenio.regional.notice': 'تستخدم هذه الاتفاقية جداول مجتمع مدريد كمرجع. كل منطقة حكم ذاتي لديها اتفاقيتها الإقليمية الخاصة مع جداول رواتب مختلفة. راجع الجريدة الرسمية لمنطقتك للحصول على بيانات دقيقة.',
+            'convenio.regional.notice': 'هذه اتفاقية إقليمية. قد يكون لكل منطقة حكم ذاتي أو مقاطعة اتفاقيتها الخاصة مع جداول رواتب مختلفة. راجع الجريدة الرسمية لمنطقتك للحصول على بيانات دقيقة.',
             'irpf.title': 'الوضع الشخصي (ضريبة الدخل)',
             'irpf.age': 'العمر',
             'irpf.contract': 'نوع العقد',
@@ -970,6 +980,7 @@ const I18n = {
             'modal.convenio.p1': 'في إسبانيا هناك <strong>مئات الاتفاقيات الجماعية</strong>، على المستوى الوطني والإقليمي والمحلي. إضافتها جميعًا إلى هذه الآلة الحاسبة مهمة ضخمة، حتى لو كانت فقط كمرجع توجيهي.',
             'modal.convenio.p2': 'نبذل قصارى جهدنا للحفاظ على تحديث الآلة الحاسبة بأكبر عدد ممكن من الاتفاقيات، مع إعطاء الأولوية لتلك التي تؤثر على المزيد من العمال ولديها جداول رواتب واضحة وعامة.',
             'modal.convenio.p3': 'إذا لم تظهر اتفاقيتك في القائمة، يمكنك مراجعة <a href="https://www.boe.es" target="_blank" rel="noopener">الجريدة الرسمية للدولة (BOE)</a> أو الجريدة الرسمية لمنطقتك للعثور على جداول الرواتب الرسمية.',
+            'modal.convenio.boletines': 'الجرائد الرسمية',
             'modal.convenio.close': 'فهمت',
 
             // Spanish text explanation modal
@@ -997,7 +1008,7 @@ const I18n = {
             'convenio.use': 'Folosește salariul din contract',
             'convenio.market': 'Salariu orientativ de piață:',
             'convenio.market.disclaimer': '* Date orientative bazate pe surse precum Glassdoor, Indeed și Talent.com (2025). Salariile reale variază în funcție de companie, locație și experiență.',
-            'convenio.regional.notice': 'Acest contract folosește tabelele Comunității Madrid ca referință. Fiecare Comunitate Autonomă are propriul contract provincial/regional cu tabele salariale diferite. Consultați Buletinul Oficial al provinciei sau comunității dvs. pentru date exacte.',
+            'convenio.regional.notice': 'Acesta este un contract regional. Fiecare Comunitate Autonomă sau provincie poate avea propriul contract cu tabele salariale diferite. Consultați Buletinul Oficial al provinciei sau comunității dvs. pentru date exacte.',
             'irpf.title': 'Situație Personală (Impozit pe Venit)',
             'irpf.age': 'Vârstă',
             'irpf.contract': 'Tip de contract',
@@ -1073,6 +1084,7 @@ const I18n = {
             'modal.convenio.p1': 'În Spania există <strong>sute de contracte colective</strong>, atât la nivel național, cât și provincial și regional. Adăugarea tuturor la acest calculator este o sarcină enormă, chiar și doar ca referință orientativă.',
             'modal.convenio.p2': 'Facem tot posibilul pentru a menține calculatorul actualizat cu cât mai multe contracte, prioritizând pe cele care afectează mai mulți lucrători și au tabele salariale clare și publice.',
             'modal.convenio.p3': 'Dacă contractul dvs. nu apare în listă, puteți consulta <a href="https://www.boe.es" target="_blank" rel="noopener">Buletinul Oficial de Stat (BOE)</a> sau buletinul oficial al provinciei dvs. pentru a găsi tabelele salariale oficiale.',
+            'modal.convenio.boletines': 'Buletine Oficiale',
             'modal.convenio.close': 'Am înțeles',
 
             // Spanish text explanation modal
@@ -1100,7 +1112,7 @@ const I18n = {
             'convenio.use': '使用协议工资',
             'convenio.market': '市场参考工资：',
             'convenio.market.disclaimer': '* 参考数据来源于Glassdoor、Indeed和Talent.com (2025)。实际工资因公司、地点和经验而异。',
-            'convenio.regional.notice': '此协议使用马德里自治区的工资表作为参考。每个自治区都有自己的省级/地区协议，工资表各不相同。请查阅您所在省份或自治区的官方公报以获取准确数据。',
+            'convenio.regional.notice': '这是一份地区协议。每个自治区或省份可能有自己的协议，工资表各不相同。请查阅您所在省份或自治区的官方公报以获取准确数据。',
             'irpf.title': '个人情况（所得税）',
             'irpf.age': '年龄',
             'irpf.contract': '合同类型',
@@ -1176,6 +1188,7 @@ const I18n = {
             'modal.convenio.p1': '西班牙有<strong>数百个集体协议</strong>，包括国家级、省级和地区级。将所有协议添加到此计算器是一项艰巨的任务，即使仅作为参考。',
             'modal.convenio.p2': '我们尽最大努力使计算器保持更新，优先添加影响更多工人且工资表清晰公开的协议。',
             'modal.convenio.p3': '如果您的协议不在列表中，可以查阅<a href="https://www.boe.es" target="_blank" rel="noopener">国家官方公报（BOE）</a>或您所在省份的官方公报以查找官方工资表。',
+            'modal.convenio.boletines': '官方公报',
             'modal.convenio.close': '知道了',
 
             // Spanish text explanation modal
@@ -1203,7 +1216,7 @@ const I18n = {
             'convenio.use': 'Usar salário da convenção',
             'convenio.market': 'Salário orientativo de mercado:',
             'convenio.market.disclaimer': '* Dados orientativos baseados em fontes como Glassdoor, Indeed e Talent.com (2025). Os salários reais variam conforme a empresa, localização e experiência.',
-            'convenio.regional.notice': 'Esta convenção utiliza as tabelas da Comunidade de Madrid como referência. Cada Comunidade Autónoma tem a sua própria convenção provincial/regional com tabelas salariais diferentes. Consulte o Boletim Oficial da sua província ou comunidade para dados exatos.',
+            'convenio.regional.notice': 'Esta é uma convenção regional. Cada Comunidade Autónoma ou província pode ter a sua própria convenção com tabelas salariais diferentes. Consulte o Boletim Oficial da sua província ou comunidade para dados exatos.',
             'irpf.title': 'Situação Pessoal (IRS)',
             'irpf.age': 'Idade',
             'irpf.contract': 'Tipo de contrato',
@@ -1279,6 +1292,7 @@ const I18n = {
             'modal.convenio.p1': 'Em Espanha existem <strong>centenas de convenções coletivas</strong>, tanto de âmbito estatal como provincial e autonómico. Adicionar todas elas a esta calculadora é uma tarefa enorme, mesmo que apenas como referência orientativa.',
             'modal.convenio.p2': 'Fazemos o nosso melhor esforço para manter a calculadora atualizada com o maior número possível de convenções, priorizando aquelas que afetam mais trabalhadores e têm tabelas salariais claras e públicas.',
             'modal.convenio.p3': 'Se a sua convenção não aparece na lista, pode consultar o <a href="https://www.boe.es" target="_blank" rel="noopener">Boletim Oficial do Estado (BOE)</a> ou o boletim oficial da sua província para encontrar as tabelas salariais oficiais.',
+            'modal.convenio.boletines': 'Boletins Oficiais',
             'modal.convenio.close': 'Entendido',
 
             // Spanish text explanation modal
@@ -1306,7 +1320,7 @@ const I18n = {
             'convenio.use': 'Użyj wynagrodzenia z układu',
             'convenio.market': 'Orientacyjne wynagrodzenie rynkowe:',
             'convenio.market.disclaimer': '* Dane orientacyjne oparte na źródłach takich jak Glassdoor, Indeed i Talent.com (2025). Rzeczywiste wynagrodzenia różnią się w zależności od firmy, lokalizacji i doświadczenia.',
-            'convenio.regional.notice': 'Ten układ wykorzystuje tabele Wspólnoty Madryckiej jako punkt odniesienia. Każda Wspólnota Autonomiczna ma własny układ prowincjonalny/regionalny z różnymi tabelami wynagrodzeń. Sprawdź oficjalny biuletyn swojej prowincji lub wspólnoty, aby uzyskać dokładne dane.',
+            'convenio.regional.notice': 'To jest układ regionalny. Każda Wspólnota Autonomiczna lub prowincja może mieć własny układ z różnymi tabelami wynagrodzeń. Sprawdź oficjalny biuletyn swojej prowincji lub wspólnoty, aby uzyskać dokładne dane.',
             'irpf.title': 'Sytuacja Osobista (Podatek Dochodowy)',
             'irpf.age': 'Wiek',
             'irpf.contract': 'Rodzaj umowy',
@@ -1382,6 +1396,7 @@ const I18n = {
             'modal.convenio.p1': 'W Hiszpanii istnieją <strong>setki układów zbiorowych</strong>, zarówno na poziomie krajowym, jak i prowincjonalnym i regionalnym. Dodanie ich wszystkich do tego kalkulatora to ogromne zadanie, nawet jako orientacyjne odniesienie.',
             'modal.convenio.p2': 'Dokładamy wszelkich starań, aby kalkulator był aktualizowany o jak największą liczbę układów, priorytetyzując te, które dotyczą większej liczby pracowników i mają jasne i publiczne tabele wynagrodzeń.',
             'modal.convenio.p3': 'Jeśli Twojego układu nie ma na liście, możesz sprawdzić <a href="https://www.boe.es" target="_blank" rel="noopener">Dziennik Urzędowy Państwa (BOE)</a> lub oficjalny biuletyn swojej prowincji, aby znaleźć oficjalne tabele wynagrodzeń.',
+            'modal.convenio.boletines': 'Dzienniki Urzędowe',
             'modal.convenio.close': 'Rozumiem',
 
             // Spanish text explanation modal
@@ -1409,7 +1424,7 @@ const I18n = {
             'convenio.use': 'Використати зарплату з договору',
             'convenio.market': 'Орієнтовна ринкова зарплата:',
             'convenio.market.disclaimer': '* Орієнтовні дані на основі джерел, таких як Glassdoor, Indeed та Talent.com (2025). Реальні зарплати відрізняються залежно від компанії, місця та досвіду.',
-            'convenio.regional.notice': 'Цей договір використовує таблиці Мадридської Спільноти як орієнтир. Кожна Автономна Спільнота має власний провінційний/регіональний договір з різними таблицями зарплат. Перевірте офіційний бюлетень вашої провінції або спільноти для точних даних.',
+            'convenio.regional.notice': 'Це регіональний договір. Кожна Автономна Спільнота або провінція може мати власний договір з різними таблицями зарплат. Перевірте офіційний бюлетень вашої провінції або спільноти для точних даних.',
             'irpf.title': 'Особиста Ситуація (Податок на Доходи)',
             'irpf.age': 'Вік',
             'irpf.contract': 'Тип контракту',
@@ -1485,6 +1500,7 @@ const I18n = {
             'modal.convenio.p1': 'В Іспанії існують <strong>сотні колективних договорів</strong>, як на національному, так і на провінційному та регіональному рівнях. Додати їх усі до цього калькулятора - величезне завдання, навіть як орієнтовну довідку.',
             'modal.convenio.p2': 'Ми робимо все можливе, щоб підтримувати калькулятор оновленим з якомога більшою кількістю договорів, пріоритезуючи ті, що стосуються більшої кількості працівників і мають чіткі та публічні таблиці зарплат.',
             'modal.convenio.p3': 'Якщо вашого договору немає в списку, ви можете перевірити <a href="https://www.boe.es" target="_blank" rel="noopener">Офіційний Державний Бюлетень (BOE)</a> або офіційний бюлетень вашої провінції, щоб знайти офіційні таблиці зарплат.',
+            'modal.convenio.boletines': 'Офіційні Бюлетені',
             'modal.convenio.close': 'Зрозуміло',
 
             // Spanish text explanation modal

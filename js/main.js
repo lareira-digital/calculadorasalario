@@ -61,6 +61,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const gestoriasFields = document.getElementById('gestorias-fields');
     const gestoriasCategorySelect = document.getElementById('gestorias-category');
 
+    // Oficinas y Despachos convenio selectors
+    const oficinasFields = document.getElementById('oficinas-despachos-fields');
+    const oficinasLevelSelect = document.getElementById('oficinas-despachos-level');
+
+    // Oficinas y Despachos Galicia convenio selectors
+    const oficinasGaliciaFields = document.getElementById('oficinas-galicia-fields');
+    const oficinasGaliciaCategorySelect = document.getElementById('oficinas-galicia-category');
+
     // Regional notice
     const regionalNotice = document.getElementById('convenio-regional-notice');
 
@@ -109,6 +117,8 @@ document.addEventListener('DOMContentLoaded', function() {
         seguridadFields.classList.add('hidden');
         contactCenterFields.classList.add('hidden');
         gestoriasFields.classList.add('hidden');
+        oficinasFields.classList.add('hidden');
+        oficinasGaliciaFields.classList.add('hidden');
         regionalNotice.classList.add('hidden');
 
         if (convenio === 'tic') {
@@ -127,6 +137,14 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (convenio === 'gestorias') {
             gestoriasFields.classList.remove('hidden');
             updateYearOptionsForGestorias();
+        } else if (convenio === 'oficinas-despachos') {
+            oficinasFields.classList.remove('hidden');
+            regionalNotice.classList.remove('hidden');
+            updateYearOptionsForOficinasDespachos();
+        } else if (convenio === 'oficinas-despachos-galicia') {
+            oficinasGaliciaFields.classList.remove('hidden');
+            regionalNotice.classList.remove('hidden');
+            updateYearOptionsForOficinasGalicia();
         }
 
         updateConvenioSalaryDisplay();
@@ -226,6 +244,42 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /**
+     * Update year options for Oficinas y Despachos convenio (2024-2026)
+     */
+    function updateYearOptionsForOficinasDespachos() {
+        const currentYear = parseInt(yearSelect.value);
+        yearSelect.innerHTML = `
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+        `;
+        // Keep current selection if valid
+        if ([2024, 2025, 2026].includes(currentYear)) {
+            yearSelect.value = currentYear;
+        } else {
+            yearSelect.value = '2025';
+        }
+    }
+
+    /**
+     * Update year options for Oficinas y Despachos Galicia convenio (2023-2025)
+     */
+    function updateYearOptionsForOficinasGalicia() {
+        const currentYear = parseInt(yearSelect.value);
+        yearSelect.innerHTML = `
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+        `;
+        // Keep current selection if valid
+        if ([2023, 2024, 2025].includes(currentYear)) {
+            yearSelect.value = currentYear;
+        } else {
+            yearSelect.value = '2025';
+        }
+    }
+
+    /**
      * Get available levels for a given group (TIC convenio)
      */
     function getLevelsForGroup(group) {
@@ -291,6 +345,12 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (convenio === 'gestorias') {
             const category = gestoriasCategorySelect.value;
             return ConvenioGestorias.getSalary(category, year);
+        } else if (convenio === 'oficinas-despachos') {
+            const level = oficinasLevelSelect.value;
+            return ConvenioOficinasDespachos.getSalary(level, year);
+        } else if (convenio === 'oficinas-despachos-galicia') {
+            const category = oficinasGaliciaCategorySelect.value;
+            return ConvenioOficinasGalicia.getSalary(category, year);
         }
 
         return null;
@@ -339,6 +399,12 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (convenio === 'gestorias') {
             const category = gestoriasCategorySelect.value;
             marketData = ConvenioGestorias.marketRates.getMarketRateForCategory(category);
+        } else if (convenio === 'oficinas-despachos') {
+            const level = oficinasLevelSelect.value;
+            marketData = ConvenioOficinasDespachos.marketRates.getMarketRateForCategory(level);
+        } else if (convenio === 'oficinas-despachos-galicia') {
+            const category = oficinasGaliciaCategorySelect.value;
+            marketData = ConvenioOficinasGalicia.marketRates.getMarketRateForCategory(category);
         }
 
         if (marketData) {
@@ -391,6 +457,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 type: 'gestorias',
                 category: gestoriasCategorySelect.value
             };
+        } else if (convenio === 'oficinas-despachos') {
+            return {
+                type: 'oficinas-despachos',
+                level: oficinasLevelSelect.value
+            };
+        } else if (convenio === 'oficinas-despachos-galicia') {
+            return {
+                type: 'oficinas-despachos-galicia',
+                category: oficinasGaliciaCategorySelect.value
+            };
         }
 
         return null;
@@ -419,6 +495,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listeners for Gestorías convenio selectors
     gestoriasCategorySelect.addEventListener('change', updateConvenioSalaryDisplay);
+
+    // Event listeners for Oficinas y Despachos convenio selectors
+    oficinasLevelSelect.addEventListener('change', updateConvenioSalaryDisplay);
+
+    // Event listeners for Oficinas y Despachos Galicia convenio selectors
+    oficinasGaliciaCategorySelect.addEventListener('change', updateConvenioSalaryDisplay);
 
     // Modal event listeners - Convenio missing modal
     function openConvenioModal() {
@@ -592,6 +674,22 @@ document.addEventListener('DOMContentLoaded', function() {
             );
             // Use short category name for display
             const catInfo = ConvenioGestorias.categories[convenioParams.category];
+            categoryCode = catInfo ? catInfo.name.substring(0, 18) : convenioParams.category;
+        } else if (convenioParams.type === 'oficinas-despachos') {
+            convenioSalary = ConvenioOficinasDespachos.getSalary(
+                convenioParams.level,
+                year
+            );
+            // Use level name for display
+            const levelInfo = ConvenioOficinasDespachos.categories[convenioParams.level];
+            categoryCode = levelInfo ? levelInfo.name.substring(0, 18) : convenioParams.level;
+        } else if (convenioParams.type === 'oficinas-despachos-galicia') {
+            convenioSalary = ConvenioOficinasGalicia.getSalary(
+                convenioParams.category,
+                year
+            );
+            // Use category name for display
+            const catInfo = ConvenioOficinasGalicia.categories[convenioParams.category];
             categoryCode = catInfo ? catInfo.name.substring(0, 18) : convenioParams.category;
         }
 
